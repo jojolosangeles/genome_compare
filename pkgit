@@ -1,5 +1,6 @@
 set -x
-pip install -r requirements.txt --target ./package
+#rm -rf package
+#pip install -r requirements.txt --target ./package
 rm lambda_function.zip
 cd package
 zip -r9 ../lambda_function.zip .
