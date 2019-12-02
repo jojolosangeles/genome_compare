@@ -1,0 +1,8 @@
+set -x
+pip install -r requirements.txt --target ./package
+rm lambda_function.zip
+cd package
+zip -r9 ../lambda_function.zip .
+cd ..
+zip -g lambda_function.zip *.py
+aws lambda update-function-code --function-name py_lambda_test --zip-file fileb://lambda_function.zip
