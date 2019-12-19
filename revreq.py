@@ -13,10 +13,25 @@ import json
 @click.option("--listmod", prompt="list mods joined back into line", help="list mods joined back into line")
 
 def doquery(query, data, len, offset, index, linemod, splitmod, listmod):
+    def comp(val):
+        if val == 'A':
+            return 'T'
+        elif val == 'C':
+            return 'G'
+        elif val == 'G':
+            return 'C'
+        else:
+            return 'A'
+
+    def revcomp(s):
+        l = [comp(v) for v in s]
+        return "".join(l)
+
     with open(query) as fh:
         with open(data, "r") as dataFile:
             dataFile.seek(offset)
             line = dataFile.read(len)
+            line = revcomp(line)
             line = eval(linemod)
             data = eval(splitmod)
             queryData = " ".join(eval(listmod))

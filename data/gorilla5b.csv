@@ -1,0 +1,616 @@
+x,y,x2,y2,color
+107,200,120,400,same orientation
+species chimp, chromosome 17
+15,200,70,100,inversed
+species human, chromosome 17
+15,200,67,100,inversed
+species human, chromosome 17
+22,200,57,100,inversed
+species chimp, chromosome 17
+22,200,57,100,inversed
+165,200,174,0,same orientation
+165,200,178,400,same orientation
+77,200,132,0,inversed
+species human, chromosome 17
+40,200,38,100,inversed
+88,200,121,0,inversed
+88,200,101,400,inversed
+species chimp, chromosome 17
+46,200,19,100,same orientation
+species human, chromosome 17
+46,200,30,100,same orientation
+71,200,34,400,same orientation
+71,200,82,0,same orientation
+128,200,145,0,inversed
+128,200,170,400,inversed
+species human, chromosome 17
+24,200,53,100,same orientation
+species human, chromosome 17
+7,200,61,100,inversed
+species chimp, chromosome 17
+7,200,64,100,inversed
+92,200,105,400,same orientation
+species chimp, chromosome 17
+5,200,62,100,same orientation
+species human, chromosome 17
+5,200,59,100,same orientation
+161,200,171,0,inversed
+161,200,175,400,inversed
+156,200,143,400,inversed
+156,200,154,0,inversed
+94,200,115,0,inversed
+103,200,106,0,inversed
+134,200,139,0,inversed
+134,200,164,400,inversed
+species human, chromosome 17
+38,200,39,100,same orientation
+species chimp, chromosome 17
+38,200,82,100,same orientation
+125,200,173,400,inversed
+125,200,148,0,inversed
+species human, chromosome 17
+29,200,48,100,same orientation
+112,200,97,0,inversed
+85,200,124,0,inversed
+147,200,163,0,inversed
+147,200,151,400,inversed
+species chimp, chromosome 17
+18,200,71,100,inversed
+species human, chromosome 17
+18,200,68,100,inversed
+139,200,134,0,inversed
+139,200,159,400,inversed
+species human, chromosome 17
+35,200,42,100,same orientation
+99,200,110,0,inversed
+species chimp, chromosome 17
+51,200,23,100,inversed
+species chimp, chromosome 17
+33,200,48,100,inversed
+121,200,134,400,same orientation
+116,200,129,400,same orientation
+species chimp, chromosome 17
+48,200,21,100,inversed
+86,200,99,400,same orientation
+117,200,92,0,inversed
+120,200,89,0,inversed
+species chimp, chromosome 6
+120,200,132,100,inversed
+79,200,42,400,same orientation
+142,200,156,400,inversed
+142,200,168,0,inversed
+80,200,129,0,inversed
+80,200,93,400,inversed
+species human, chromosome 17
+63,200,17,100,inversed
+species chimp, chromosome 17
+54,200,27,100,inversed
+species human, chromosome 17
+54,200,23,100,inversed
+113,200,126,400,same orientation
+124,200,137,400,same orientation
+species human, chromosome 17
+30,200,47,100,same orientation
+species human, chromosome 17
+52,200,26,100,same orientation
+65,200,29,400,same orientation
+65,200,76,0,same orientation
+74,200,85,0,same orientation
+74,200,37,400,same orientation
+species chimp, chromosome 17
+43,200,15,100,same orientation
+species chimp, chromosome 17
+27,200,43,100,inversed
+species human, chromosome 17
+10,200,61,100,inversed
+species chimp, chromosome 17
+10,200,64,100,inversed
+102,200,115,400,same orientation
+species human, chromosome 17
+45,200,34,100,inversed
+91,200,118,0,inversed
+153,200,157,0,inversed
+153,200,145,400,inversed
+68,200,79,0,same orientation
+131,200,142,0,inversed
+131,200,167,400,inversed
+106,200,103,0,inversed
+106,200,119,400,inversed
+97,200,180,400,same orientation
+97,200,110,400,same orientation
+species chimp, chromosome 17
+59,200,36,100,inversed
+species human, chromosome 17
+59,200,16,100,inversed
+species human, chromosome 17
+59,200,18,100,inversed
+119,200,132,400,same orientation
+species chimp, chromosome 17
+5,200,62,100,inversed
+species human, chromosome 17
+5,200,59,100,inversed
+90,200,103,400,same orientation
+154,200,156,0,inversed
+154,200,144,400,inversed
+species human, chromosome 17
+58,200,21,100,same orientation
+species chimp, chromosome 20
+58,200,0,100,same orientation
+species chimp, chromosome 20
+58,200,27,100,same orientation
+species human, chromosome 20
+58,200,26,100,same orientation
+species human, chromosome 17
+58,200,20,100,same orientation
+species chimp, chromosome 7
+58,200,60,100,same orientation
+species chimp, chromosome 17
+58,200,35,100,same orientation
+species human, chromosome 17
+58,200,15,100,same orientation
+species chimp, chromosome 7
+58,200,56,100,same orientation
+163,200,175,400,inversed
+96,200,113,0,inversed
+136,200,162,400,inversed
+136,200,137,0,inversed
+101,200,108,0,inversed
+species human, chromosome X
+132,200,66,100,same orientation
+species human, chromosome 6
+132,200,83,100,same orientation
+species chimp, chromosome X
+132,200,69,100,same orientation
+105,200,118,400,same orientation
+species human, chromosome 17
+20,200,55,100,inversed
+species chimp, chromosome 17
+20,200,75,100,inversed
+species chimp, chromosome 17
+17,200,72,100,inversed
+species human, chromosome 17
+17,200,69,100,inversed
+species human, chromosome 17
+42,200,32,100,inversed
+73,200,36,400,same orientation
+73,200,84,0,same orientation
+148,200,150,400,inversed
+148,200,162,0,inversed
+species chimp, chromosome 17
+44,200,16,100,same orientation
+species chimp, chromosome 17
+11,200,66,100,same orientation
+species human, chromosome 17
+26,200,52,100,same orientation
+species human, chromosome 17
+37,200,41,100,same orientation
+159,200,151,0,inversed
+159,200,139,400,inversed
+species chimp, chromosome 17
+62,200,36,100,same orientation
+species chimp, chromosome 17
+53,200,26,100,inversed
+species human, chromosome 17
+53,200,22,100,inversed
+species chimp, chromosome 17
+31,200,47,100,inversed
+114,200,127,400,same orientation
+114,200,95,0,same orientation
+123,200,136,400,same orientation
+species human, chromosome 17
+8,200,60,100,inversed
+species chimp, chromosome 17
+8,200,63,100,inversed
+110,200,99,0,inversed
+127,200,146,0,inversed
+127,200,171,400,inversed
+87,200,122,0,inversed
+145,200,153,400,inversed
+145,200,165,0,inversed
+species chimp, chromosome Y
+145,200,17,100,inversed
+species chimp, chromosome X
+145,200,54,100,inversed
+species human, chromosome 10
+145,200,86,100,inversed
+species human, chromosome 1
+145,200,99,100,inversed
+species chimp, chromosome X
+145,200,69,100,inversed
+species human, chromosome X
+145,200,52,100,inversed
+species human, chromosome 17
+49,200,29,100,same orientation
+78,200,131,0,inversed
+108,200,121,400,same orientation
+98,200,111,400,same orientation
+species chimp, chromosome 17
+56,200,28,100,inversed
+species human, chromosome 17
+56,200,25,100,inversed
+species human, chromosome 17
+61,200,17,100,inversed
+species chimp, chromosome 17
+61,200,34,100,inversed
+species chimp, chromosome 17
+61,200,37,100,inversed
+111,200,124,400,same orientation
+species chimp, chromosome 17
+34,200,9,100,inversed
+109,200,100,0,inversed
+species human, chromosome 17
+32,200,43,100,same orientation
+species human, chromosome 10
+32,200,87,100,same orientation
+67,200,31,400,same orientation
+67,200,78,0,same orientation
+species human, chromosome 17
+50,200,29,100,same orientation
+84,200,97,400,same orientation
+species chimp, chromosome 17
+28,200,42,100,inversed
+species human, chromosome 6
+28,200,126,100,inversed
+122,200,87,0,inversed
+115,200,94,0,inversed
+species chimp, chromosome 17
+19,200,80,100,same orientation
+140,200,170,0,inversed
+140,200,158,400,inversed
+82,200,127,0,inversed
+82,200,91,400,inversed
+93,200,116,0,inversed
+species human, chromosome 17
+0,200,76,100,same orientation
+166,200,89,0,inversed
+166,200,5,400,inversed
+151,200,147,400,inversed
+151,200,159,0,inversed
+104,200,105,0,inversed
+133,200,140,0,inversed
+133,200,165,400,inversed
+species human, chromosome 17
+39,200,39,100,inversed
+species chimp, chromosome 17
+39,200,12,100,inversed
+species chimp, chromosome 17
+39,200,82,100,inversed
+species human, chromosome 17
+39,200,40,100,inversed
+95,200,108,400,same orientation
+species human, chromosome 17
+2,200,74,100,same orientation
+species chimp, chromosome 17
+2,200,77,100,same orientation
+species chimp, chromosome 17
+41,200,18,100,same orientation
+76,200,40,400,same orientation
+118,200,91,0,inversed
+species human, chromosome 17
+12,200,64,100,inversed
+species chimp, chromosome 17
+12,200,67,100,inversed
+species chimp, chromosome 17
+25,200,42,100,inversed
+100,200,113,400,same orientation
+species chimp, chromosome 17
+47,200,20,100,inversed
+89,200,102,400,same orientation
+116,200,179,400,inversed
+116,200,93,0,inversed
+121,200,88,0,inversed
+78,200,41,400,same orientation
+143,200,167,0,inversed
+143,200,155,400,inversed
+81,200,128,0,inversed
+81,200,92,400,inversed
+species chimp, chromosome 17
+49,200,22,100,inversed
+87,200,100,400,same orientation
+species human, chromosome 17
+31,200,46,100,same orientation
+species chimp, chromosome 17
+53,200,30,100,same orientation
+species human, chromosome 17
+53,200,26,100,same orientation
+64,200,28,400,same orientation
+64,200,75,0,same orientation
+species human, chromosome 17
+62,200,17,100,inversed
+species chimp, chromosome 17
+55,200,28,100,inversed
+species human, chromosome 17
+55,200,24,100,inversed
+112,200,125,400,same orientation
+species chimp, chromosome 17
+37,200,9,100,inversed
+species chimp, chromosome 17
+26,200,41,100,inversed
+species human, chromosome 17
+11,200,63,100,inversed
+species chimp, chromosome 17
+11,200,66,100,inversed
+103,200,116,400,same orientation
+species human, chromosome 17
+44,200,32,100,inversed
+75,200,86,0,same orientation
+75,200,38,400,same orientation
+species chimp, chromosome 17
+42,200,17,100,same orientation
+species chimp, chromosome 17
+3,200,58,100,inversed
+species human, chromosome 17
+3,200,73,100,inversed
+96,200,109,400,same orientation
+species human, chromosome 17
+1,200,75,100,same orientation
+species chimp, chromosome 17
+58,200,31,100,inversed
+species chimp, chromosome 7
+58,200,60,100,inversed
+species chimp, chromosome 20
+58,200,26,100,inversed
+90,200,119,0,inversed
+152,200,146,400,inversed
+152,200,158,0,inversed
+69,200,80,0,same orientation
+69,200,32,400,same orientation
+130,200,143,0,inversed
+130,200,168,400,inversed
+107,200,102,0,inversed
+89,200,120,0,inversed
+species human, chromosome 17
+47,200,30,100,same orientation
+species human, chromosome 17
+47,200,31,100,same orientation
+70,200,33,400,same orientation
+70,200,81,0,same orientation
+species human, chromosome 17
+25,200,51,100,same orientation
+129,200,144,0,inversed
+129,200,169,400,inversed
+106,200,119,400,same orientation
+106,200,103,0,same orientation
+species chimp, chromosome 17
+14,200,69,100,inversed
+species human, chromosome 17
+14,200,66,100,inversed
+species chimp, chromosome 17
+23,200,57,100,inversed
+species human, chromosome 17
+23,200,57,100,inversed
+164,200,173,0,same orientation
+164,200,177,400,same orientation
+76,200,133,0,inversed
+species human, chromosome 17
+41,200,36,100,inversed
+160,200,150,0,inversed
+160,200,138,400,inversed
+157,200,142,400,inversed
+157,200,153,0,inversed
+95,200,114,0,inversed
+102,200,107,0,inversed
+species chimp, chromosome 17
+39,200,11,100,same orientation
+135,200,138,0,inversed
+135,200,163,400,inversed
+species human, chromosome 17
+6,200,58,100,inversed
+species chimp, chromosome 17
+6,200,61,100,inversed
+93,200,106,400,same orientation
+82,200,127,0,same orientation
+82,200,91,400,same orientation
+species human, chromosome 17
+19,200,53,100,inversed
+species chimp, chromosome 17
+19,200,74,100,inversed
+species chimp, chromosome 17
+19,200,11,100,inversed
+species human, chromosome 17
+28,200,50,100,same orientation
+species chimp, chromosome 6
+28,200,135,100,same orientation
+124,200,149,0,inversed
+113,200,96,0,inversed
+84,200,125,0,inversed
+146,200,152,400,inversed
+146,200,164,0,inversed
+species chimp, chromosome 17
+50,200,22,100,inversed
+species chimp, chromosome 17
+32,200,49,100,inversed
+species human, chromosome X
+32,200,46,100,inversed
+species chimp, chromosome 11
+32,200,57,100,inversed
+120,200,133,400,same orientation
+117,200,130,400,same orientation
+species human, chromosome 17
+34,200,41,100,same orientation
+138,200,135,0,inversed
+138,200,160,400,inversed
+species chimp, chromosome 17
+61,200,37,100,same orientation
+species chimp, chromosome 17
+61,200,34,100,same orientation
+species human, chromosome 17
+61,200,18,100,same orientation
+species chimp, chromosome 17
+61,200,36,100,same orientation
+species human, chromosome 17
+61,200,19,100,same orientation
+species chimp, chromosome 17
+61,200,33,100,same orientation
+species chimp, chromosome 17
+56,200,28,100,same orientation
+species human, chromosome 17
+56,200,25,100,same orientation
+98,200,111,0,inversed
+108,200,101,0,inversed
+species human, chromosome 17
+33,200,44,100,same orientation
+66,200,30,400,same orientation
+66,200,77,0,same orientation
+species human, chromosome 17
+51,200,28,100,same orientation
+species chimp, chromosome X
+145,200,69,100,same orientation
+species human, chromosome Y
+145,200,15,100,same orientation
+species human, chromosome X
+145,200,66,100,same orientation
+species human, chromosome X
+145,200,51,100,same orientation
+99,200,112,400,same orientation
+species human, chromosome 17
+57,200,25,100,inversed
+species chimp, chromosome 17
+57,200,29,100,inversed
+species human, chromosome 17
+60,200,19,100,inversed
+species chimp, chromosome 17
+60,200,33,100,inversed
+110,200,123,400,same orientation
+species chimp, chromosome 17
+35,200,81,100,inversed
+species chimp, chromosome 17
+35,200,8,100,inversed
+123,200,150,0,inversed
+123,200,136,400,inversed
+114,200,95,0,inversed
+114,200,127,400,inversed
+141,200,157,400,inversed
+141,200,169,0,inversed
+83,200,95,400,inversed
+83,200,126,0,inversed
+85,200,98,400,same orientation
+species chimp, chromosome 17
+29,200,45,100,inversed
+species chimp, chromosome 17
+1,200,78,100,inversed
+species chimp, chromosome 17
+38,200,11,100,inversed
+species chimp, chromosome 7
+3,200,0,100,same orientation
+94,200,107,400,same orientation
+92,200,117,0,inversed
+150,200,160,0,inversed
+150,200,148,400,inversed
+105,200,104,0,inversed
+132,200,141,0,inversed
+132,200,166,400,inversed
+species human, chromosome X
+132,200,51,100,inversed
+species chimp, chromosome X
+132,200,54,100,inversed
+species chimp, chromosome X
+132,200,69,100,inversed
+species chimp, chromosome X
+132,200,169,100,inversed
+species human, chromosome X
+132,200,67,100,inversed
+species chimp, chromosome 17
+13,200,68,100,inversed
+species human, chromosome 17
+13,200,65,100,inversed
+species chimp, chromosome 17
+24,200,40,100,inversed
+101,200,114,400,same orientation
+species chimp, chromosome 17
+46,200,19,100,inversed
+species human, chromosome 17
+46,200,56,100,inversed
+species chimp, chromosome 17
+46,200,39,100,inversed
+species chimp, chromosome 17
+46,200,21,100,inversed
+species human, chromosome 17
+46,200,58,100,inversed
+species human, chromosome 17
+46,200,4,100,inversed
+species human, chromosome 17
+46,200,41,100,inversed
+species chimp, chromosome 17
+46,200,56,100,inversed
+163,200,172,0,same orientation
+88,200,101,400,same orientation
+88,200,121,0,same orientation
+species chimp, chromosome 17
+40,200,13,100,same orientation
+77,200,40,400,same orientation
+119,200,90,0,inversed
+species human, chromosome 20
+119,200,25,100,inversed
+species chimp, chromosome 20
+119,200,2,100,inversed
+species human, chromosome 17
+59,200,19,100,same orientation
+species chimp, chromosome 17
+59,200,36,100,same orientation
+155,200,155,0,inversed
+155,200,144,400,inversed
+162,200,170,0,inversed
+162,200,174,400,inversed
+97,200,112,0,inversed
+137,200,161,400,inversed
+137,200,136,0,inversed
+100,200,109,0,inversed
+118,200,131,400,same orientation
+species chimp, chromosome 17
+4,200,59,100,inversed
+species human, chromosome 17
+4,200,71,100,inversed
+91,200,104,400,same orientation
+72,200,83,0,same orientation
+72,200,35,400,same orientation
+species chimp, chromosome 17
+45,200,15,100,same orientation
+149,200,161,0,inversed
+149,200,149,400,inversed
+species human, chromosome 17
+27,200,49,100,same orientation
+104,200,117,400,same orientation
+species chimp, chromosome 17
+21,200,74,100,inversed
+species human, chromosome 17
+21,200,54,100,inversed
+species chimp, chromosome 17
+16,200,73,100,inversed
+species human, chromosome 17
+16,200,70,100,inversed
+166,200,133,400,same orientation
+166,200,13,0,same orientation
+166,200,128,400,same orientation
+species human, chromosome 17
+43,200,33,100,inversed
+species chimp, chromosome 17
+52,200,24,100,inversed
+species chimp, chromosome 17
+30,200,46,100,inversed
+115,200,128,400,same orientation
+species human, chromosome 17
+9,200,62,100,inversed
+species chimp, chromosome 17
+9,200,65,100,inversed
+122,200,135,400,same orientation
+species chimp, chromosome 17
+36,200,12,100,same orientation
+species human, chromosome 17
+36,200,40,100,same orientation
+158,200,141,400,inversed
+158,200,152,0,inversed
+species chimp, chromosome 17
+63,200,36,100,same orientation
+79,200,130,0,inversed
+109,200,122,400,same orientation
+111,200,98,0,inversed
+126,200,147,0,inversed
+126,200,172,400,inversed
+86,200,123,0,inversed
+species human, chromosome 17
+48,200,29,100,same orientation
+species chimp, chromosome 17
+0,200,79,100,inversed
+144,200,166,0,inversed
+144,200,154,400,inversed

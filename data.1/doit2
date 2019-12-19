@@ -1,0 +1,33 @@
+set -x
+#python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr2A.fa --linelen 1000000 --outfile esdata/g2A.1m --filter "len(line) == 0 or line[0] == '>'"
+#python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr2B.fa --linelen 1000000 --outfile esdata/g2B.1m --filter "len(line) == 0 or line[0] == '>'"
+#python line_gen.py --datasource /Users/jojo/genomes/hs_ref_GRCh38/hs_ref_GRCh38.p7_chr2.fa --linelen 1000000 --outfile esdata/h2.1m --filter "len(line) == 0 or line[0] == '>'"
+#python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr2A.fa --linelen 1000000 --outfile esdata/c2A.1m --filter "len(line) == 0 or line[0] == '>'"
+#python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr2B.fa --linelen 1000000 --outfile esdata/c2B.1m --filter "len(line) == 0 or line[0] == '>'"
+#python esgen.py --chromosome 2A --datasource esdata/g2A.1m --index gorilla --linemod "line.replace('CG', 'C G').replace('GC', 'G C')" --splitmod "line.split()" --listmod "[val for val in data if len(val) > 3]" --idprefix gorilla --outfile esdata/g2A.1m.es_bulk
+#python esgen.py --chromosome 2B --datasource esdata/g2B.1m --index gorilla --linemod "line.replace('CG', 'C G').replace('GC', 'G C')" --splitmod "line.split()" --listmod "[val for val in data if len(val) > 3]" --idprefix gorilla --outfile esdata/g2B.1m.es_bulk
+#python esgen.py --chromosome 2 --datasource esdata/h2.1m --index human --linemod "line.replace('CG', 'C G').replace('GC', 'G C')" --splitmod "line.split()" --listmod "[val for val in data if len(val) > 3]" --idprefix human --outfile esdata/h2.1m.es_bulk
+#python esgen.py --chromosome 2A --datasource esdata/c2A.1m --index chimp --linemod "line.replace('CG', 'C G').replace('GC', 'G C')" --splitmod "line.split()" --listmod "[val for val in data if len(val) > 3]" --idprefix chimp --outfile esdata/c2A.1m.es_bulk
+#python esgen.py --chromosome 2B --datasource esdata/c2B.1m --index chimp --linemod "line.replace('CG', 'C G').replace('GC', 'G C')" --splitmod "line.split()" --listmod "[val for val in data if len(val) > 3]" --idprefix chimp --outfile esdata/c2B.1m.es_bulk
+#python mk50.py esdata/c2A.1m.es_bulk
+#python mk50.py esdata/c2B.1m.es_bulk
+#python mk50.py esdata/g2A.1m.es_bulk
+#python mk50.py esdata/g2B.1m.es_bulk
+#python mk50.py esdata/h2.1m.es_bulk
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@c2A.1m.es_bulk.1"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@c2A.1m.es_bulk.2"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@c2A.1m.es_bulk.3"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@c2B.1m.es_bulk.1"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@c2B.1m.es_bulk.2"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@c2B.1m.es_bulk.3"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@g2A.1m.es_bulk.1"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@g2A.1m.es_bulk.2"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@g2A.1m.es_bulk.3"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@g2B.1m.es_bulk.1"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@g2B.1m.es_bulk.2"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@g2B.1m.es_bulk.3"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@h2.1m.es_bulk.1"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@h2.1m.es_bulk.2"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@h2.1m.es_bulk.3"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@h2.1m.es_bulk.4"
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/_bulk --data-binary "@h2.1m.es_bulk.5"

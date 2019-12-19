@@ -1,0 +1,10 @@
+{
+  "_source": {
+    "exclude": "data"
+  },
+  "query": {
+    "match": {
+       "data": "DATA"
+    }
+  }
+}

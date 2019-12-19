@@ -1,0 +1,25 @@
+set -x
+python mkcsv.py --graph True --species chimp --chromosome 1 > chimp1_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 2A > chimp2A_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 2B > chimp2B_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 3 > chimp3_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 4 > chimp4_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 5 > chimp5_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 6 > chimp6_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 7 > chimp6_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 7 > chimp7_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 6 > chimp6_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 8 > chimp8_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 9 > chimp9_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 10 > chimp10_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 11 > chimp11_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 12 > chimp12_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 13 > chimp13_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 14 > chimp14_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 15 > chimp15_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 16 > chimp16_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 17 > chimp17_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 18 > chimp18_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 19 > chimp19_x2.csv
+python mkcsv.py --graph True --species chimp --chromosome 20 > chimp20_x2.csv
+python mkcsv.py --graph True --species gorilla --chromosome 17 > gorilla17_x2.csv

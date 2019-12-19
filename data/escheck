@@ -1,0 +1,15 @@
+set -x
+curl -H "Content-Type: application/json" localhost:9200/cgh_genomes/_search -d '
+{
+  "_source": {
+     "excludes": [ "data" ]
+  },
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "species": "gorilla" }}
+      ]
+    }
+  }
+}'

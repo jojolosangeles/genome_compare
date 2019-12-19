@@ -1,0 +1,91 @@
+x,y,x2,y2,color
+1,250,0,0,same orientation
+1,250,1,450,inversed
+23,250,11,450,inversed
+23,250,12,0,inversed
+14,250,20,450,inversed
+14,250,21,0,inversed
+30,250,29,450,same orientation
+30,250,30,0,same orientation
+19,250,15,450,inversed
+19,250,16,0,inversed
+9,250,25,450,inversed
+9,250,26,0,inversed
+29,250,28,450,same orientation
+29,250,29,0,same orientation
+4,250,4,0,inversed
+4,250,4,450,same orientation
+38,250,8,0,same orientation
+38,250,7,450,same orientation
+38,250,6,0,same orientation
+38,250,5,0,same orientation
+11,250,23,450,inversed
+11,250,24,0,inversed
+26,250,8,450,inversed
+26,250,9,0,inversed
+16,250,18,450,inversed
+16,250,19,0,inversed
+21,250,13,450,inversed
+21,250,14,0,inversed
+14,250,21,0,same orientation
+3,250,2,0,same orientation
+3,250,3,450,inversed
+32,250,31,450,same orientation
+32,250,32,0,same orientation
+37,250,5,450,same orientation
+37,250,6,0,same orientation
+35,250,16,450,inversed
+35,250,17,0,inversed
+24,250,10,450,inversed
+24,250,11,0,inversed
+13,250,22,0,inversed
+13,250,21,450,inversed
+38,250,8,0,inversed
+38,250,7,450,inversed
+38,250,5,0,inversed
+38,250,3,0,inversed
+38,250,2,0,inversed
+6,250,6,450,same orientation
+6,250,6,0,same orientation
+8,250,7,450,same orientation
+8,250,8,0,same orientation
+36,250,15,0,inversed
+36,250,14,450,inversed
+28,250,27,450,same orientation
+28,250,28,0,same orientation
+28,250,16,0,same orientation
+28,250,15,450,same orientation
+5,250,5,450,inversed
+5,250,5,0,inversed
+10,250,24,450,inversed
+10,250,25,0,inversed
+27,250,26,450,inversed
+12,250,22,450,same orientation
+12,250,23,0,same orientation
+22,250,12,450,inversed
+22,250,13,0,inversed
+15,250,19,450,inversed
+15,250,20,0,inversed
+31,250,30,450,same orientation
+31,250,31,0,same orientation
+18,250,17,0,inversed
+18,250,16,450,inversed
+34,250,35,0,inversed
+34,250,33,450,inversed
+25,250,9,450,inversed
+25,250,10,0,inversed
+12,250,22,450,inversed
+12,250,23,0,inversed
+27,250,27,0,same orientation
+7,250,5,450,same orientation
+7,250,6,0,same orientation
+7,250,2,0,inversed
+7,250,3,0,inversed
+17,250,17,450,inversed
+17,250,18,0,inversed
+20,250,14,450,inversed
+20,250,15,0,inversed
+2,250,0,450,inversed
+2,250,1,0,same orientation
+33,250,32,450,same orientation
+0,250,2,450,inversed

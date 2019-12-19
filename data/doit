@@ -1,0 +1,19 @@
+set -x
+rm *.txt
+rm doit2
+rm doit3
+rm -rf esdata
+mkdir -p esdata
+ls /Users/jojo/genomes/ptr*/*_chr* > files.txt
+ls /Users/jojo/genomes/huref*/*_chr* >> files.txt
+ls /Users/jojo/genomes/Gorilla_gorilla/*_chr* >> files.txt
+python files.py > files2.txt
+python mkscript_random.py > doit2
+chmod +x doit2
+./doit2
+ls -l esdata/*.1m > dataSizes.txt
+python mkdata.py > doit3
+chmod +x doit3
+./doit3
+cp doit3 doit3r
+

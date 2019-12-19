@@ -1,6 +1,8 @@
 # generated test data
-**/data
+**/json
+**/esdata
 **/tmp
+**/test.1.results
 package/
 
 # Created by .ignore support plugin (hsz.mobi)

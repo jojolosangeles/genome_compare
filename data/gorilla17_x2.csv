@@ -1,0 +1,38 @@
+x,y,x2,y2,color
+2,250,1,450,inversed
+2,250,2,450,inversed
+4,250,3,0,same orientation
+9,250,8,0,same orientation
+9,250,51,450,same orientation
+16,250,38,450,inversed
+12,250,11,0,same orientation
+12,250,54,450,same orientation
+1,250,1,450,same orientation
+1,250,0,0,same orientation
+6,250,5,0,same orientation
+6,250,6,450,same orientation
+15,250,14,0,same orientation
+10,250,9,0,same orientation
+10,250,52,450,same orientation
+3,250,3,450,same orientation
+3,250,2,0,same orientation
+13,250,12,0,same orientation
+13,250,55,450,same orientation
+5,250,5,450,same orientation
+5,250,4,0,same orientation
+0,250,0,0,inversed
+0,250,0,450,inversed
+16,250,15,0,same orientation
+8,250,7,0,same orientation
+8,250,8,450,same orientation
+11,250,53,450,same orientation
+11,250,10,0,same orientation
+15,250,39,450,inversed
+4,250,3,450,inversed
+2,250,1,0,same orientation
+2,250,2,450,same orientation
+7,250,7,450,same orientation
+7,250,6,0,same orientation
+1,250,1,450,inversed
+14,250,13,0,same orientation
+14,250,56,450,same orientation
