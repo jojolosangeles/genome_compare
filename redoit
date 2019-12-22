@@ -1,0 +1,5 @@
+rm -rf ch16_cgh_500000
+rm -rf ch16_cgh_500000_search
+curl -XDELETE localhost:9200/ch16_cgh_500000
+./mkdoit
+#./doit

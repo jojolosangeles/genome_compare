@@ -4,6 +4,10 @@
 **/tmp
 **/test.1.results
 cgh_100000
+cgh_500000
+cgh_500000_search
+ch16_cgh_500000/
+ch16_cgh_500000_search/
 package/
 
 # Created by .ignore support plugin (hsz.mobi)

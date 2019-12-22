@@ -1,0 +1,9 @@
+line.replace('CG', 'C G').replace('GC', 'G C').replace('AT', 'A T').replace('TA', 'T A').replace('N', '')
+line.split()
+[val for val in data if len(val) > 11]
+
+The lines are ordered:
+
+line 1: given a string "line", eval this to get a replacement for the original line
+line 2: given a line, convert it into a list
+line 3: given a list, filter the list into another list

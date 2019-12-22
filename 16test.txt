@@ -1,0 +1,3 @@
+chimp 16 /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr16.fa
+human 16 /Users/jojo/genomes/huref/hs_alt_HuRef_chr16.fa
+gorilla 16 /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr16.fa

@@ -6,7 +6,7 @@ import os
 @click.option("--target-folder", help="folder to contain resulting data")
 @click.option("--data-files", help="text file, listing of source data files and their metadata: <species>,<chromosome>,<datafile>")
 @click.option("--processing-config", default="config/config.test", help="line and list processing before elasticsearch gets data")
-@click.option("--search-size", type=float, help="proportion of section to use for a search term, e.g. '.01'")
+@click.option("--search-size", type=int, help="size of sequence to use in relationship-finding search")
 @click.option("--target-index", help="elasticsearch index to contain genome data")
 
 # lines = open("files2.txt", "r").readlines()
@@ -33,11 +33,14 @@ def gen_script(section_size, target_folder, data_files, processing_config, searc
     number_lines = int(50000000/section_size)*2  # approximate
     MK50 = f"python mk50.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.es_bulk {number_lines}"
     MKLOAD = f"python mkload.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.es_bulk > {target_folder}/load_SPECIES_CHROMOSOME"
+    MKSEARCH = f"python mksearch.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.processed {target_folder}_search SPECIES CHROMOSOME {section_size} {search_size} {target_index} > {target_folder}/search_SPECIES_CHROMOSOME"
+
     # make it visible
     print("set -x")
 
     # make sure target folder exists
     print(f"mkdir -p {target_folder}")
+    print(f"mkdir -p {target_folder}_search")
 
     # get the list of files to process
     lines = open(data_files, "r").readlines()
@@ -52,11 +55,41 @@ def gen_script(section_size, target_folder, data_files, processing_config, searc
         print(MKLOAD.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
         print(f"chmod +x {target_folder}/load_{species}_{chromosome}")
         print(f"./{target_folder}/load_{species}_{chromosome}")
+        print(MKSEARCH.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
 
+    def comp(val):
+        if val == 'A':
+            return 'T'
+        elif val == 'C':
+            return 'G'
+        elif val == 'G':
+            return 'C'
+        elif val == 'T':
+            return 'A'
+        else:
+            return val
+
+    def revcomp(s):
+        l = [comp(v) for v in reversed(s)]
+        return "".join(l)
+
+    # load data into elasticsearch
     for line in lines:
         line = line.strip()
         species, chromosome, filepath = line.split()
         process_file(species, chromosome, filepath, section_size)
+
+    # search to find relationship between sections
+    search_folder = f"{target_folder}_search"
+    print(f"mkdir -p {search_folder}")
+
+    for line in lines:
+        line = line.strip()
+        species, chromosome, filepath = line.split()
+        print(f"chmod +x {target_folder}/search_{species}_{chromosome}")
+        print(f"{target_folder}/search_{species}_{chromosome}")
+
+
 
 if __name__ == "__main__":
     gen_script()
