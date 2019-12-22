@@ -1,0 +1,440 @@
+set -x
+mkdir -p cgh_100000
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr1.fa --linelen 100000 --outfile cgh_100000/chimp.1.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.1.100000  --chromosome 1 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_1 --outfile cgh_100000/chimp.1.100000.es_bulk
+python mk50.py cgh_100000/chimp.1.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.1.100000.es_bulk > cgh_100000/load_chimp_1
+chmod +x cgh_100000/load_chimp_1
+./load_chimp_1
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr10.fa --linelen 100000 --outfile cgh_100000/chimp.10.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.10.100000  --chromosome 10 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_10 --outfile cgh_100000/chimp.10.100000.es_bulk
+python mk50.py cgh_100000/chimp.10.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.10.100000.es_bulk > cgh_100000/load_chimp_10
+chmod +x cgh_100000/load_chimp_10
+./load_chimp_10
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr11.fa --linelen 100000 --outfile cgh_100000/chimp.11.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.11.100000  --chromosome 11 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_11 --outfile cgh_100000/chimp.11.100000.es_bulk
+python mk50.py cgh_100000/chimp.11.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.11.100000.es_bulk > cgh_100000/load_chimp_11
+chmod +x cgh_100000/load_chimp_11
+./load_chimp_11
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr12.fa --linelen 100000 --outfile cgh_100000/chimp.12.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.12.100000  --chromosome 12 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_12 --outfile cgh_100000/chimp.12.100000.es_bulk
+python mk50.py cgh_100000/chimp.12.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.12.100000.es_bulk > cgh_100000/load_chimp_12
+chmod +x cgh_100000/load_chimp_12
+./load_chimp_12
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr13.fa --linelen 100000 --outfile cgh_100000/chimp.13.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.13.100000  --chromosome 13 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_13 --outfile cgh_100000/chimp.13.100000.es_bulk
+python mk50.py cgh_100000/chimp.13.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.13.100000.es_bulk > cgh_100000/load_chimp_13
+chmod +x cgh_100000/load_chimp_13
+./load_chimp_13
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr14.fa --linelen 100000 --outfile cgh_100000/chimp.14.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.14.100000  --chromosome 14 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_14 --outfile cgh_100000/chimp.14.100000.es_bulk
+python mk50.py cgh_100000/chimp.14.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.14.100000.es_bulk > cgh_100000/load_chimp_14
+chmod +x cgh_100000/load_chimp_14
+./load_chimp_14
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr15.fa --linelen 100000 --outfile cgh_100000/chimp.15.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.15.100000  --chromosome 15 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_15 --outfile cgh_100000/chimp.15.100000.es_bulk
+python mk50.py cgh_100000/chimp.15.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.15.100000.es_bulk > cgh_100000/load_chimp_15
+chmod +x cgh_100000/load_chimp_15
+./load_chimp_15
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr16.fa --linelen 100000 --outfile cgh_100000/chimp.16.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.16.100000  --chromosome 16 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_16 --outfile cgh_100000/chimp.16.100000.es_bulk
+python mk50.py cgh_100000/chimp.16.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.16.100000.es_bulk > cgh_100000/load_chimp_16
+chmod +x cgh_100000/load_chimp_16
+./load_chimp_16
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr17.fa --linelen 100000 --outfile cgh_100000/chimp.17.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.17.100000  --chromosome 17 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_17 --outfile cgh_100000/chimp.17.100000.es_bulk
+python mk50.py cgh_100000/chimp.17.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.17.100000.es_bulk > cgh_100000/load_chimp_17
+chmod +x cgh_100000/load_chimp_17
+./load_chimp_17
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr18.fa --linelen 100000 --outfile cgh_100000/chimp.18.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.18.100000  --chromosome 18 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_18 --outfile cgh_100000/chimp.18.100000.es_bulk
+python mk50.py cgh_100000/chimp.18.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.18.100000.es_bulk > cgh_100000/load_chimp_18
+chmod +x cgh_100000/load_chimp_18
+./load_chimp_18
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr19.fa --linelen 100000 --outfile cgh_100000/chimp.19.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.19.100000  --chromosome 19 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_19 --outfile cgh_100000/chimp.19.100000.es_bulk
+python mk50.py cgh_100000/chimp.19.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.19.100000.es_bulk > cgh_100000/load_chimp_19
+chmod +x cgh_100000/load_chimp_19
+./load_chimp_19
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr20.fa --linelen 100000 --outfile cgh_100000/chimp.20.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.20.100000  --chromosome 20 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_20 --outfile cgh_100000/chimp.20.100000.es_bulk
+python mk50.py cgh_100000/chimp.20.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.20.100000.es_bulk > cgh_100000/load_chimp_20
+chmod +x cgh_100000/load_chimp_20
+./load_chimp_20
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr21.fa --linelen 100000 --outfile cgh_100000/chimp.21.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.21.100000  --chromosome 21 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_21 --outfile cgh_100000/chimp.21.100000.es_bulk
+python mk50.py cgh_100000/chimp.21.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.21.100000.es_bulk > cgh_100000/load_chimp_21
+chmod +x cgh_100000/load_chimp_21
+./load_chimp_21
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr22.fa --linelen 100000 --outfile cgh_100000/chimp.22.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.22.100000  --chromosome 22 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_22 --outfile cgh_100000/chimp.22.100000.es_bulk
+python mk50.py cgh_100000/chimp.22.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.22.100000.es_bulk > cgh_100000/load_chimp_22
+chmod +x cgh_100000/load_chimp_22
+./load_chimp_22
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr2A.fa --linelen 100000 --outfile cgh_100000/chimp.2A.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.2A.100000  --chromosome 2A --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_2A --outfile cgh_100000/chimp.2A.100000.es_bulk
+python mk50.py cgh_100000/chimp.2A.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.2A.100000.es_bulk > cgh_100000/load_chimp_2A
+chmod +x cgh_100000/load_chimp_2A
+./load_chimp_2A
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr2B.fa --linelen 100000 --outfile cgh_100000/chimp.2B.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.2B.100000  --chromosome 2B --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_2B --outfile cgh_100000/chimp.2B.100000.es_bulk
+python mk50.py cgh_100000/chimp.2B.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.2B.100000.es_bulk > cgh_100000/load_chimp_2B
+chmod +x cgh_100000/load_chimp_2B
+./load_chimp_2B
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr3.fa --linelen 100000 --outfile cgh_100000/chimp.3.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.3.100000  --chromosome 3 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_3 --outfile cgh_100000/chimp.3.100000.es_bulk
+python mk50.py cgh_100000/chimp.3.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.3.100000.es_bulk > cgh_100000/load_chimp_3
+chmod +x cgh_100000/load_chimp_3
+./load_chimp_3
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr4.fa --linelen 100000 --outfile cgh_100000/chimp.4.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.4.100000  --chromosome 4 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_4 --outfile cgh_100000/chimp.4.100000.es_bulk
+python mk50.py cgh_100000/chimp.4.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.4.100000.es_bulk > cgh_100000/load_chimp_4
+chmod +x cgh_100000/load_chimp_4
+./load_chimp_4
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr5.fa --linelen 100000 --outfile cgh_100000/chimp.5.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.5.100000  --chromosome 5 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_5 --outfile cgh_100000/chimp.5.100000.es_bulk
+python mk50.py cgh_100000/chimp.5.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.5.100000.es_bulk > cgh_100000/load_chimp_5
+chmod +x cgh_100000/load_chimp_5
+./load_chimp_5
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr6.fa --linelen 100000 --outfile cgh_100000/chimp.6.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.6.100000  --chromosome 6 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_6 --outfile cgh_100000/chimp.6.100000.es_bulk
+python mk50.py cgh_100000/chimp.6.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.6.100000.es_bulk > cgh_100000/load_chimp_6
+chmod +x cgh_100000/load_chimp_6
+./load_chimp_6
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr7.fa --linelen 100000 --outfile cgh_100000/chimp.7.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.7.100000  --chromosome 7 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_7 --outfile cgh_100000/chimp.7.100000.es_bulk
+python mk50.py cgh_100000/chimp.7.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.7.100000.es_bulk > cgh_100000/load_chimp_7
+chmod +x cgh_100000/load_chimp_7
+./load_chimp_7
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr8.fa --linelen 100000 --outfile cgh_100000/chimp.8.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.8.100000  --chromosome 8 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_8 --outfile cgh_100000/chimp.8.100000.es_bulk
+python mk50.py cgh_100000/chimp.8.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.8.100000.es_bulk > cgh_100000/load_chimp_8
+chmod +x cgh_100000/load_chimp_8
+./load_chimp_8
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr9.fa --linelen 100000 --outfile cgh_100000/chimp.9.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.9.100000  --chromosome 9 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_9 --outfile cgh_100000/chimp.9.100000.es_bulk
+python mk50.py cgh_100000/chimp.9.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.9.100000.es_bulk > cgh_100000/load_chimp_9
+chmod +x cgh_100000/load_chimp_9
+./load_chimp_9
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chrX.fa --linelen 100000 --outfile cgh_100000/chimp.X.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.X.100000  --chromosome X --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_X --outfile cgh_100000/chimp.X.100000.es_bulk
+python mk50.py cgh_100000/chimp.X.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.X.100000.es_bulk > cgh_100000/load_chimp_X
+chmod +x cgh_100000/load_chimp_X
+./load_chimp_X
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chrY.fa --linelen 100000 --outfile cgh_100000/chimp.Y.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/chimp.Y.100000  --chromosome Y --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_Y --outfile cgh_100000/chimp.Y.100000.es_bulk
+python mk50.py cgh_100000/chimp.Y.100000.es_bulk 1000
+python mkload.py cgh_100000/chimp.Y.100000.es_bulk > cgh_100000/load_chimp_Y
+chmod +x cgh_100000/load_chimp_Y
+./load_chimp_Y
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr1.fa --linelen 100000 --outfile cgh_100000/human.1.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.1.100000  --chromosome 1 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_1 --outfile cgh_100000/human.1.100000.es_bulk
+python mk50.py cgh_100000/human.1.100000.es_bulk 1000
+python mkload.py cgh_100000/human.1.100000.es_bulk > cgh_100000/load_human_1
+chmod +x cgh_100000/load_human_1
+./load_human_1
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr10.fa --linelen 100000 --outfile cgh_100000/human.10.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.10.100000  --chromosome 10 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_10 --outfile cgh_100000/human.10.100000.es_bulk
+python mk50.py cgh_100000/human.10.100000.es_bulk 1000
+python mkload.py cgh_100000/human.10.100000.es_bulk > cgh_100000/load_human_10
+chmod +x cgh_100000/load_human_10
+./load_human_10
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr11.fa --linelen 100000 --outfile cgh_100000/human.11.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.11.100000  --chromosome 11 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_11 --outfile cgh_100000/human.11.100000.es_bulk
+python mk50.py cgh_100000/human.11.100000.es_bulk 1000
+python mkload.py cgh_100000/human.11.100000.es_bulk > cgh_100000/load_human_11
+chmod +x cgh_100000/load_human_11
+./load_human_11
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr12.fa --linelen 100000 --outfile cgh_100000/human.12.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.12.100000  --chromosome 12 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_12 --outfile cgh_100000/human.12.100000.es_bulk
+python mk50.py cgh_100000/human.12.100000.es_bulk 1000
+python mkload.py cgh_100000/human.12.100000.es_bulk > cgh_100000/load_human_12
+chmod +x cgh_100000/load_human_12
+./load_human_12
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr13.fa --linelen 100000 --outfile cgh_100000/human.13.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.13.100000  --chromosome 13 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_13 --outfile cgh_100000/human.13.100000.es_bulk
+python mk50.py cgh_100000/human.13.100000.es_bulk 1000
+python mkload.py cgh_100000/human.13.100000.es_bulk > cgh_100000/load_human_13
+chmod +x cgh_100000/load_human_13
+./load_human_13
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr14.fa --linelen 100000 --outfile cgh_100000/human.14.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.14.100000  --chromosome 14 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_14 --outfile cgh_100000/human.14.100000.es_bulk
+python mk50.py cgh_100000/human.14.100000.es_bulk 1000
+python mkload.py cgh_100000/human.14.100000.es_bulk > cgh_100000/load_human_14
+chmod +x cgh_100000/load_human_14
+./load_human_14
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr15.fa --linelen 100000 --outfile cgh_100000/human.15.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.15.100000  --chromosome 15 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_15 --outfile cgh_100000/human.15.100000.es_bulk
+python mk50.py cgh_100000/human.15.100000.es_bulk 1000
+python mkload.py cgh_100000/human.15.100000.es_bulk > cgh_100000/load_human_15
+chmod +x cgh_100000/load_human_15
+./load_human_15
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr16.fa --linelen 100000 --outfile cgh_100000/human.16.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.16.100000  --chromosome 16 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_16 --outfile cgh_100000/human.16.100000.es_bulk
+python mk50.py cgh_100000/human.16.100000.es_bulk 1000
+python mkload.py cgh_100000/human.16.100000.es_bulk > cgh_100000/load_human_16
+chmod +x cgh_100000/load_human_16
+./load_human_16
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr17.fa --linelen 100000 --outfile cgh_100000/human.17.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.17.100000  --chromosome 17 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_17 --outfile cgh_100000/human.17.100000.es_bulk
+python mk50.py cgh_100000/human.17.100000.es_bulk 1000
+python mkload.py cgh_100000/human.17.100000.es_bulk > cgh_100000/load_human_17
+chmod +x cgh_100000/load_human_17
+./load_human_17
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr18.fa --linelen 100000 --outfile cgh_100000/human.18.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.18.100000  --chromosome 18 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_18 --outfile cgh_100000/human.18.100000.es_bulk
+python mk50.py cgh_100000/human.18.100000.es_bulk 1000
+python mkload.py cgh_100000/human.18.100000.es_bulk > cgh_100000/load_human_18
+chmod +x cgh_100000/load_human_18
+./load_human_18
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr19.fa --linelen 100000 --outfile cgh_100000/human.19.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.19.100000  --chromosome 19 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_19 --outfile cgh_100000/human.19.100000.es_bulk
+python mk50.py cgh_100000/human.19.100000.es_bulk 1000
+python mkload.py cgh_100000/human.19.100000.es_bulk > cgh_100000/load_human_19
+chmod +x cgh_100000/load_human_19
+./load_human_19
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr2.fa --linelen 100000 --outfile cgh_100000/human.2.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.2.100000  --chromosome 2 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_2 --outfile cgh_100000/human.2.100000.es_bulk
+python mk50.py cgh_100000/human.2.100000.es_bulk 1000
+python mkload.py cgh_100000/human.2.100000.es_bulk > cgh_100000/load_human_2
+chmod +x cgh_100000/load_human_2
+./load_human_2
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr20.fa --linelen 100000 --outfile cgh_100000/human.20.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.20.100000  --chromosome 20 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_20 --outfile cgh_100000/human.20.100000.es_bulk
+python mk50.py cgh_100000/human.20.100000.es_bulk 1000
+python mkload.py cgh_100000/human.20.100000.es_bulk > cgh_100000/load_human_20
+chmod +x cgh_100000/load_human_20
+./load_human_20
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr21.fa --linelen 100000 --outfile cgh_100000/human.21.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.21.100000  --chromosome 21 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_21 --outfile cgh_100000/human.21.100000.es_bulk
+python mk50.py cgh_100000/human.21.100000.es_bulk 1000
+python mkload.py cgh_100000/human.21.100000.es_bulk > cgh_100000/load_human_21
+chmod +x cgh_100000/load_human_21
+./load_human_21
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr22.fa --linelen 100000 --outfile cgh_100000/human.22.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.22.100000  --chromosome 22 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_22 --outfile cgh_100000/human.22.100000.es_bulk
+python mk50.py cgh_100000/human.22.100000.es_bulk 1000
+python mkload.py cgh_100000/human.22.100000.es_bulk > cgh_100000/load_human_22
+chmod +x cgh_100000/load_human_22
+./load_human_22
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr3.fa --linelen 100000 --outfile cgh_100000/human.3.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.3.100000  --chromosome 3 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_3 --outfile cgh_100000/human.3.100000.es_bulk
+python mk50.py cgh_100000/human.3.100000.es_bulk 1000
+python mkload.py cgh_100000/human.3.100000.es_bulk > cgh_100000/load_human_3
+chmod +x cgh_100000/load_human_3
+./load_human_3
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr4.fa --linelen 100000 --outfile cgh_100000/human.4.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.4.100000  --chromosome 4 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_4 --outfile cgh_100000/human.4.100000.es_bulk
+python mk50.py cgh_100000/human.4.100000.es_bulk 1000
+python mkload.py cgh_100000/human.4.100000.es_bulk > cgh_100000/load_human_4
+chmod +x cgh_100000/load_human_4
+./load_human_4
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr5.fa --linelen 100000 --outfile cgh_100000/human.5.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.5.100000  --chromosome 5 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_5 --outfile cgh_100000/human.5.100000.es_bulk
+python mk50.py cgh_100000/human.5.100000.es_bulk 1000
+python mkload.py cgh_100000/human.5.100000.es_bulk > cgh_100000/load_human_5
+chmod +x cgh_100000/load_human_5
+./load_human_5
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr6.fa --linelen 100000 --outfile cgh_100000/human.6.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.6.100000  --chromosome 6 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_6 --outfile cgh_100000/human.6.100000.es_bulk
+python mk50.py cgh_100000/human.6.100000.es_bulk 1000
+python mkload.py cgh_100000/human.6.100000.es_bulk > cgh_100000/load_human_6
+chmod +x cgh_100000/load_human_6
+./load_human_6
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr7.fa --linelen 100000 --outfile cgh_100000/human.7.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.7.100000  --chromosome 7 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_7 --outfile cgh_100000/human.7.100000.es_bulk
+python mk50.py cgh_100000/human.7.100000.es_bulk 1000
+python mkload.py cgh_100000/human.7.100000.es_bulk > cgh_100000/load_human_7
+chmod +x cgh_100000/load_human_7
+./load_human_7
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr8.fa --linelen 100000 --outfile cgh_100000/human.8.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.8.100000  --chromosome 8 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_8 --outfile cgh_100000/human.8.100000.es_bulk
+python mk50.py cgh_100000/human.8.100000.es_bulk 1000
+python mkload.py cgh_100000/human.8.100000.es_bulk > cgh_100000/load_human_8
+chmod +x cgh_100000/load_human_8
+./load_human_8
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr9.fa --linelen 100000 --outfile cgh_100000/human.9.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.9.100000  --chromosome 9 --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_9 --outfile cgh_100000/human.9.100000.es_bulk
+python mk50.py cgh_100000/human.9.100000.es_bulk 1000
+python mkload.py cgh_100000/human.9.100000.es_bulk > cgh_100000/load_human_9
+chmod +x cgh_100000/load_human_9
+./load_human_9
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chrX.fa --linelen 100000 --outfile cgh_100000/human.X.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.X.100000  --chromosome X --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_X --outfile cgh_100000/human.X.100000.es_bulk
+python mk50.py cgh_100000/human.X.100000.es_bulk 1000
+python mkload.py cgh_100000/human.X.100000.es_bulk > cgh_100000/load_human_X
+chmod +x cgh_100000/load_human_X
+./load_human_X
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chrY.fa --linelen 100000 --outfile cgh_100000/human.Y.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/human.Y.100000  --chromosome Y --species human --index cgh_100000 --processing-config data/config/config.test --idprefix human_Y --outfile cgh_100000/human.Y.100000.es_bulk
+python mk50.py cgh_100000/human.Y.100000.es_bulk 1000
+python mkload.py cgh_100000/human.Y.100000.es_bulk > cgh_100000/load_human_Y
+chmod +x cgh_100000/load_human_Y
+./load_human_Y
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr1.fa --linelen 100000 --outfile cgh_100000/gorilla.1.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.1.100000  --chromosome 1 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_1 --outfile cgh_100000/gorilla.1.100000.es_bulk
+python mk50.py cgh_100000/gorilla.1.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.1.100000.es_bulk > cgh_100000/load_gorilla_1
+chmod +x cgh_100000/load_gorilla_1
+./load_gorilla_1
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr10.fa --linelen 100000 --outfile cgh_100000/gorilla.10.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.10.100000  --chromosome 10 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_10 --outfile cgh_100000/gorilla.10.100000.es_bulk
+python mk50.py cgh_100000/gorilla.10.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.10.100000.es_bulk > cgh_100000/load_gorilla_10
+chmod +x cgh_100000/load_gorilla_10
+./load_gorilla_10
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr11.fa --linelen 100000 --outfile cgh_100000/gorilla.11.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.11.100000  --chromosome 11 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_11 --outfile cgh_100000/gorilla.11.100000.es_bulk
+python mk50.py cgh_100000/gorilla.11.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.11.100000.es_bulk > cgh_100000/load_gorilla_11
+chmod +x cgh_100000/load_gorilla_11
+./load_gorilla_11
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr12.fa --linelen 100000 --outfile cgh_100000/gorilla.12.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.12.100000  --chromosome 12 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_12 --outfile cgh_100000/gorilla.12.100000.es_bulk
+python mk50.py cgh_100000/gorilla.12.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.12.100000.es_bulk > cgh_100000/load_gorilla_12
+chmod +x cgh_100000/load_gorilla_12
+./load_gorilla_12
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr13.fa --linelen 100000 --outfile cgh_100000/gorilla.13.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.13.100000  --chromosome 13 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_13 --outfile cgh_100000/gorilla.13.100000.es_bulk
+python mk50.py cgh_100000/gorilla.13.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.13.100000.es_bulk > cgh_100000/load_gorilla_13
+chmod +x cgh_100000/load_gorilla_13
+./load_gorilla_13
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr14.fa --linelen 100000 --outfile cgh_100000/gorilla.14.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.14.100000  --chromosome 14 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_14 --outfile cgh_100000/gorilla.14.100000.es_bulk
+python mk50.py cgh_100000/gorilla.14.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.14.100000.es_bulk > cgh_100000/load_gorilla_14
+chmod +x cgh_100000/load_gorilla_14
+./load_gorilla_14
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr15.fa --linelen 100000 --outfile cgh_100000/gorilla.15.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.15.100000  --chromosome 15 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_15 --outfile cgh_100000/gorilla.15.100000.es_bulk
+python mk50.py cgh_100000/gorilla.15.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.15.100000.es_bulk > cgh_100000/load_gorilla_15
+chmod +x cgh_100000/load_gorilla_15
+./load_gorilla_15
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr16.fa --linelen 100000 --outfile cgh_100000/gorilla.16.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.16.100000  --chromosome 16 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_16 --outfile cgh_100000/gorilla.16.100000.es_bulk
+python mk50.py cgh_100000/gorilla.16.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.16.100000.es_bulk > cgh_100000/load_gorilla_16
+chmod +x cgh_100000/load_gorilla_16
+./load_gorilla_16
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr17.fa --linelen 100000 --outfile cgh_100000/gorilla.17.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.17.100000  --chromosome 17 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_17 --outfile cgh_100000/gorilla.17.100000.es_bulk
+python mk50.py cgh_100000/gorilla.17.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.17.100000.es_bulk > cgh_100000/load_gorilla_17
+chmod +x cgh_100000/load_gorilla_17
+./load_gorilla_17
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr18.fa --linelen 100000 --outfile cgh_100000/gorilla.18.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.18.100000  --chromosome 18 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_18 --outfile cgh_100000/gorilla.18.100000.es_bulk
+python mk50.py cgh_100000/gorilla.18.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.18.100000.es_bulk > cgh_100000/load_gorilla_18
+chmod +x cgh_100000/load_gorilla_18
+./load_gorilla_18
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr19.fa --linelen 100000 --outfile cgh_100000/gorilla.19.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.19.100000  --chromosome 19 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_19 --outfile cgh_100000/gorilla.19.100000.es_bulk
+python mk50.py cgh_100000/gorilla.19.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.19.100000.es_bulk > cgh_100000/load_gorilla_19
+chmod +x cgh_100000/load_gorilla_19
+./load_gorilla_19
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr20.fa --linelen 100000 --outfile cgh_100000/gorilla.20.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.20.100000  --chromosome 20 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_20 --outfile cgh_100000/gorilla.20.100000.es_bulk
+python mk50.py cgh_100000/gorilla.20.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.20.100000.es_bulk > cgh_100000/load_gorilla_20
+chmod +x cgh_100000/load_gorilla_20
+./load_gorilla_20
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr21.fa --linelen 100000 --outfile cgh_100000/gorilla.21.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.21.100000  --chromosome 21 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_21 --outfile cgh_100000/gorilla.21.100000.es_bulk
+python mk50.py cgh_100000/gorilla.21.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.21.100000.es_bulk > cgh_100000/load_gorilla_21
+chmod +x cgh_100000/load_gorilla_21
+./load_gorilla_21
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr22.fa --linelen 100000 --outfile cgh_100000/gorilla.22.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.22.100000  --chromosome 22 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_22 --outfile cgh_100000/gorilla.22.100000.es_bulk
+python mk50.py cgh_100000/gorilla.22.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.22.100000.es_bulk > cgh_100000/load_gorilla_22
+chmod +x cgh_100000/load_gorilla_22
+./load_gorilla_22
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr2A.fa --linelen 100000 --outfile cgh_100000/gorilla.2A.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.2A.100000  --chromosome 2A --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_2A --outfile cgh_100000/gorilla.2A.100000.es_bulk
+python mk50.py cgh_100000/gorilla.2A.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.2A.100000.es_bulk > cgh_100000/load_gorilla_2A
+chmod +x cgh_100000/load_gorilla_2A
+./load_gorilla_2A
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr2B.fa --linelen 100000 --outfile cgh_100000/gorilla.2B.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.2B.100000  --chromosome 2B --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_2B --outfile cgh_100000/gorilla.2B.100000.es_bulk
+python mk50.py cgh_100000/gorilla.2B.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.2B.100000.es_bulk > cgh_100000/load_gorilla_2B
+chmod +x cgh_100000/load_gorilla_2B
+./load_gorilla_2B
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr3.fa --linelen 100000 --outfile cgh_100000/gorilla.3.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.3.100000  --chromosome 3 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_3 --outfile cgh_100000/gorilla.3.100000.es_bulk
+python mk50.py cgh_100000/gorilla.3.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.3.100000.es_bulk > cgh_100000/load_gorilla_3
+chmod +x cgh_100000/load_gorilla_3
+./load_gorilla_3
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr4.fa --linelen 100000 --outfile cgh_100000/gorilla.4.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.4.100000  --chromosome 4 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_4 --outfile cgh_100000/gorilla.4.100000.es_bulk
+python mk50.py cgh_100000/gorilla.4.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.4.100000.es_bulk > cgh_100000/load_gorilla_4
+chmod +x cgh_100000/load_gorilla_4
+./load_gorilla_4
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr5.fa --linelen 100000 --outfile cgh_100000/gorilla.5.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.5.100000  --chromosome 5 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_5 --outfile cgh_100000/gorilla.5.100000.es_bulk
+python mk50.py cgh_100000/gorilla.5.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.5.100000.es_bulk > cgh_100000/load_gorilla_5
+chmod +x cgh_100000/load_gorilla_5
+./load_gorilla_5
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr6.fa --linelen 100000 --outfile cgh_100000/gorilla.6.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.6.100000  --chromosome 6 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_6 --outfile cgh_100000/gorilla.6.100000.es_bulk
+python mk50.py cgh_100000/gorilla.6.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.6.100000.es_bulk > cgh_100000/load_gorilla_6
+chmod +x cgh_100000/load_gorilla_6
+./load_gorilla_6
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr7.fa --linelen 100000 --outfile cgh_100000/gorilla.7.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.7.100000  --chromosome 7 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_7 --outfile cgh_100000/gorilla.7.100000.es_bulk
+python mk50.py cgh_100000/gorilla.7.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.7.100000.es_bulk > cgh_100000/load_gorilla_7
+chmod +x cgh_100000/load_gorilla_7
+./load_gorilla_7
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr8.fa --linelen 100000 --outfile cgh_100000/gorilla.8.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.8.100000  --chromosome 8 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_8 --outfile cgh_100000/gorilla.8.100000.es_bulk
+python mk50.py cgh_100000/gorilla.8.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.8.100000.es_bulk > cgh_100000/load_gorilla_8
+chmod +x cgh_100000/load_gorilla_8
+./load_gorilla_8
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr9.fa --linelen 100000 --outfile cgh_100000/gorilla.9.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.9.100000  --chromosome 9 --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_9 --outfile cgh_100000/gorilla.9.100000.es_bulk
+python mk50.py cgh_100000/gorilla.9.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.9.100000.es_bulk > cgh_100000/load_gorilla_9
+chmod +x cgh_100000/load_gorilla_9
+./load_gorilla_9
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chrX.fa --linelen 100000 --outfile cgh_100000/gorilla.X.100000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource cgh_100000/gorilla.X.100000  --chromosome X --species gorilla --index cgh_100000 --processing-config data/config/config.test --idprefix gorilla_X --outfile cgh_100000/gorilla.X.100000.es_bulk
+python mk50.py cgh_100000/gorilla.X.100000.es_bulk 1000
+python mkload.py cgh_100000/gorilla.X.100000.es_bulk > cgh_100000/load_gorilla_X
+chmod +x cgh_100000/load_gorilla_X
+./load_gorilla_X

@@ -5,18 +5,20 @@ import click
 @click.option("--chromosome", prompt="chromosome", help="chromosome")
 @click.option("--datasource", prompt="Source data file", help="Source data file")
 @click.option("--index", prompt="target index", help="target index")
-@click.option("--linemod", prompt="python line processing", help="python line processing")
-@click.option("--splitmod", prompt="python line splitting", help="python line splitting")
-@click.option("--listmod", prompt="list mods joined back into line", help="list mods joined back into line")
+@click.option("--processing-config", help="python line, split, list processing configuration")
 @click.option("--idprefix", prompt="id prefix", help="id prefix")
 @click.option("--outfile", prompt="output file", help="output file")
 
 
-def esgen(datasource, index, linemod, splitmod, listmod, idprefix, outfile, species, chromosome):
+def esgen(datasource, index, processing_config, idprefix, outfile, species, chromosome):
     CREATE_LINE = '{ "create": { "_index": "__INDEX__", "_id": "__ID__" }}'
     DATA_LINE = '{ "id": "__ID__", "data": "__DATA__", "chromosome": "__CHROMOSOME__", "species": "__SPECIES__", "location": __LOCATION__}'
     n = 0
     location = 0
+    code = open(processing_config).readlines()
+    linemod = code[0]
+    splitmod = code[1]
+    listmod = code[2]
     with open(datasource, "r") as inFile:
         with open(outfile, "w") as outFile:
             for line in inFile:

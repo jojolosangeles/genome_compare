@@ -19,10 +19,11 @@ class NWriter:
       self.writeFile()
       self.lineBuffer = []
 
-print(sys.argv)
 fileName = sys.argv[1]
-lines = open(fileName, "r").readlines()
 numberLines = 100
+if len(sys.argv) > 2:
+  numberLines = int(sys.argv[2])
+lines = open(fileName, "r").readlines()
 
 nw = NWriter(fileName, numberLines)
 for line in lines:

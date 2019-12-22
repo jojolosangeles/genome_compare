@@ -1,3 +1,0 @@
-generate graph data?: Error: less data_human.csv is not a valid boolean
-generate graph data?: Error: python mkcsv.py --species human --chromosome 1 --graph true > h1_graph.csv is not a valid boolean
-generate graph data?: 
