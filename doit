@@ -659,3 +659,4 @@ chmod +x cgh_500000/search_gorilla_9
 cgh_500000/search_gorilla_9
 chmod +x cgh_500000/search_gorilla_X
 cgh_500000/search_gorilla_X
+python mkcsv.py --target-folder cgh_500000_search > cgh_500000/data.csv

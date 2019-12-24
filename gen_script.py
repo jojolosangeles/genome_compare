@@ -89,6 +89,8 @@ def gen_script(section_size, target_folder, data_files, processing_config, searc
         print(f"chmod +x {target_folder}/search_{species}_{chromosome}")
         print(f"{target_folder}/search_{species}_{chromosome}")
 
+    # make dataframe CSV from all the JSON files
+    print(f"python mkcsv.py --target-folder {target_folder}_search > {target_folder}/data.csv")
 
 
 if __name__ == "__main__":
