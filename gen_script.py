@@ -57,20 +57,10 @@ def gen_script(section_size, target_folder, data_files, processing_config, searc
         print(f"./{target_folder}/load_{species}_{chromosome}")
         print(MKSEARCH.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
 
-    def comp(val):
-        if val == 'A':
-            return 'T'
-        elif val == 'C':
-            return 'G'
-        elif val == 'G':
-            return 'C'
-        elif val == 'T':
-            return 'A'
-        else:
-            return val
+    comp_dict = { 'A':'T', 'C':'G', 'G':'C', 'T':'A'}
 
     def revcomp(s):
-        l = [comp(v) for v in reversed(s)]
+        l = [comp_dict(v, v) for v in reversed(s)]
         return "".join(l)
 
     # load data into elasticsearch

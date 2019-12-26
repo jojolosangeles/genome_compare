@@ -4,8 +4,10 @@
 **/tmp
 **/test.1.results
 cgh_100000
+cgh_1000000
 cgh_500000
 cgh_500000_search
+cgh_1000000_search
 ch16_cgh_500000/
 ch16_cgh_500000_search/
 package/
