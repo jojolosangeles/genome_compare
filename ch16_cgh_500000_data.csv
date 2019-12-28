@@ -1,0 +1,1220 @@
+sp,chr,loc,score,msp,mchr,mloc
+human,16,47500000,1947,chimp,16,49000000,same orientation
+human,16,47500000,1829,gorilla,16,51500000,same orientation
+chimp,16,42000000,364,gorilla,16,32500000,inversed
+gorilla,16,41000000,1914,human,16,37000000,same orientation
+gorilla,16,69500000,2037,human,16,67500000,inversed
+chimp,16,21000000,1054,human,16,26500000,inversed
+chimp,16,8000000,1879,human,16,7500000,same orientation
+chimp,16,8000000,1668,gorilla,16,7500000,same orientation
+gorilla,16,69500000,1835,chimp,16,67000000,same orientation
+human,16,58000000,1309,gorilla,16,62500000,same orientation
+human,16,58000000,988,gorilla,16,62000000,same orientation
+human,16,25500000,1065,gorilla,16,28000000,same orientation
+gorilla,16,14000000,1706,chimp,16,13500000,same orientation
+gorilla,16,14000000,1685,human,16,13000000,same orientation
+human,16,75500000,1792,gorilla,16,80000000,inversed
+human,16,12500000,1559,chimp,16,12500000,same orientation
+human,16,12500000,1064,gorilla,16,13000000,same orientation
+human,16,12500000,484,gorilla,16,12500000,same orientation
+gorilla,16,23000000,1075,chimp,16,21500000,same orientation
+gorilla,16,23000000,428,human,16,27500000,same orientation
+gorilla,16,23000000,393,chimp,16,80500000,same orientation
+human,16,16500000,2233,chimp,16,17000000,inversed
+human,16,16500000,2026,gorilla,16,18000000,inversed
+gorilla,16,64500000,1859,chimp,16,58000000,inversed
+gorilla,16,64500000,1737,human,16,59000000,inversed
+human,16,58000000,2457,chimp,16,60000000,inversed
+chimp,16,50000000,2076,human,16,48000000,same orientation
+chimp,16,50000000,1924,gorilla,16,52000000,same orientation
+chimp,16,67000000,1775,gorilla,16,69000000,same orientation
+gorilla,16,27000000,2035,chimp,16,24000000,inversed
+human,16,36000000,1903,gorilla,16,38500000,inversed
+chimp,16,78500000,1502,gorilla,16,80500000,same orientation
+gorilla,16,44000000,2114,chimp,16,33500000,inversed
+gorilla,16,74500000,1468,human,16,62500000,inversed
+gorilla,16,74500000,930,chimp,16,71000000,inversed
+gorilla,16,74500000,556,chimp,16,71500000,inversed
+gorilla,16,20500000,1451,human,16,18000000,same orientation
+gorilla,16,20500000,979,chimp,16,19000000,same orientation
+gorilla,16,20500000,591,chimp,16,19500000,same orientation
+human,16,11000000,2049,chimp,16,11000000,same orientation
+human,16,11000000,1875,gorilla,16,11000000,same orientation
+gorilla,16,17500000,1460,human,16,17000000,inversed
+gorilla,16,17500000,410,chimp,16,16500000,inversed
+gorilla,16,17500000,284,human,16,58000000,inversed
+gorilla,16,17500000,262,chimp,16,31500000,inversed
+gorilla,16,17500000,253,human,16,31000000,inversed
+gorilla,16,17500000,1224,chimp,16,16500000,same orientation
+gorilla,16,17500000,407,human,16,17000000,same orientation
+human,16,26000000,1635,gorilla,16,28500000,same orientation
+human,16,65500000,1620,chimp,16,69000000,inversed
+human,16,65500000,1194,gorilla,16,71500000,inversed
+gorilla,16,8500000,1405,chimp,16,8500000,same orientation
+gorilla,16,8500000,1340,human,16,8000000,same orientation
+chimp,16,31000000,360,gorilla,16,33500000,inversed
+chimp,16,31000000,308,human,16,29500000,inversed
+chimp,16,31000000,260,gorilla,16,32500000,inversed
+gorilla,16,42500000,2020,human,16,38500000,same orientation
+human,16,73000000,1783,chimp,16,75500000,same orientation
+human,16,73000000,1577,gorilla,16,77500000,same orientation
+chimp,16,52000000,1341,gorilla,16,54000000,inversed
+human,16,68500000,1834,chimp,16,66000000,inversed
+human,16,68500000,1732,gorilla,16,68500000,inversed
+human,16,44000000,1680,gorilla,16,48000000,same orientation
+human,16,44000000,1502,chimp,16,45500000,same orientation
+human,16,39500000,2134,gorilla,16,43000000,same orientation
+human,16,26000000,2120,chimp,16,22000000,inversed
+chimp,16,31500000,1275,human,16,30500000,same orientation
+chimp,16,31500000,789,gorilla,16,33000000,same orientation
+chimp,16,31500000,579,human,16,32000000,same orientation
+chimp,16,31500000,569,human,16,31500000,same orientation
+chimp,16,31500000,366,human,16,29500000,same orientation
+chimp,16,31500000,261,human,16,30000000,same orientation
+gorilla,16,37000000,1894,chimp,16,40000000,inversed
+gorilla,16,37000000,1851,human,16,32500000,inversed
+chimp,16,64500000,1831,gorilla,16,66500000,same orientation
+chimp,16,19000000,1585,gorilla,16,20000000,same orientation
+chimp,16,19000000,1253,human,16,17500000,same orientation
+chimp,16,19000000,473,human,16,18000000,same orientation
+chimp,16,53500000,1997,human,16,51500000,same orientation
+chimp,16,53500000,1929,gorilla,16,55500000,same orientation
+chimp,16,72500000,1733,gorilla,16,73500000,inversed
+human,16,75000000,1482,gorilla,16,80500000,inversed
+human,16,1000000,1886,chimp,16,1500000,same orientation
+human,16,1000000,314,gorilla,16,1500000,same orientation
+gorilla,16,64000000,1812,human,16,59500000,inversed
+gorilla,16,64000000,1768,chimp,16,58500000,inversed
+chimp,16,42500000,1862,gorilla,16,35500000,same orientation
+chimp,16,75500000,1652,human,16,73000000,same orientation
+chimp,16,75500000,1529,gorilla,16,77500000,same orientation
+human,16,16000000,2164,gorilla,16,18500000,inversed
+human,16,16000000,1860,chimp,16,17500000,inversed
+human,16,16000000,374,chimp,16,18000000,inversed
+chimp,16,42500000,2222,human,16,31000000,inversed
+chimp,16,20500000,1777,human,16,19000000,same orientation
+chimp,16,20500000,1686,gorilla,16,21500000,same orientation
+chimp,16,21500000,2463,human,16,20500000,inversed
+gorilla,16,69000000,1642,human,16,68000000,inversed
+chimp,16,17500000,1857,gorilla,16,18000000,same orientation
+human,16,55000000,2107,chimp,16,57000000,same orientation
+human,16,55000000,2006,gorilla,16,59000000,same orientation
+human,16,28500000,1784,chimp,16,29500000,same orientation
+human,16,28500000,1660,gorilla,16,31500000,same orientation
+gorilla,16,19000000,293,chimp,16,15000000,same orientation
+gorilla,16,19000000,283,chimp,16,21000000,same orientation
+gorilla,16,27500000,1845,chimp,16,23500000,inversed
+gorilla,16,53500000,2014,human,16,49000000,same orientation
+gorilla,16,53500000,2007,chimp,16,51000000,same orientation
+human,16,62000000,1885,chimp,16,70500000,same orientation
+gorilla,16,44500000,1814,chimp,16,33000000,inversed
+human,16,36500000,1883,gorilla,16,38000000,inversed
+human,16,36500000,272,chimp,16,39000000,inversed
+human,16,37000000,2100,chimp,16,39500000,same orientation
+gorilla,16,31500000,1649,chimp,16,29500000,same orientation
+gorilla,16,31500000,1602,human,16,28000000,same orientation
+human,16,58500000,2361,chimp,16,59500000,inversed
+chimp,16,62000000,1682,gorilla,16,60500000,inversed
+gorilla,16,6000000,1689,chimp,16,6000000,same orientation
+gorilla,16,6000000,1558,human,16,5500000,same orientation
+gorilla,16,49500000,827,chimp,16,31500000,inversed
+gorilla,16,49500000,773,human,16,49000000,inversed
+gorilla,16,49500000,773,human,16,31000000,inversed
+gorilla,16,49500000,725,human,16,47500000,inversed
+gorilla,16,49500000,685,chimp,16,50500000,inversed
+gorilla,16,49500000,682,human,16,58000000,inversed
+gorilla,16,49500000,668,human,16,30000000,inversed
+chimp,16,5000000,1229,human,16,4500000,same orientation
+chimp,16,5000000,1083,gorilla,16,4500000,same orientation
+chimp,16,69500000,1899,gorilla,16,71500000,same orientation
+chimp,16,31500000,626,human,16,29500000,inversed
+chimp,16,31500000,612,gorilla,16,34000000,inversed
+chimp,16,31500000,520,human,16,30500000,inversed
+chimp,16,31500000,435,human,16,33500000,inversed
+chimp,16,31500000,416,human,16,30000000,inversed
+chimp,16,31500000,377,gorilla,16,32500000,inversed
+chimp,16,31500000,317,gorilla,16,33500000,inversed
+chimp,16,14000000,1738,human,16,13500000,same orientation
+chimp,16,14000000,1500,gorilla,16,14000000,same orientation
+gorilla,16,79000000,2106,chimp,16,76500000,inversed
+gorilla,16,79000000,634,human,16,74000000,inversed
+human,16,68000000,1728,chimp,16,66500000,inversed
+human,16,68000000,1538,gorilla,16,69000000,inversed
+chimp,16,76000000,1803,human,16,73000000,same orientation
+chimp,16,76000000,1396,gorilla,16,78000000,same orientation
+gorilla,16,74000000,1653,chimp,16,72000000,inversed
+gorilla,16,74000000,1574,human,16,63000000,inversed
+chimp,16,41000000,2061,human,16,33000000,same orientation
+human,16,65000000,1388,gorilla,16,72000000,inversed
+chimp,16,0,913,gorilla,16,0,inversed
+chimp,16,0,454,human,16,2000000,inversed
+human,16,2500000,1576,chimp,16,0,same orientation
+gorilla,16,17000000,704,chimp,16,15000000,inversed
+gorilla,16,17000000,646,chimp,16,21000000,inversed
+gorilla,16,17000000,494,human,16,11500000,inversed
+gorilla,16,17000000,347,chimp,16,16000000,inversed
+gorilla,16,5500000,1633,human,16,5000000,same orientation
+gorilla,16,5500000,1604,chimp,16,5500000,same orientation
+chimp,16,6500000,1691,human,16,6000000,same orientation
+chimp,16,6500000,1530,gorilla,16,6000000,same orientation
+gorilla,16,32000000,1610,chimp,16,30000000,same orientation
+gorilla,16,32000000,1499,human,16,28500000,same orientation
+chimp,16,72000000,1765,gorilla,16,74000000,inversed
+gorilla,16,78500000,1289,human,16,73500000,same orientation
+gorilla,16,78500000,1245,chimp,16,76000000,same orientation
+gorilla,16,78500000,283,chimp,16,21000000,same orientation
+human,16,49000000,1812,chimp,16,50500000,same orientation
+human,16,49000000,1747,gorilla,16,53000000,same orientation
+human,16,49000000,267,chimp,16,31500000,same orientation
+human,16,34500000,1901,chimp,16,37000000,same orientation
+human,16,26500000,1645,gorilla,16,29000000,inversed
+human,16,26500000,1128,chimp,16,28000000,inversed
+human,16,500000,1710,gorilla,16,2000000,inversed
+human,16,500000,977,gorilla,16,15500000,inversed
+human,16,61500000,1725,chimp,16,70000000,same orientation
+gorilla,16,50000000,1696,human,16,45500000,same orientation
+gorilla,16,50000000,1674,chimp,16,47500000,same orientation
+human,16,56500000,1391,chimp,16,62000000,same orientation
+gorilla,16,67000000,1709,chimp,16,64500000,same orientation
+gorilla,16,37500000,1783,chimp,16,39500000,inversed
+gorilla,16,37500000,1742,human,16,37000000,inversed
+gorilla,16,37500000,263,human,16,44500000,inversed
+gorilla,16,56500000,1512,human,16,52000000,same orientation
+gorilla,16,56500000,1468,chimp,16,54000000,same orientation
+gorilla,16,61500000,1816,human,16,57000000,same orientation
+human,16,50000000,2107,chimp,16,51500000,same orientation
+human,16,50000000,1809,gorilla,16,54000000,same orientation
+human,16,66000000,1775,chimp,16,68500000,inversed
+human,16,66000000,1712,gorilla,16,71000000,inversed
+gorilla,16,3000000,1837,human,16,2500000,same orientation
+gorilla,16,3000000,1404,chimp,16,3000000,same orientation
+chimp,16,32500000,2024,gorilla,16,45000000,inversed
+chimp,16,32500000,1919,human,16,41000000,inversed
+gorilla,16,49000000,1637,human,16,44500000,same orientation
+gorilla,16,49000000,1550,chimp,16,46500000,same orientation
+gorilla,16,19000000,530,human,16,14500000,inversed
+gorilla,16,19000000,508,chimp,16,80000000,inversed
+gorilla,16,19000000,466,human,16,500000,inversed
+gorilla,16,19000000,391,chimp,16,2000000,inversed
+gorilla,16,19000000,318,chimp,16,3000000,inversed
+human,16,32000000,797,chimp,16,80000000,same orientation
+human,16,32000000,514,gorilla,16,33500000,same orientation
+human,16,32000000,510,chimp,16,42500000,same orientation
+human,16,32000000,432,gorilla,16,33000000,same orientation
+gorilla,16,81000000,296,chimp,16,52500000,same orientation
+gorilla,16,81000000,264,chimp,16,63500000,same orientation
+chimp,16,70500000,1861,human,16,61500000,same orientation
+human,16,25500000,2103,chimp,16,22500000,inversed
+chimp,16,47500000,1823,human,16,45500000,same orientation
+chimp,16,47500000,1533,gorilla,16,49500000,same orientation
+gorilla,16,34500000,738,human,16,30000000,inversed
+gorilla,16,34500000,689,chimp,16,31500000,inversed
+gorilla,16,34500000,652,chimp,16,79500000,inversed
+human,16,4000000,1713,chimp,16,4000000,same orientation
+human,16,4000000,1553,gorilla,16,4000000,same orientation
+human,16,0,1792,chimp,16,2500000,same orientation
+human,16,0,465,gorilla,16,2500000,same orientation
+chimp,16,12500000,1782,human,16,12000000,same orientation
+chimp,16,12500000,1589,gorilla,16,12500000,same orientation
+chimp,16,58000000,451,human,16,55500000,same orientation
+chimp,16,58000000,361,gorilla,16,60000000,same orientation
+chimp,16,71000000,1705,gorilla,16,75000000,inversed
+gorilla,16,39500000,2028,chimp,16,37500000,inversed
+gorilla,16,39500000,1996,human,16,35000000,inversed
+chimp,16,41500000,1465,human,16,31500000,inversed
+chimp,16,22500000,1842,human,16,25500000,inversed
+chimp,16,22500000,1696,gorilla,16,28500000,inversed
+chimp,16,3500000,1721,human,16,3000000,same orientation
+chimp,16,3500000,1574,gorilla,16,3000000,same orientation
+human,16,53500000,1547,chimp,16,55000000,same orientation
+human,16,53500000,1542,gorilla,16,57500000,same orientation
+gorilla,16,62000000,1597,human,16,57500000,same orientation
+gorilla,16,28500000,1821,human,16,25500000,same orientation
+human,16,19000000,1919,chimp,16,20000000,same orientation
+human,16,19000000,1106,gorilla,16,21000000,same orientation
+human,16,64500000,1902,chimp,16,73000000,same orientation
+gorilla,16,55000000,2031,human,16,50500000,same orientation
+gorilla,16,55000000,1931,chimp,16,52500000,same orientation
+human,16,15000000,1851,chimp,16,15500000,inversed
+gorilla,16,67000000,2025,human,16,70000000,inversed
+chimp,16,61000000,2354,human,16,57000000,inversed
+chimp,16,61000000,2064,gorilla,16,61500000,inversed
+human,16,38500000,2490,chimp,16,35000000,inversed
+chimp,16,11000000,1605,human,16,10500000,same orientation
+chimp,16,11000000,1160,gorilla,16,10500000,same orientation
+chimp,16,11000000,434,gorilla,16,11000000,same orientation
+human,16,7500000,1774,chimp,16,7500000,same orientation
+human,16,7500000,1421,gorilla,16,7500000,same orientation
+gorilla,16,24500000,2120,chimp,16,26500000,inversed
+human,16,56500000,1666,gorilla,16,60500000,inversed
+chimp,16,39500000,2120,human,16,36500000,same orientation
+human,16,35500000,2277,gorilla,16,39000000,inversed
+chimp,16,44000000,2132,human,16,42000000,same orientation
+chimp,16,44000000,1940,gorilla,16,46000000,same orientation
+chimp,16,73000000,1953,human,16,64000000,same orientation
+chimp,16,32000000,2013,human,16,41500000,inversed
+chimp,16,32000000,1833,gorilla,16,45500000,inversed
+chimp,16,62000000,1787,human,16,56000000,same orientation
+chimp,16,28500000,1058,human,16,27000000,same orientation
+chimp,16,28500000,309,gorilla,16,30500000,same orientation
+chimp,16,28500000,258,gorilla,16,30000000,same orientation
+chimp,16,28500000,253,human,16,26500000,same orientation
+chimp,16,55000000,1927,human,16,53000000,same orientation
+chimp,16,55000000,1779,gorilla,16,57000000,same orientation
+gorilla,16,19500000,1354,chimp,16,79000000,inversed
+chimp,16,37000000,2177,human,16,34000000,same orientation
+human,16,66500000,1898,chimp,16,68000000,inversed
+human,16,66500000,1791,gorilla,16,70500000,inversed
+human,16,9000000,1372,chimp,16,9000000,same orientation
+human,16,9000000,1269,gorilla,16,9000000,same orientation
+human,16,75500000,1970,chimp,16,77500000,same orientation
+gorilla,16,39000000,550,human,16,35500000,inversed
+gorilla,16,39000000,536,chimp,16,38000000,inversed
+gorilla,16,44000000,1914,human,16,40000000,same orientation
+chimp,16,71500000,902,gorilla,16,74000000,inversed
+chimp,16,71500000,595,gorilla,16,74500000,inversed
+human,16,42500000,1762,chimp,16,44000000,same orientation
+human,16,42500000,1745,gorilla,16,46000000,same orientation
+human,16,25000000,1995,chimp,16,23000000,inversed
+human,16,17500000,1432,chimp,16,18500000,same orientation
+human,16,17500000,1200,gorilla,16,19500000,same orientation
+gorilla,16,26000000,1847,human,16,23000000,same orientation
+gorilla,16,34000000,1688,chimp,16,31000000,inversed
+gorilla,16,11000000,1340,chimp,16,11000000,same orientation
+gorilla,16,11000000,1340,human,16,10500000,same orientation
+gorilla,16,67500000,1580,human,16,69500000,inversed
+gorilla,16,67500000,470,chimp,16,65000000,inversed
+chimp,16,49000000,2150,human,16,47000000,same orientation
+chimp,16,49000000,1790,gorilla,16,51000000,same orientation
+human,16,15500000,1871,chimp,16,16000000,inversed
+chimp,16,41000000,2166,gorilla,16,36500000,inversed
+chimp,16,22000000,755,human,16,26000000,inversed
+chimp,16,22000000,522,gorilla,16,22000000,inversed
+chimp,16,22000000,449,gorilla,16,29000000,inversed
+chimp,16,22000000,329,gorilla,16,30000000,inversed
+chimp,16,56500000,1516,human,16,54500000,same orientation
+chimp,16,56500000,757,gorilla,16,58500000,same orientation
+human,16,56000000,1718,chimp,16,58000000,inversed
+human,16,56000000,1408,gorilla,16,60000000,inversed
+gorilla,16,12500000,1430,human,16,12000000,same orientation
+gorilla,16,12500000,1427,chimp,16,12000000,same orientation
+gorilla,16,12500000,986,chimp,16,80000000,same orientation
+gorilla,16,12500000,425,human,16,19500000,same orientation
+gorilla,16,12500000,368,chimp,16,21000000,same orientation
+human,16,23000000,1504,gorilla,16,25500000,same orientation
+gorilla,16,25500000,1907,human,16,22500000,same orientation
+gorilla,16,24000000,1598,chimp,16,27000000,inversed
+gorilla,16,24000000,1440,human,16,20500000,inversed
+human,16,14000000,1803,gorilla,16,14500000,same orientation
+human,16,14000000,1720,chimp,16,14000000,same orientation
+gorilla,16,58000000,1315,human,16,53500000,same orientation
+gorilla,16,58000000,849,chimp,16,55500000,same orientation
+human,16,35000000,1633,gorilla,16,39500000,inversed
+chimp,16,81000000,792,human,16,20500000,same orientation
+chimp,16,81000000,667,human,16,21500000,same orientation
+gorilla,16,29000000,2298,chimp,16,22000000,inversed
+gorilla,16,70500000,1521,chimp,16,68000000,same orientation
+human,16,41000000,1743,gorilla,16,44500000,same orientation
+gorilla,16,81000000,285,human,16,71000000,inversed
+gorilla,16,47500000,1644,chimp,16,45000000,same orientation
+gorilla,16,47500000,1266,human,16,43500000,same orientation
+gorilla,16,47500000,368,human,16,43000000,same orientation
+chimp,16,61500000,2081,human,16,56500000,inversed
+chimp,16,61500000,2070,gorilla,16,61000000,inversed
+human,16,38000000,2166,chimp,16,35500000,inversed
+chimp,16,500000,1916,gorilla,16,0,inversed
+chimp,16,77500000,656,gorilla,16,79500000,inversed
+chimp,16,77500000,413,human,16,74500000,inversed
+gorilla,16,15500000,1193,human,16,500000,same orientation
+gorilla,16,15500000,515,chimp,16,2000000,same orientation
+gorilla,16,15500000,278,human,16,14500000,same orientation
+human,16,24000000,1933,gorilla,16,26500000,same orientation
+human,16,59500000,2008,chimp,16,58500000,same orientation
+gorilla,16,68000000,1844,chimp,16,65500000,same orientation
+gorilla,16,22500000,1446,chimp,16,21000000,same orientation
+gorilla,16,22500000,558,chimp,16,21500000,same orientation
+gorilla,16,22500000,427,chimp,16,18000000,same orientation
+gorilla,16,22500000,425,human,16,17000000,same orientation
+human,16,13000000,1784,chimp,16,13000000,same orientation
+human,16,13000000,1471,gorilla,16,13500000,same orientation
+human,16,40000000,2339,chimp,16,33500000,inversed
+chimp,16,9500000,1686,human,16,9000000,same orientation
+chimp,16,9500000,1418,gorilla,16,9500000,same orientation
+human,16,23000000,1872,chimp,16,25500000,inversed
+gorilla,16,77500000,1622,chimp,16,75000000,same orientation
+gorilla,16,77500000,1615,human,16,72500000,same orientation
+human,16,46000000,2049,chimp,16,47500000,same orientation
+human,16,46000000,1957,gorilla,16,50000000,same orientation
+chimp,16,79000000,786,human,16,27500000,same orientation
+chimp,16,34000000,2275,human,16,39500000,inversed
+chimp,16,34000000,1102,gorilla,16,43500000,inversed
+chimp,16,34000000,1045,gorilla,16,43000000,inversed
+chimp,16,51500000,2290,human,16,49500000,same orientation
+chimp,16,51500000,1892,gorilla,16,53500000,same orientation
+gorilla,16,12500000,275,human,16,19500000,inversed
+chimp,16,66500000,1570,gorilla,16,68500000,same orientation
+chimp,16,39000000,2216,gorilla,16,38000000,inversed
+gorilla,16,71500000,1895,human,16,65500000,inversed
+human,16,72500000,1203,gorilla,16,77000000,same orientation
+human,16,72500000,896,chimp,16,75000000,same orientation
+human,16,72500000,640,chimp,16,74500000,same orientation
+gorilla,16,43000000,2065,human,16,39000000,same orientation
+human,16,33000000,2440,gorilla,16,36500000,inversed
+human,16,38000000,1862,gorilla,16,41500000,same orientation
+gorilla,16,41000000,2027,chimp,16,36000000,inversed
+gorilla,16,0,699,human,16,2500000,inversed
+gorilla,16,0,698,chimp,16,0,inversed
+human,16,45500000,2249,chimp,16,47000000,same orientation
+human,16,45500000,1990,gorilla,16,49500000,same orientation
+gorilla,16,22000000,673,human,16,56500000,inversed
+gorilla,16,22000000,270,chimp,16,80500000,inversed
+gorilla,16,9000000,1543,human,16,8500000,same orientation
+gorilla,16,9000000,1473,chimp,16,9000000,same orientation
+chimp,16,2500000,1024,human,16,0,inversed
+human,16,10500000,1555,chimp,16,10500000,same orientation
+human,16,10500000,1242,gorilla,16,10500000,same orientation
+gorilla,16,21000000,1702,human,16,18500000,same orientation
+gorilla,16,21000000,1437,chimp,16,19500000,same orientation
+gorilla,16,21000000,275,chimp,16,20000000,same orientation
+human,16,27500000,1808,chimp,16,28500000,same orientation
+gorilla,16,16000000,1554,human,16,14500000,same orientation
+chimp,16,67500000,1999,human,16,67000000,inversed
+chimp,16,81000000,2081,gorilla,16,23000000,inversed
+chimp,16,29000000,2036,gorilla,16,30000000,inversed
+gorilla,16,61500000,1994,chimp,16,61000000,inversed
+chimp,16,18500000,850,gorilla,16,19500000,same orientation
+chimp,16,18500000,839,human,16,17000000,same orientation
+chimp,16,18500000,567,human,16,17500000,same orientation
+chimp,16,18500000,333,gorilla,16,19000000,same orientation
+chimp,16,65000000,1793,gorilla,16,67000000,same orientation
+chimp,16,52000000,2202,human,16,50000000,same orientation
+chimp,16,52000000,1952,gorilla,16,54000000,same orientation
+chimp,16,0,728,human,16,2500000,same orientation
+chimp,16,0,538,gorilla,16,0,same orientation
+human,16,70500000,2016,chimp,16,64000000,inversed
+human,16,70500000,1852,gorilla,16,66500000,inversed
+chimp,16,24000000,1757,gorilla,16,27000000,inversed
+chimp,16,24000000,1630,human,16,24000000,inversed
+chimp,16,24000000,347,human,16,24500000,inversed
+chimp,16,30000000,1806,human,16,28500000,same orientation
+chimp,16,30000000,1739,gorilla,16,31500000,same orientation
+chimp,16,21000000,1372,human,16,73500000,same orientation
+chimp,16,21000000,728,gorilla,16,78500000,same orientation
+human,16,40500000,2320,chimp,16,33000000,inversed
+gorilla,16,32500000,710,chimp,16,30000000,inversed
+gorilla,16,32500000,576,chimp,16,31000000,inversed
+human,16,23500000,1470,gorilla,16,26000000,inversed
+human,16,23500000,1255,chimp,16,24500000,inversed
+human,16,23500000,962,chimp,16,25000000,inversed
+human,16,23500000,416,chimp,16,78500000,inversed
+chimp,16,43000000,907,human,16,33500000,same orientation
+chimp,16,43000000,341,gorilla,16,33500000,same orientation
+chimp,16,43000000,301,human,16,30000000,same orientation
+chimp,16,43000000,288,human,16,30500000,same orientation
+chimp,16,74000000,1665,human,16,71500000,same orientation
+chimp,16,74000000,1550,gorilla,16,76000000,same orientation
+chimp,16,77000000,1363,human,16,74000000,inversed
+chimp,16,77000000,901,gorilla,16,79000000,inversed
+human,16,60000000,1985,gorilla,16,63500000,inversed
+chimp,16,4500000,1827,human,16,4000000,same orientation
+chimp,16,4500000,1565,gorilla,16,4000000,same orientation
+gorilla,16,7500000,1416,chimp,16,7500000,same orientation
+gorilla,16,7500000,1303,human,16,7000000,same orientation
+human,16,36500000,1887,chimp,16,39000000,same orientation
+gorilla,16,71000000,1782,human,16,66000000,inversed
+gorilla,16,30000000,1594,human,16,73500000,same orientation
+gorilla,16,30000000,902,chimp,16,76500000,same orientation
+gorilla,16,30000000,561,chimp,16,76000000,same orientation
+chimp,16,39500000,1996,gorilla,16,37500000,inversed
+gorilla,16,18500000,1887,chimp,16,17500000,same orientation
+human,16,29000000,1830,chimp,16,30000000,same orientation
+human,16,29000000,1547,gorilla,16,32000000,same orientation
+human,16,54500000,1514,chimp,16,56500000,same orientation
+human,16,54500000,912,gorilla,16,58500000,same orientation
+chimp,16,34500000,2463,human,16,39000000,inversed
+chimp,16,34500000,1283,gorilla,16,42500000,inversed
+chimp,16,34500000,829,gorilla,16,43000000,inversed
+gorilla,16,65000000,1600,chimp,16,62500000,same orientation
+gorilla,16,65000000,1573,human,16,60000000,same orientation
+human,16,63500000,1919,chimp,16,72000000,same orientation
+gorilla,16,52000000,2026,human,16,47500000,same orientation
+gorilla,16,52000000,2003,chimp,16,49500000,same orientation
+human,16,3000000,1918,chimp,16,3000000,same orientation
+human,16,3000000,1868,gorilla,16,3000000,same orientation
+chimp,16,2000000,1747,gorilla,16,1500000,inversed
+chimp,16,77500000,553,gorilla,16,79500000,same orientation
+chimp,16,77500000,514,human,16,74500000,same orientation
+chimp,16,40500000,2204,human,16,32500000,same orientation
+chimp,16,67000000,1835,human,16,67500000,inversed
+gorilla,16,41500000,1963,chimp,16,35500000,inversed
+human,16,33500000,1888,gorilla,16,36000000,inversed
+chimp,16,15500000,942,human,16,15000000,same orientation
+chimp,16,15500000,844,gorilla,16,16500000,same orientation
+chimp,16,15500000,589,gorilla,16,18500000,same orientation
+chimp,16,68000000,1714,gorilla,16,70000000,same orientation
+gorilla,16,22500000,1595,human,16,20500000,inversed
+gorilla,16,22500000,432,chimp,16,80500000,inversed
+gorilla,16,22500000,414,human,16,27500000,inversed
+gorilla,16,51500000,1962,chimp,16,49000000,same orientation
+gorilla,16,51500000,1932,human,16,47000000,same orientation
+human,16,60000000,1962,chimp,16,59000000,same orientation
+chimp,16,24500000,1895,gorilla,16,26500000,inversed
+chimp,16,24500000,1461,human,16,23500000,inversed
+chimp,16,24500000,585,human,16,24000000,inversed
+gorilla,16,66500000,1896,chimp,16,64000000,same orientation
+human,16,57000000,1966,gorilla,16,61000000,same orientation
+gorilla,16,33500000,738,chimp,16,31000000,same orientation
+gorilla,16,61000000,1878,chimp,16,61500000,inversed
+gorilla,16,61000000,1277,human,16,56000000,inversed
+gorilla,16,61000000,409,human,16,56500000,inversed
+human,16,35000000,1019,chimp,16,37500000,same orientation
+human,16,48500000,2066,chimp,16,50000000,same orientation
+human,16,48500000,1782,gorilla,16,52500000,same orientation
+gorilla,16,79000000,1153,human,16,74000000,same orientation
+human,16,70000000,2057,chimp,16,64500000,inversed
+human,16,70000000,1988,gorilla,16,67000000,inversed
+chimp,16,7000000,1641,human,16,6500000,same orientation
+chimp,16,7000000,1310,gorilla,16,6500000,same orientation
+gorilla,16,4000000,1788,human,16,3500000,same orientation
+gorilla,16,4000000,1720,chimp,16,4000000,same orientation
+gorilla,16,48500000,1484,human,16,44000000,same orientation
+gorilla,16,48500000,1455,chimp,16,46000000,same orientation
+gorilla,16,35000000,1421,chimp,16,41500000,same orientation
+human,16,30500000,863,gorilla,16,34000000,inversed
+human,16,30500000,833,chimp,16,43000000,inversed
+human,16,30500000,542,gorilla,16,33500000,inversed
+human,16,30500000,533,chimp,16,31500000,inversed
+human,16,33500000,1732,chimp,16,41000000,same orientation
+gorilla,16,42500000,1731,chimp,16,34500000,inversed
+gorilla,16,42500000,392,chimp,16,35000000,inversed
+chimp,16,1500000,1675,human,16,500000,same orientation
+gorilla,16,2500000,1656,chimp,16,2500000,same orientation
+gorilla,16,500000,2054,human,16,2000000,inversed
+gorilla,16,500000,1434,chimp,16,0,inversed
+chimp,16,69000000,1948,human,16,65500000,inversed
+gorilla,16,57000000,2026,chimp,16,54500000,same orientation
+gorilla,16,57000000,1947,human,16,52500000,same orientation
+chimp,16,1000000,1756,human,16,1500000,inversed
+human,16,51500000,1954,chimp,16,53000000,same orientation
+human,16,51500000,1930,gorilla,16,55500000,same orientation
+gorilla,16,60000000,1673,human,16,55500000,same orientation
+gorilla,16,60000000,1663,chimp,16,57500000,same orientation
+chimp,16,64000000,2271,human,16,70500000,inversed
+gorilla,16,62000000,1858,chimp,16,60500000,inversed
+chimp,16,13000000,378,human,16,12500000,same orientation
+chimp,16,13000000,265,gorilla,16,13000000,same orientation
+human,16,5500000,1676,chimp,16,5500000,same orientation
+human,16,5500000,1495,gorilla,16,5500000,same orientation
+chimp,16,27500000,2127,gorilla,16,23500000,inversed
+chimp,16,71000000,1509,human,16,62000000,same orientation
+chimp,16,46000000,1585,human,16,44000000,same orientation
+chimp,16,46000000,1380,gorilla,16,48000000,same orientation
+gorilla,16,63500000,1246,human,16,59000000,same orientation
+gorilla,16,63500000,758,human,16,58500000,same orientation
+human,16,52000000,1917,chimp,16,53500000,same orientation
+human,16,52000000,1826,gorilla,16,56000000,same orientation
+gorilla,16,54500000,2106,chimp,16,52000000,same orientation
+gorilla,16,54500000,2091,human,16,50000000,same orientation
+chimp,16,17000000,2034,human,16,16500000,inversed
+human,16,65000000,1442,chimp,16,73500000,same orientation
+human,16,18500000,1897,chimp,16,19500000,same orientation
+human,16,18500000,1668,gorilla,16,20500000,same orientation
+gorilla,16,29000000,2169,human,16,26000000,same orientation
+gorilla,16,31500000,272,human,16,28000000,inversed
+gorilla,16,31500000,255,chimp,16,29500000,inversed
+chimp,16,2000000,1925,human,16,1000000,same orientation
+chimp,16,79000000,898,gorilla,16,30500000,inversed
+chimp,16,79000000,874,human,16,23500000,inversed
+chimp,16,79000000,864,gorilla,16,26000000,inversed
+gorilla,16,1000000,1518,chimp,16,1000000,same orientation
+human,16,20500000,1861,chimp,16,21500000,inversed
+human,16,20500000,1706,gorilla,16,22500000,inversed
+human,16,30000000,770,gorilla,16,34000000,same orientation
+human,16,30000000,555,chimp,16,31000000,same orientation
+human,16,30000000,431,chimp,16,43000000,same orientation
+human,16,30000000,273,chimp,16,31500000,same orientation
+human,16,30000000,271,chimp,16,80000000,same orientation
+human,16,30000000,255,gorilla,16,32500000,same orientation
+chimp,16,45500000,1594,human,16,43500000,same orientation
+chimp,16,45500000,1579,gorilla,16,47500000,same orientation
+chimp,16,38000000,1991,human,16,35000000,same orientation
+chimp,16,72500000,2019,human,16,63500000,same orientation
+human,16,6000000,1976,chimp,16,6000000,same orientation
+human,16,6000000,1598,gorilla,16,6000000,same orientation
+chimp,16,37500000,2351,gorilla,16,39500000,inversed
+chimp,16,27500000,2101,human,16,21000000,same orientation
+chimp,16,27500000,254,gorilla,16,23500000,same orientation
+chimp,16,59500000,1940,human,16,58500000,inversed
+chimp,16,59500000,1623,gorilla,16,63000000,inversed
+chimp,16,10500000,1844,human,16,10000000,same orientation
+chimp,16,10500000,1157,gorilla,16,10500000,same orientation
+chimp,16,10500000,439,gorilla,16,10000000,same orientation
+human,16,63000000,1933,gorilla,16,74000000,inversed
+human,16,500000,814,gorilla,16,15500000,same orientation
+human,16,500000,613,chimp,16,2000000,same orientation
+gorilla,16,72000000,1932,human,16,65000000,inversed
+chimp,16,500000,2133,human,16,2000000,same orientation
+human,16,8500000,1699,chimp,16,8500000,same orientation
+human,16,8500000,1316,gorilla,16,8500000,same orientation
+chimp,16,1500000,1638,gorilla,16,2000000,inversed
+chimp,16,64500000,1850,human,16,70000000,inversed
+gorilla,16,42000000,1728,chimp,16,35000000,inversed
+gorilla,16,42000000,545,chimp,16,35500000,inversed
+human,16,30000000,1184,chimp,16,31000000,inversed
+human,16,30000000,538,gorilla,16,32500000,inversed
+human,16,30000000,384,gorilla,16,33000000,inversed
+human,16,30000000,351,chimp,16,80000000,inversed
+human,16,30000000,349,chimp,16,42500000,inversed
+human,16,30000000,304,gorilla,16,33500000,inversed
+chimp,16,69500000,2167,human,16,65000000,inversed
+chimp,16,63500000,1570,gorilla,16,65500000,same orientation
+chimp,16,54500000,1610,human,16,52500000,same orientation
+chimp,16,54500000,1383,gorilla,16,56500000,same orientation
+gorilla,16,21000000,488,chimp,16,20000000,inversed
+gorilla,16,21000000,465,human,16,19000000,inversed
+chimp,16,29000000,1640,human,16,27500000,same orientation
+chimp,16,27000000,1649,human,16,21500000,inversed
+chimp,16,27000000,1578,gorilla,16,24000000,inversed
+gorilla,16,27500000,1574,human,16,24500000,same orientation
+gorilla,16,10500000,1614,human,16,10000000,same orientation
+gorilla,16,10500000,1523,chimp,16,10500000,same orientation
+human,16,21000000,2041,chimp,16,27000000,same orientation
+gorilla,16,45500000,1823,human,16,41500000,same orientation
+human,16,74000000,1759,chimp,16,76500000,same orientation
+human,16,74000000,1193,gorilla,16,78500000,same orientation
+human,16,74000000,698,gorilla,16,30000000,same orientation
+gorilla,16,62500000,2217,chimp,16,60000000,inversed
+human,16,43000000,1837,chimp,16,44500000,same orientation
+human,16,43000000,1002,gorilla,16,47000000,same orientation
+human,16,43000000,696,gorilla,16,46500000,same orientation
+human,16,73500000,1686,chimp,16,79000000,inversed
+chimp,16,57000000,1868,gorilla,16,59000000,same orientation
+chimp,16,57000000,1030,human,16,55000000,same orientation
+chimp,16,57000000,994,human,16,54500000,same orientation
+chimp,16,79500000,1796,human,16,73000000,inversed
+chimp,16,79500000,1464,gorilla,16,78000000,inversed
+human,16,20000000,1830,chimp,16,21000000,inversed
+human,16,20000000,1725,gorilla,16,22000000,inversed
+chimp,16,48500000,1848,human,16,46500000,same orientation
+chimp,16,48500000,1430,gorilla,16,50500000,same orientation
+chimp,16,17500000,2105,human,16,16000000,inversed
+chimp,16,59000000,1723,gorilla,16,63500000,inversed
+human,16,63500000,1981,gorilla,16,73500000,inversed
+gorilla,16,72500000,1782,human,16,64500000,inversed
+gorilla,16,72500000,1714,chimp,16,73500000,inversed
+human,16,40500000,1980,gorilla,16,44000000,same orientation
+gorilla,16,71000000,1679,chimp,16,68500000,same orientation
+chimp,16,80500000,520,human,16,30000000,same orientation
+gorilla,16,46000000,2023,chimp,16,43500000,same orientation
+gorilla,16,46000000,1927,human,16,42000000,same orientation
+human,16,22500000,1772,gorilla,16,25000000,same orientation
+gorilla,16,13000000,1586,human,16,12500000,same orientation
+gorilla,16,13000000,1497,chimp,16,12500000,same orientation
+chimp,16,37000000,2295,gorilla,16,40000000,inversed
+gorilla,16,59500000,1590,human,16,55000000,same orientation
+gorilla,16,59500000,1528,chimp,16,57000000,same orientation
+human,16,15500000,728,gorilla,16,16500000,same orientation
+chimp,16,16000000,1539,human,16,14500000,inversed
+chimp,16,16000000,1476,gorilla,16,16000000,inversed
+chimp,16,71500000,1612,human,16,62500000,same orientation
+chimp,16,46500000,1814,human,16,44500000,same orientation
+chimp,16,46500000,1789,gorilla,16,48500000,same orientation
+human,16,5000000,1680,chimp,16,5000000,same orientation
+human,16,5000000,1488,gorilla,16,5000000,same orientation
+chimp,16,13500000,1938,human,16,13000000,same orientation
+chimp,16,13500000,1740,gorilla,16,13500000,same orientation
+chimp,16,59000000,1398,human,16,59500000,same orientation
+chimp,16,59000000,701,human,16,60000000,same orientation
+human,16,21500000,1861,gorilla,16,23000000,inversed
+human,16,21500000,1820,chimp,16,80500000,inversed
+human,16,21500000,407,chimp,16,78500000,inversed
+chimp,16,78000000,568,gorilla,16,80000000,inversed
+chimp,16,78000000,559,human,16,75500000,inversed
+gorilla,16,30500000,1423,human,16,27500000,inversed
+gorilla,16,30500000,1369,chimp,16,28500000,inversed
+gorilla,16,30500000,1368,chimp,16,79000000,inversed
+chimp,16,36500000,1857,human,16,37000000,inversed
+chimp,16,36500000,1619,gorilla,16,40500000,inversed
+gorilla,16,57500000,1986,human,16,53000000,same orientation
+gorilla,16,57500000,1909,chimp,16,55000000,same orientation
+human,16,51000000,2054,chimp,16,52500000,same orientation
+human,16,51000000,1927,gorilla,16,55000000,same orientation
+chimp,16,1000000,1573,gorilla,16,500000,same orientation
+gorilla,16,73000000,1837,human,16,64000000,inversed
+gorilla,16,73000000,1011,chimp,16,73000000,inversed
+gorilla,16,73000000,723,chimp,16,72500000,inversed
+gorilla,16,2500000,1811,human,16,0,inversed
+human,16,62000000,1767,gorilla,16,75000000,inversed
+gorilla,16,48000000,1506,chimp,16,45500000,same orientation
+gorilla,16,48000000,1351,human,16,43500000,same orientation
+chimp,16,58500000,653,gorilla,16,64000000,inversed
+gorilla,16,35500000,2051,chimp,16,42000000,same orientation
+human,16,33000000,2203,chimp,16,40500000,same orientation
+chimp,16,68000000,2141,human,16,66500000,inversed
+gorilla,16,43500000,1185,chimp,16,34000000,inversed
+gorilla,16,43500000,1053,chimp,16,33500000,inversed
+chimp,16,10000000,1786,human,16,9500000,same orientation
+chimp,16,10000000,1082,gorilla,16,10000000,same orientation
+human,16,31500000,2600,gorilla,16,35000000,inversed
+human,16,31500000,2509,chimp,16,41500000,inversed
+human,16,6500000,1862,chimp,16,6500000,same orientation
+human,16,6500000,1581,gorilla,16,6500000,same orientation
+chimp,16,65000000,2091,human,16,69500000,inversed
+chimp,16,45000000,1616,human,16,43000000,same orientation
+chimp,16,45000000,1521,gorilla,16,47000000,same orientation
+chimp,16,38500000,2078,human,16,35500000,same orientation
+chimp,16,72000000,1819,human,16,63000000,same orientation
+human,16,30500000,986,chimp,16,80000000,same orientation
+human,16,30500000,601,gorilla,16,33000000,same orientation
+human,16,30500000,554,chimp,16,42500000,same orientation
+human,16,30500000,477,chimp,16,31500000,same orientation
+human,16,30500000,378,chimp,16,31000000,same orientation
+gorilla,16,36000000,695,human,16,32000000,same orientation
+gorilla,16,36000000,538,human,16,30500000,same orientation
+gorilla,16,36000000,451,human,16,31500000,same orientation
+gorilla,16,36000000,269,chimp,16,80000000,same orientation
+gorilla,16,63000000,2024,chimp,16,59500000,inversed
+chimp,16,2500000,694,gorilla,16,2000000,same orientation
+gorilla,16,63000000,1882,human,16,58500000,same orientation
+human,16,52500000,2064,chimp,16,54000000,same orientation
+human,16,52500000,2049,gorilla,16,56500000,same orientation
+gorilla,16,54000000,1834,human,16,49500000,same orientation
+gorilla,16,54000000,1754,chimp,16,51500000,same orientation
+human,16,18000000,1731,chimp,16,19000000,same orientation
+human,16,18000000,1221,gorilla,16,20000000,same orientation
+gorilla,16,29500000,985,human,16,26000000,same orientation
+gorilla,16,29500000,563,chimp,16,28000000,same orientation
+chimp,16,26500000,2057,human,16,22000000,inversed
+chimp,16,26500000,1357,gorilla,16,24500000,inversed
+human,16,21000000,1927,gorilla,16,23500000,inversed
+gorilla,16,45000000,1891,human,16,41000000,same orientation
+gorilla,16,30000000,1825,human,16,26500000,inversed
+gorilla,16,30000000,1744,chimp,16,79500000,inversed
+human,16,74500000,1790,chimp,16,77000000,same orientation
+human,16,74500000,1502,gorilla,16,79000000,same orientation
+chimp,16,78500000,1846,human,16,74500000,inversed
+gorilla,16,72000000,1972,chimp,16,69500000,same orientation
+human,16,43500000,1867,chimp,16,45000000,same orientation
+human,16,43500000,1737,gorilla,16,47500000,same orientation
+chimp,16,16500000,1994,gorilla,16,16500000,inversed
+chimp,16,16500000,1675,human,16,15000000,inversed
+gorilla,16,27000000,1900,human,16,24000000,same orientation
+gorilla,16,10000000,1705,human,16,9500000,same orientation
+gorilla,16,10000000,1647,chimp,16,10000000,same orientation
+human,16,21500000,1948,chimp,16,27500000,same orientation
+chimp,16,63000000,1630,human,16,60500000,same orientation
+chimp,16,63000000,1524,gorilla,16,65000000,same orientation
+gorilla,16,2000000,1427,human,16,500000,inversed
+gorilla,16,2000000,1398,chimp,16,1500000,inversed
+gorilla,16,73500000,1401,chimp,16,72500000,inversed
+gorilla,16,73500000,1362,human,16,63500000,inversed
+chimp,16,54000000,1895,human,16,52000000,same orientation
+chimp,16,54000000,1757,gorilla,16,56000000,same orientation
+chimp,16,29500000,1681,human,16,28000000,same orientation
+chimp,16,29500000,1542,gorilla,16,31000000,same orientation
+human,16,62500000,1738,gorilla,16,74500000,inversed
+chimp,16,58000000,376,gorilla,16,60000000,inversed
+chimp,16,58000000,316,human,16,55500000,inversed
+chimp,16,36000000,2268,human,16,37500000,inversed
+chimp,16,36000000,2164,gorilla,16,41000000,inversed
+human,16,8000000,1952,chimp,16,8000000,same orientation
+human,16,8000000,1657,gorilla,16,8000000,same orientation
+chimp,16,65500000,2347,human,16,69000000,inversed
+human,16,22000000,1871,gorilla,16,24500000,same orientation
+gorilla,16,13500000,1746,chimp,16,13000000,same orientation
+gorilla,16,13500000,1730,human,16,13000000,same orientation
+gorilla,16,59000000,1520,chimp,16,56500000,same orientation
+gorilla,16,59000000,1501,human,16,54500000,same orientation
+human,16,15000000,1484,gorilla,16,16000000,same orientation
+gorilla,16,24500000,1941,human,16,21500000,same orientation
+human,16,40000000,1909,gorilla,16,43500000,same orientation
+chimp,16,80000000,945,gorilla,16,15000000,same orientation
+chimp,16,80000000,797,human,16,14500000,same orientation
+chimp,16,80000000,394,gorilla,16,17000000,same orientation
+gorilla,16,71500000,1729,chimp,16,69000000,same orientation
+chimp,16,68500000,2280,human,16,66000000,inversed
+gorilla,16,46500000,1796,human,16,42500000,same orientation
+gorilla,16,46500000,1345,chimp,16,44000000,same orientation
+human,16,31000000,2337,chimp,16,42500000,inversed
+human,16,31000000,1959,gorilla,16,35500000,inversed
+gorilla,16,43000000,1390,chimp,16,34000000,inversed
+gorilla,16,43000000,872,chimp,16,34500000,inversed
+chimp,16,48000000,1902,gorilla,16,50000000,same orientation
+chimp,16,48000000,1862,human,16,46000000,same orientation
+chimp,16,26000000,1715,human,16,22500000,inversed
+chimp,16,26000000,1666,gorilla,16,25000000,inversed
+chimp,16,57500000,1372,human,16,55000000,same orientation
+chimp,16,57500000,1039,gorilla,16,59500000,same orientation
+gorilla,16,63500000,2107,chimp,16,59000000,inversed
+gorilla,16,23000000,1311,human,16,20000000,inversed
+gorilla,16,23000000,548,chimp,16,21000000,inversed
+gorilla,16,23000000,453,chimp,16,18000000,inversed
+gorilla,16,23000000,444,human,16,17000000,inversed
+chimp,16,51000000,2216,human,16,49000000,same orientation
+chimp,16,51000000,2133,gorilla,16,53000000,same orientation
+gorilla,16,40000000,1918,human,16,34500000,inversed
+gorilla,16,40000000,1818,chimp,16,37000000,inversed
+human,16,32000000,1400,chimp,16,43000000,inversed
+human,16,32000000,337,gorilla,16,33500000,inversed
+human,16,32000000,294,chimp,16,31000000,inversed
+chimp,16,66000000,1148,gorilla,16,68000000,same orientation
+chimp,16,66500000,1918,human,16,68000000,inversed
+gorilla,16,77000000,1622,human,16,72000000,same orientation
+gorilla,16,77000000,1538,chimp,16,74500000,same orientation
+human,16,46500000,1909,gorilla,16,50500000,same orientation
+human,16,46500000,1739,chimp,16,48000000,same orientation
+human,16,71500000,1685,chimp,16,73500000,same orientation
+human,16,71500000,1531,gorilla,16,76000000,same orientation
+gorilla,16,60500000,1679,human,16,56500000,inversed
+gorilla,16,60500000,1504,chimp,16,62000000,inversed
+chimp,16,80000000,639,gorilla,16,19000000,inversed
+chimp,16,9000000,1875,human,16,8500000,same orientation
+chimp,16,9000000,1330,gorilla,16,8500000,same orientation
+chimp,16,28000000,1069,gorilla,16,29000000,inversed
+gorilla,16,15000000,1406,human,16,14000000,same orientation
+gorilla,16,15000000,1371,chimp,16,14500000,same orientation
+human,16,24500000,1645,gorilla,16,27000000,same orientation
+human,16,59000000,1983,gorilla,16,63500000,same orientation
+gorilla,16,68500000,1889,chimp,16,66000000,same orientation
+gorilla,16,22000000,1257,chimp,16,21000000,same orientation
+gorilla,16,22000000,545,chimp,16,18000000,same orientation
+gorilla,16,22000000,517,human,16,17000000,same orientation
+gorilla,16,22000000,411,human,16,55500000,same orientation
+gorilla,16,22000000,355,chimp,16,80500000,same orientation
+gorilla,16,22000000,335,human,16,14500000,same orientation
+human,16,13500000,1937,gorilla,16,14000000,same orientation
+human,16,13500000,1839,chimp,16,13500000,same orientation
+chimp,16,25000000,1878,gorilla,16,26000000,inversed
+chimp,16,25000000,1195,human,16,23000000,inversed
+chimp,16,25000000,950,human,16,23500000,inversed
+chimp,16,76500000,1480,human,16,26500000,inversed
+chimp,16,18000000,1874,gorilla,16,18500000,same orientation
+chimp,16,65500000,2149,gorilla,16,67500000,same orientation
+gorilla,16,50000000,370,human,16,45500000,inversed
+gorilla,16,50000000,341,chimp,16,47500000,inversed
+chimp,16,52500000,1765,human,16,50500000,same orientation
+chimp,16,52500000,1738,gorilla,16,54500000,same orientation
+human,16,22000000,2359,chimp,16,26500000,inversed
+human,16,41000000,2220,chimp,16,32500000,inversed
+gorilla,16,33000000,743,human,16,29500000,inversed
+chimp,16,35000000,2191,human,16,38500000,inversed
+chimp,16,35000000,1595,gorilla,16,42000000,inversed
+chimp,16,35000000,400,gorilla,16,42500000,inversed
+human,16,10000000,1897,chimp,16,10000000,same orientation
+human,16,10000000,1684,gorilla,16,10000000,same orientation
+gorilla,16,21500000,1473,human,16,19000000,same orientation
+gorilla,16,21500000,1353,chimp,16,20500000,same orientation
+human,16,27000000,1809,chimp,16,27500000,same orientation
+gorilla,16,16500000,1243,human,16,15000000,same orientation
+gorilla,16,16500000,599,chimp,16,15500000,same orientation
+gorilla,16,16500000,469,chimp,16,15000000,same orientation
+chimp,16,56000000,334,gorilla,16,58000000,inversed
+gorilla,16,9500000,1609,human,16,9000000,same orientation
+gorilla,16,9500000,1098,chimp,16,9500000,same orientation
+gorilla,16,9500000,508,chimp,16,9000000,same orientation
+gorilla,16,70500000,1881,human,16,66500000,inversed
+chimp,16,38000000,1970,gorilla,16,39000000,inversed
+gorilla,16,1000000,2030,human,16,1500000,inversed
+gorilla,16,1000000,332,chimp,16,1000000,inversed
+human,16,61500000,1800,gorilla,16,75500000,inversed
+human,16,72000000,1464,chimp,16,74000000,same orientation
+human,16,72000000,1405,gorilla,16,76500000,same orientation
+human,16,72000000,262,chimp,16,31500000,same orientation
+gorilla,16,43500000,2151,human,16,39500000,same orientation
+human,16,38500000,1940,gorilla,16,42000000,same orientation
+human,16,45000000,1976,chimp,16,46500000,same orientation
+human,16,45000000,1920,gorilla,16,49000000,same orientation
+chimp,16,66000000,1961,human,16,68500000,inversed
+gorilla,16,18000000,1668,chimp,16,17000000,same orientation
+human,16,29500000,969,gorilla,16,32500000,same orientation
+human,16,29500000,301,gorilla,16,34000000,same orientation
+human,16,54000000,1777,gorilla,16,58000000,same orientation
+human,16,54000000,1067,chimp,16,56000000,same orientation
+human,16,54000000,773,chimp,16,55500000,same orientation
+gorilla,16,65500000,1704,human,16,60500000,same orientation
+gorilla,16,65500000,1642,chimp,16,63000000,same orientation
+human,16,63000000,1822,chimp,16,71500000,same orientation
+gorilla,16,52500000,1865,human,16,48000000,same orientation
+gorilla,16,52500000,1835,chimp,16,50000000,same orientation
+chimp,16,3000000,1626,gorilla,16,12000000,inversed
+chimp,16,3000000,1267,human,16,11500000,inversed
+chimp,16,3000000,749,gorilla,16,30000000,inversed
+chimp,16,3000000,399,human,16,55500000,inversed
+chimp,16,3000000,378,gorilla,16,29000000,inversed
+chimp,16,3000000,314,gorilla,16,19000000,inversed
+chimp,16,3000000,297,gorilla,16,30500000,inversed
+chimp,16,3000000,280,gorilla,16,22000000,inversed
+human,16,36000000,1881,chimp,16,38500000,same orientation
+gorilla,16,23500000,2016,chimp,16,27500000,inversed
+gorilla,16,23500000,1996,human,16,21000000,inversed
+human,16,32500000,2119,gorilla,16,37000000,inversed
+chimp,16,4000000,1827,human,16,3500000,same orientation
+chimp,16,4000000,1683,gorilla,16,3500000,same orientation
+gorilla,16,40500000,2013,chimp,16,36500000,inversed
+gorilla,16,40500000,1945,human,16,34000000,inversed
+gorilla,16,7000000,1430,human,16,6500000,same orientation
+gorilla,16,7000000,1423,chimp,16,7000000,same orientation
+chimp,16,43500000,2078,human,16,41500000,same orientation
+chimp,16,43500000,1733,gorilla,16,45500000,same orientation
+chimp,16,25500000,1890,human,16,23000000,inversed
+chimp,16,25500000,1662,gorilla,16,25500000,inversed
+chimp,16,74500000,1337,human,16,72000000,same orientation
+chimp,16,74500000,956,gorilla,16,76500000,same orientation
+human,16,71000000,1955,chimp,16,63500000,inversed
+human,16,71000000,1762,gorilla,16,66000000,inversed
+human,16,71000000,376,gorilla,16,81000000,inversed
+chimp,16,28500000,919,gorilla,16,29500000,inversed
+chimp,16,28500000,530,human,16,27000000,inversed
+chimp,16,21500000,2079,gorilla,16,22500000,same orientation
+chimp,16,80500000,422,human,16,30000000,inversed
+chimp,16,7500000,1400,human,16,7000000,same orientation
+chimp,16,7500000,1029,gorilla,16,7000000,same orientation
+chimp,16,7500000,268,gorilla,16,7500000,same orientation
+gorilla,16,4500000,1333,chimp,16,4500000,same orientation
+gorilla,16,4500000,1261,human,16,4000000,same orientation
+chimp,16,18000000,1849,human,16,15500000,inversed
+chimp,16,18000000,390,human,16,16000000,inversed
+human,16,22500000,1972,chimp,16,26000000,inversed
+gorilla,16,33000000,686,chimp,16,80000000,same orientation
+gorilla,16,33000000,306,human,16,29500000,same orientation
+human,16,35500000,2144,chimp,16,38000000,same orientation
+human,16,48000000,1884,chimp,16,49500000,same orientation
+human,16,48000000,1808,gorilla,16,52000000,same orientation
+human,16,41500000,1152,chimp,16,32000000,inversed
+human,16,41500000,332,chimp,16,31500000,inversed
+human,16,41500000,330,gorilla,16,37000000,inversed
+human,16,41500000,329,chimp,16,40500000,inversed
+human,16,41500000,319,chimp,16,46500000,inversed
+gorilla,16,79500000,1384,chimp,16,77000000,same orientation
+gorilla,16,79500000,1228,human,16,74500000,same orientation
+gorilla,16,51000000,1968,human,16,46500000,same orientation
+gorilla,16,51000000,1965,chimp,16,48500000,same orientation
+human,16,60500000,1878,chimp,16,62500000,same orientation
+human,16,60500000,1799,gorilla,16,65000000,same orientation
+human,16,0,1449,gorilla,16,2500000,inversed
+gorilla,16,66000000,1824,chimp,16,63500000,same orientation
+human,16,57500000,1663,gorilla,16,61500000,same orientation
+chimp,16,15000000,1817,human,16,14500000,same orientation
+chimp,16,15000000,1765,gorilla,16,15000000,same orientation
+chimp,16,38500000,2115,gorilla,16,38500000,inversed
+gorilla,16,1500000,1684,human,16,1000000,inversed
+gorilla,16,1500000,1661,chimp,16,2000000,inversed
+chimp,16,68500000,2130,gorilla,16,70500000,same orientation
+gorilla,16,70000000,1955,human,16,67000000,inversed
+chimp,16,22000000,417,human,16,19500000,same orientation
+chimp,16,77000000,715,human,16,74000000,same orientation
+chimp,16,77000000,682,gorilla,16,79000000,same orientation
+chimp,16,40000000,1755,human,16,32000000,same orientation
+chimp,16,35500000,2240,human,16,38000000,inversed
+chimp,16,35500000,1557,gorilla,16,41500000,inversed
+chimp,16,35500000,528,gorilla,16,42000000,inversed
+human,16,3500000,1644,chimp,16,3500000,same orientation
+human,16,3500000,1173,gorilla,16,3500000,same orientation
+human,16,19000000,1622,chimp,16,20000000,inversed
+human,16,19000000,1295,gorilla,16,21000000,inversed
+chimp,16,23500000,1916,human,16,24500000,inversed
+chimp,16,23500000,1757,gorilla,16,27500000,inversed
+chimp,16,12000000,1717,human,16,11500000,same orientation
+chimp,16,12000000,843,gorilla,16,12000000,same orientation
+chimp,16,12000000,648,gorilla,16,11500000,same orientation
+chimp,16,40500000,2401,gorilla,16,36500000,inversed
+chimp,16,25000000,844,gorilla,16,26000000,same orientation
+chimp,16,58500000,1873,human,16,59000000,same orientation
+chimp,16,58500000,306,human,16,59500000,same orientation
+gorilla,16,66000000,2026,human,16,71000000,inversed
+human,16,4500000,1869,chimp,16,4500000,same orientation
+human,16,4500000,1359,gorilla,16,4500000,same orientation
+chimp,16,70000000,1734,human,16,61000000,same orientation
+chimp,16,47000000,2051,human,16,45000000,same orientation
+chimp,16,47000000,1701,gorilla,16,49000000,same orientation
+human,16,39500000,2487,chimp,16,34000000,inversed
+gorilla,16,34000000,337,human,16,30000000,same orientation
+gorilla,16,49500000,1249,human,16,45000000,same orientation
+gorilla,16,49500000,1180,chimp,16,47000000,same orientation
+gorilla,16,49500000,795,human,16,30500000,same orientation
+gorilla,16,49500000,778,human,16,31500000,same orientation
+gorilla,16,49500000,725,chimp,16,42500000,same orientation
+gorilla,16,49500000,708,human,16,44500000,same orientation
+gorilla,16,49500000,682,human,16,32500000,same orientation
+human,16,32500000,2279,chimp,16,40000000,same orientation
+gorilla,16,3500000,1534,human,16,3000000,same orientation
+gorilla,16,3500000,1401,chimp,16,3500000,same orientation
+gorilla,16,80500000,1326,human,16,75000000,inversed
+gorilla,16,80500000,1319,chimp,16,78000000,inversed
+gorilla,16,28500000,2015,chimp,16,22500000,inversed
+chimp,16,60000000,2296,human,16,58000000,inversed
+chimp,16,60000000,2094,gorilla,16,62500000,inversed
+gorilla,16,56000000,1850,human,16,51500000,same orientation
+gorilla,16,56000000,1767,chimp,16,53500000,same orientation
+gorilla,16,46500000,340,human,16,42500000,inversed
+gorilla,16,46500000,332,chimp,16,44000000,inversed
+human,16,34500000,1894,gorilla,16,40000000,inversed
+human,16,50500000,1873,chimp,16,52000000,same orientation
+human,16,50500000,1802,gorilla,16,54500000,same orientation
+human,16,57500000,2142,chimp,16,60500000,inversed
+gorilla,16,25500000,2064,chimp,16,25500000,inversed
+chimp,16,39000000,2270,human,16,36000000,same orientation
+human,16,67000000,1936,chimp,16,67500000,inversed
+human,16,67000000,1652,gorilla,16,70000000,inversed
+chimp,16,44500000,1906,human,16,42500000,same orientation
+chimp,16,44500000,1733,gorilla,16,46500000,same orientation
+chimp,16,73500000,1979,human,16,64500000,same orientation
+gorilla,16,76000000,1835,human,16,61000000,inversed
+gorilla,16,76000000,1721,chimp,16,70000000,inversed
+human,16,7000000,1456,chimp,16,7000000,same orientation
+human,16,7000000,1120,gorilla,16,7000000,same orientation
+gorilla,16,18000000,1905,human,16,16500000,inversed
+chimp,16,11500000,1829,human,16,11000000,same orientation
+chimp,16,11500000,1104,gorilla,16,11000000,same orientation
+chimp,16,11500000,555,gorilla,16,11500000,same orientation
+chimp,16,33500000,2225,human,16,40000000,inversed
+chimp,16,33500000,1777,gorilla,16,44000000,inversed
+gorilla,16,35500000,2239,human,16,31000000,inversed
+gorilla,16,56500000,268,human,16,52000000,inversed
+gorilla,16,56500000,264,chimp,16,54000000,inversed
+human,16,53000000,1740,chimp,16,54500000,same orientation
+human,16,53000000,1645,gorilla,16,57000000,same orientation
+gorilla,16,62500000,2103,human,16,58000000,same orientation
+gorilla,16,28000000,1796,human,16,25000000,same orientation
+human,16,19500000,1774,chimp,16,20500000,same orientation
+human,16,19500000,1408,gorilla,16,21500000,same orientation
+human,16,64000000,1914,chimp,16,72500000,same orientation
+gorilla,16,55500000,1836,chimp,16,53000000,same orientation
+gorilla,16,55500000,1811,human,16,51000000,same orientation
+human,16,24500000,1428,chimp,16,23500000,inversed
+human,16,24500000,405,chimp,16,24000000,inversed
+gorilla,16,38500000,1998,human,16,36000000,inversed
+gorilla,16,38500000,1943,chimp,16,38500000,inversed
+human,16,1500000,1727,gorilla,16,1000000,inversed
+chimp,16,3000000,914,gorilla,16,29500000,same orientation
+chimp,16,3000000,668,gorilla,16,15000000,same orientation
+chimp,16,3000000,438,gorilla,16,17000000,same orientation
+chimp,16,3000000,426,human,16,14500000,same orientation
+chimp,16,70000000,1784,gorilla,16,76000000,inversed
+human,16,29500000,978,gorilla,16,34000000,inversed
+human,16,29500000,294,chimp,16,31000000,inversed
+gorilla,16,37500000,318,chimp,16,40000000,same orientation
+gorilla,16,26500000,1887,human,16,23500000,same orientation
+gorilla,16,66500000,2104,human,16,70500000,inversed
+gorilla,16,11500000,1687,human,16,11000000,same orientation
+gorilla,16,11500000,1674,chimp,16,11500000,same orientation
+gorilla,16,39000000,1209,human,16,35500000,same orientation
+gorilla,16,39000000,1170,chimp,16,38000000,same orientation
+human,16,75000000,1683,chimp,16,78000000,same orientation
+gorilla,16,44500000,1774,human,16,40500000,same orientation
+human,16,42000000,2236,chimp,16,43500000,same orientation
+human,16,42000000,1962,gorilla,16,45500000,same orientation
+chimp,16,23000000,2054,human,16,25000000,inversed
+chimp,16,23000000,1983,gorilla,16,28000000,inversed
+chimp,16,40000000,1335,gorilla,16,37000000,inversed
+human,16,34000000,2201,gorilla,16,40500000,inversed
+human,16,9500000,2044,chimp,16,9500000,same orientation
+human,16,9500000,1948,gorilla,16,9500000,same orientation
+human,16,9500000,417,gorilla,16,81000000,same orientation
+gorilla,16,25000000,1885,chimp,16,26000000,inversed
+chimp,16,37500000,2133,human,16,34500000,same orientation
+human,16,57000000,2294,chimp,16,61000000,inversed
+human,16,39000000,1952,chimp,16,34500000,inversed
+chimp,16,62500000,1386,human,16,60000000,same orientation
+chimp,16,62500000,1267,gorilla,16,64500000,same orientation
+chimp,16,60500000,731,human,16,57500000,inversed
+chimp,16,60500000,643,gorilla,16,62000000,inversed
+chimp,16,28000000,932,human,16,26500000,same orientation
+chimp,16,28000000,407,human,16,26000000,same orientation
+chimp,16,28000000,404,gorilla,16,29500000,same orientation
+gorilla,16,28000000,1827,chimp,16,23000000,inversed
+chimp,16,55500000,1877,human,16,53500000,same orientation
+chimp,16,55500000,1805,gorilla,16,57500000,same orientation
+gorilla,16,80000000,1909,human,16,75500000,inversed
+gorilla,16,80000000,1771,chimp,16,77500000,inversed
+gorilla,16,18500000,2017,human,16,16000000,inversed
+gorilla,16,70000000,1784,chimp,16,67500000,same orientation
+human,16,41500000,1215,gorilla,16,45000000,same orientation
+human,16,41500000,398,chimp,16,31500000,same orientation
+human,16,41500000,371,chimp,16,40000000,same orientation
+human,16,41500000,358,gorilla,16,55500000,same orientation
+human,16,41500000,330,chimp,16,41500000,same orientation
+chimp,16,33000000,2064,human,16,40500000,inversed
+chimp,16,33000000,1839,gorilla,16,44500000,inversed
+gorilla,16,47000000,1819,human,16,43000000,same orientation
+gorilla,16,47000000,1771,chimp,16,44500000,same orientation
+gorilla,16,15500000,352,human,16,14500000,inversed
+human,16,67500000,1789,gorilla,16,69500000,inversed
+human,16,67500000,1766,chimp,16,67000000,inversed
+gorilla,16,12000000,1289,chimp,16,12000000,same orientation
+gorilla,16,12000000,1188,human,16,11500000,same orientation
+human,16,23500000,1900,gorilla,16,26000000,same orientation
+gorilla,16,25000000,1729,human,16,22000000,same orientation
+human,16,14500000,1977,chimp,16,14500000,same orientation
+human,16,14500000,1918,gorilla,16,15000000,same orientation
+gorilla,16,58500000,1751,chimp,16,56000000,same orientation
+gorilla,16,58500000,1721,human,16,54000000,same orientation
+human,16,1000000,1744,gorilla,16,1500000,inversed
+chimp,16,70500000,1726,gorilla,16,75500000,inversed
+chimp,16,56000000,1853,human,16,54000000,same orientation
+chimp,16,56000000,1820,gorilla,16,58000000,same orientation
+gorilla,16,38000000,1527,human,16,36500000,inversed
+gorilla,16,38000000,1522,chimp,16,39000000,inversed
+gorilla,16,35000000,1659,human,16,31500000,inversed
+chimp,16,49500000,2196,human,16,47500000,same orientation
+chimp,16,49500000,1694,gorilla,16,51500000,same orientation
+human,16,24000000,1559,chimp,16,24000000,inversed
+human,16,24000000,635,chimp,16,24500000,inversed
+human,16,64500000,1789,gorilla,16,72500000,inversed
+gorilla,16,16500000,404,chimp,16,16000000,inversed
+chimp,16,78000000,535,human,16,75000000,same orientation
+chimp,16,78000000,363,gorilla,16,79500000,same orientation
+gorilla,16,75500000,1928,chimp,16,70500000,inversed
+gorilla,16,75500000,1760,human,16,61500000,inversed
+chimp,16,50500000,2059,gorilla,16,52500000,same orientation
+chimp,16,50500000,2042,human,16,48500000,same orientation
+chimp,16,67500000,1768,gorilla,16,69500000,same orientation
+human,16,69500000,2021,chimp,16,65000000,inversed
+human,16,69500000,1646,gorilla,16,67500000,inversed
+gorilla,16,78500000,586,human,16,27500000,inversed
+gorilla,16,78500000,337,human,16,19500000,inversed
+gorilla,16,36000000,1678,human,16,33500000,inversed
+gorilla,16,36000000,1264,chimp,16,41000000,inversed
+gorilla,16,36000000,680,chimp,16,43000000,inversed
+gorilla,16,36000000,282,chimp,16,31000000,inversed
+gorilla,16,69000000,1566,chimp,16,66500000,same orientation
+human,16,58500000,1606,gorilla,16,63000000,same orientation
+human,16,25000000,1641,gorilla,16,27500000,same orientation
+gorilla,16,14500000,1750,human,16,13500000,same orientation
+gorilla,16,14500000,1748,chimp,16,14000000,same orientation
+human,16,12000000,1813,chimp,16,12000000,same orientation
+human,16,12000000,1722,gorilla,16,12000000,same orientation
+human,16,27000000,1868,gorilla,16,29500000,inversed
+chimp,16,8500000,1720,human,16,8000000,same orientation
+chimp,16,8500000,1048,gorilla,16,8000000,same orientation
+chimp,16,8500000,482,gorilla,16,8500000,same orientation
+human,16,2000000,1903,gorilla,16,500000,inversed
+human,16,2000000,1045,chimp,16,500000,inversed
+chimp,16,73500000,1942,gorilla,16,72500000,inversed
+human,16,47000000,2203,chimp,16,48500000,same orientation
+human,16,47000000,2031,gorilla,16,51000000,same orientation
+gorilla,16,76500000,1696,human,16,71500000,same orientation
+gorilla,16,76500000,1604,chimp,16,74000000,same orientation
+gorilla,16,58000000,531,chimp,16,55500000,inversed
+gorilla,16,58000000,301,human,16,53500000,inversed
+gorilla,16,41500000,1818,human,16,37500000,same orientation
+chimp,16,20000000,1077,human,16,19000000,inversed
+chimp,16,20000000,924,gorilla,16,21000000,inversed
+gorilla,16,68500000,2088,human,16,68500000,inversed
+chimp,16,64000000,1550,gorilla,16,66000000,same orientation
+chimp,16,19500000,1867,human,16,18000000,same orientation
+chimp,16,19500000,1708,gorilla,16,20500000,same orientation
+chimp,16,43000000,1559,human,16,30500000,inversed
+chimp,16,43000000,1490,human,16,32000000,inversed
+chimp,16,43000000,1096,human,16,31500000,inversed
+chimp,16,43000000,433,gorilla,16,33000000,inversed
+chimp,16,43000000,305,gorilla,16,36000000,inversed
+chimp,16,43000000,252,human,16,29500000,inversed
+chimp,16,53000000,2091,human,16,51000000,same orientation
+chimp,16,53000000,1799,gorilla,16,55000000,same orientation
+human,16,17500000,1629,chimp,16,79000000,inversed
+chimp,16,31000000,266,human,16,30000000,same orientation
+gorilla,16,42000000,2234,human,16,38000000,same orientation
+human,16,73500000,1407,chimp,16,76000000,same orientation
+human,16,73500000,1307,gorilla,16,78000000,same orientation
+human,16,44500000,1613,chimp,16,46000000,same orientation
+human,16,44500000,1260,gorilla,16,48500000,same orientation
+human,16,39000000,1657,gorilla,16,42500000,same orientation
+gorilla,16,8000000,1588,human,16,7500000,same orientation
+gorilla,16,8000000,1572,chimp,16,8000000,same orientation
+chimp,16,63500000,1740,human,16,71000000,inversed
+human,16,59000000,2281,chimp,16,59000000,inversed
+gorilla,16,20000000,1512,human,16,17500000,same orientation
+gorilla,16,20000000,1171,chimp,16,19000000,same orientation
+gorilla,16,20000000,474,chimp,16,18500000,same orientation
+human,16,11500000,1647,chimp,16,11500000,same orientation
+human,16,11500000,1419,gorilla,16,11500000,same orientation
+gorilla,16,45000000,2129,chimp,16,32500000,inversed
+human,16,37000000,2177,gorilla,16,37500000,inversed
+gorilla,16,17000000,889,human,16,14500000,same orientation
+gorilla,16,17000000,754,chimp,16,3000000,same orientation
+gorilla,16,17000000,353,chimp,16,80000000,same orientation
+gorilla,16,17000000,302,human,16,500000,same orientation
+human,16,26500000,1092,chimp,16,28000000,same orientation
+human,16,26500000,271,gorilla,16,15500000,same orientation
+gorilla,16,26000000,2041,chimp,16,25000000,inversed
+human,16,69000000,2037,chimp,16,65500000,inversed
+human,16,69000000,1704,gorilla,16,68000000,inversed
+gorilla,16,6500000,1699,chimp,16,6500000,same orientation
+gorilla,16,6500000,1659,human,16,6000000,same orientation
+chimp,16,5500000,1574,human,16,5000000,same orientation
+chimp,16,5500000,284,gorilla,16,5000000,same orientation
+human,16,37500000,1669,gorilla,16,41000000,same orientation
+gorilla,16,78000000,397,chimp,16,47000000,inversed
+gorilla,16,78000000,367,human,16,45500000,inversed
+gorilla,16,31000000,1171,chimp,16,29000000,same orientation
+gorilla,16,31000000,1122,human,16,27500000,same orientation
+gorilla,16,31000000,459,chimp,16,21000000,same orientation
+chimp,16,30500000,2208,human,16,29000000,inversed
+chimp,16,30500000,2142,gorilla,16,32000000,inversed
+gorilla,16,16000000,1651,chimp,16,16000000,inversed
+human,16,64000000,2101,gorilla,16,73000000,inversed
+human,16,55500000,1822,chimp,16,57500000,same orientation
+human,16,55500000,1537,gorilla,16,59500000,same orientation
+human,16,28000000,1757,chimp,16,29000000,same orientation
+human,16,28000000,1044,gorilla,16,31000000,same orientation
+gorilla,16,19500000,1320,chimp,16,18500000,same orientation
+gorilla,16,19500000,867,human,16,17500000,same orientation
+gorilla,16,19500000,452,human,16,17000000,same orientation
+gorilla,16,19500000,273,chimp,16,79000000,same orientation
+gorilla,16,500000,983,chimp,16,0,same orientation
+gorilla,16,53000000,2145,human,16,48500000,same orientation
+gorilla,16,53000000,2033,chimp,16,50500000,same orientation
+human,16,62500000,1699,chimp,16,71000000,same orientation
+gorilla,16,75000000,1547,chimp,16,71000000,inversed
+gorilla,16,75000000,1513,human,16,62000000,inversed
+human,16,2500000,1454,gorilla,16,0,inversed
+human,16,2500000,264,chimp,16,0,inversed
+chimp,16,20000000,1505,human,16,18500000,same orientation
+chimp,16,20000000,664,gorilla,16,21000000,same orientation
+chimp,16,73000000,1081,gorilla,16,73000000,inversed
+chimp,16,73000000,651,gorilla,16,72500000,inversed
+chimp,16,17000000,1628,gorilla,16,17500000,same orientation
+chimp,16,42000000,1051,gorilla,16,35000000,same orientation
+gorilla,16,36500000,1781,chimp,16,41000000,inversed
+gorilla,16,36500000,1699,human,16,33000000,inversed
+chimp,16,75000000,1661,human,16,72500000,same orientation
+chimp,16,75000000,1461,gorilla,16,77000000,same orientation
+human,16,27500000,1884,gorilla,16,30500000,inversed
+human,16,1500000,1682,chimp,16,1000000,same orientation
+human,16,17000000,2121,chimp,16,16500000,inversed
+human,16,17000000,1864,gorilla,16,17500000,inversed
+human,16,61000000,2103,chimp,16,63000000,same orientation
+human,16,61000000,1927,gorilla,16,65500000,same orientation
+gorilla,16,50500000,1793,chimp,16,48000000,same orientation
+gorilla,16,50500000,1754,human,16,46000000,same orientation
+human,16,56000000,676,gorilla,16,64500000,same orientation
+human,16,56000000,285,chimp,16,58000000,same orientation
+gorilla,16,67500000,1442,chimp,16,65000000,same orientation
+gorilla,16,67500000,473,human,16,69500000,same orientation
+human,16,74000000,2013,chimp,16,80000000,inversed
+gorilla,16,32500000,699,human,16,29500000,same orientation
+gorilla,16,32500000,688,human,16,29000000,same orientation
+gorilla,16,32500000,562,chimp,16,31500000,same orientation
+gorilla,16,68000000,1992,human,16,69000000,inversed
+gorilla,16,78000000,1380,chimp,16,75500000,same orientation
+gorilla,16,78000000,1362,human,16,73000000,same orientation
+human,16,49500000,2065,chimp,16,51000000,same orientation
+human,16,49500000,1894,gorilla,16,53500000,same orientation
+human,16,34000000,2178,chimp,16,36500000,same orientation
+gorilla,16,5000000,1437,chimp,16,5000000,same orientation
+gorilla,16,5000000,1349,human,16,4500000,same orientation
+chimp,16,6000000,1629,human,16,5500000,same orientation
+chimp,16,6000000,1573,gorilla,16,5500000,same orientation
+human,16,37500000,2190,chimp,16,36000000,inversed
+gorilla,16,45500000,2035,chimp,16,32000000,inversed
+human,16,2000000,1134,chimp,16,500000,same orientation
+chimp,16,76500000,1419,human,16,73500000,same orientation
+chimp,16,76500000,886,gorilla,16,30000000,same orientation
+chimp,16,76500000,620,gorilla,16,78500000,same orientation
+gorilla,16,26500000,1977,chimp,16,24500000,inversed
+chimp,16,41500000,962,gorilla,16,34500000,same orientation
+chimp,16,69000000,1813,gorilla,16,71000000,same orientation
+chimp,16,14500000,1692,human,16,14000000,same orientation
+chimp,16,14500000,1642,gorilla,16,14500000,same orientation
+human,16,59500000,1870,gorilla,16,64000000,inversed

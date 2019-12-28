@@ -19,7 +19,26 @@ def esgen(datasource, index, processing_config, idprefix, outfile, species, chro
     n = 0
     location = 0
     code = open(processing_config).readlines()
-    linemod = code[0]
+
+    def recode(codeline):
+        data = codeline.split()
+        code_segment = []
+        while len(data) >= 2:
+            if data[0] == "SPLIT":
+                split_sections = data[1].split(",")
+                for x in split_sections:
+                    code_segment.append(f"replace('{x}', '{x[0]} {x[1]}')")
+            elif data[0] == "REMOVE":
+                remove_data = data[1].split(",")
+                for x in remove_data:
+                    code_segment.append(f"replace('{x}', '')")
+            else:
+                return codeline
+            data = data[2:]
+
+        return f"line.{'.'.join(code_segment)}"
+
+    linemod = recode(code[0])
     splitmod = code[1]
     listmod = code[2]
     with open(datasource, "r") as inFile:

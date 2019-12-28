@@ -1,0 +1,6 @@
+curl -XDELETE localhost:9200/ch16_cgh_500000
+rm -rf ch16_cgh_500000_search
+rm -rf ch16_cgh_500000
+./mkdoit
+./doit
+diff ch16_cgh_500000_data.csv ch16_cgh_500000/data.csv
