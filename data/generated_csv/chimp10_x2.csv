@@ -1,4 +1,4 @@
-x,y,x2,y2,color
+x,y,x2,y2,orientation
 39,250,16,450,same orientation
 113,250,111,0,inversed
 124,250,126,450,inversed

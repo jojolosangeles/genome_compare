@@ -4,6 +4,7 @@ set -x
 #python gen_script.py --section-size 500000 --target-folder ch16_cgh_500000 --data-files 16test.txt --processing-config data/config/config.tokens.12 --search-size 10000 --target-index ch16_cgh_500000 > doit
 #python gen_script.py --section-size 500000 --target-folder ch16_cgh_500000 --data-files 16test.txt --processing-config data/config/config.tokens.12x --search-size 10000 --target-index ch16_cgh_500000 > doit
 #python gen_script.py --section-size 100000 --target-folder ch16_cgh_100000 --data-files 16test.txt --processing-config data/config/config.tokens.12x --search-size 10000 --target-index ch16_cgh_100000 > doit
-python gen_script.py --section-size 50000 --target-folder ch16_cgh_50000 --data-files 16test.txt --processing-config data/config/config.tokens.12x --search-size 10000 --target-index ch16_cgh_50000 > doit
+#python gen_script.py --section-size 50000 --target-folder ch16_cgh_50000 --data-files 16test.txt --processing-config data/config/config.tokens.12x --search-size 10000 --target-index ch16_cgh_50000 > doit
 #python gen_script.py --section-size 500000 --target-folder cgh_500000 --data-files data/files2.txt --processing-config data/config/config.tokens.12 --search-size 10000 --target-index cgh_500000 > doit
 #python gen_script.py --section-size 1000000 --target-folder cgh_1000000 --data-files data/files2.txt --processing-config data/config/config.tokens.17 --search-size 10000 --target-index cgh_1000000 > doit
+python gen_script.py --section-size 100000 --target-folder cgh_100000 --data-files data/files2.txt --processing-config data/config/config.tokens.17 --search-size 10000 --target-index cgh_100000 > doit
