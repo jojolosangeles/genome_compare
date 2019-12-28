@@ -1,32 +1,32 @@
 set -x
-mkdir -p ch16_cgh_500000
-mkdir -p ch16_cgh_500000_search
-python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr16.fa --linelen 500000 --outfile ch16_cgh_500000/chimp.16.500000 --filter "len(line) == 0 or line[0] == '>'"
-python esgen.py --datasource ch16_cgh_500000/chimp.16.500000  --chromosome 16 --species chimp --index ch16_cgh_500000 --processing-config data/config/config.tokens.12x --idprefix chimp_16 --outfile ch16_cgh_500000/chimp.16.500000.es_bulk
-python mk50.py ch16_cgh_500000/chimp.16.500000.es_bulk 200
-python mkload.py ch16_cgh_500000/chimp.16.500000.es_bulk > ch16_cgh_500000/load_chimp_16
-chmod +x ch16_cgh_500000/load_chimp_16
-./ch16_cgh_500000/load_chimp_16
-python mksearch.py ch16_cgh_500000/chimp.16.500000.processed ch16_cgh_500000_search chimp 16 500000 10000 ch16_cgh_500000 > ch16_cgh_500000/search_chimp_16
-python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr16.fa --linelen 500000 --outfile ch16_cgh_500000/human.16.500000 --filter "len(line) == 0 or line[0] == '>'"
-python esgen.py --datasource ch16_cgh_500000/human.16.500000  --chromosome 16 --species human --index ch16_cgh_500000 --processing-config data/config/config.tokens.12x --idprefix human_16 --outfile ch16_cgh_500000/human.16.500000.es_bulk
-python mk50.py ch16_cgh_500000/human.16.500000.es_bulk 200
-python mkload.py ch16_cgh_500000/human.16.500000.es_bulk > ch16_cgh_500000/load_human_16
-chmod +x ch16_cgh_500000/load_human_16
-./ch16_cgh_500000/load_human_16
-python mksearch.py ch16_cgh_500000/human.16.500000.processed ch16_cgh_500000_search human 16 500000 10000 ch16_cgh_500000 > ch16_cgh_500000/search_human_16
-python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr16.fa --linelen 500000 --outfile ch16_cgh_500000/gorilla.16.500000 --filter "len(line) == 0 or line[0] == '>'"
-python esgen.py --datasource ch16_cgh_500000/gorilla.16.500000  --chromosome 16 --species gorilla --index ch16_cgh_500000 --processing-config data/config/config.tokens.12x --idprefix gorilla_16 --outfile ch16_cgh_500000/gorilla.16.500000.es_bulk
-python mk50.py ch16_cgh_500000/gorilla.16.500000.es_bulk 200
-python mkload.py ch16_cgh_500000/gorilla.16.500000.es_bulk > ch16_cgh_500000/load_gorilla_16
-chmod +x ch16_cgh_500000/load_gorilla_16
-./ch16_cgh_500000/load_gorilla_16
-python mksearch.py ch16_cgh_500000/gorilla.16.500000.processed ch16_cgh_500000_search gorilla 16 500000 10000 ch16_cgh_500000 > ch16_cgh_500000/search_gorilla_16
-mkdir -p ch16_cgh_500000_search
-chmod +x ch16_cgh_500000/search_chimp_16
-ch16_cgh_500000/search_chimp_16
-chmod +x ch16_cgh_500000/search_human_16
-ch16_cgh_500000/search_human_16
-chmod +x ch16_cgh_500000/search_gorilla_16
-ch16_cgh_500000/search_gorilla_16
-python mkcsv.py --target-folder ch16_cgh_500000_search > ch16_cgh_500000/data.csv
+mkdir -p ch16_cgh_50000
+mkdir -p ch16_cgh_50000_search
+python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr16.fa --linelen 50000 --outfile ch16_cgh_50000/chimp.16.50000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource ch16_cgh_50000/chimp.16.50000  --chromosome 16 --species chimp --index ch16_cgh_50000 --processing-config data/config/config.tokens.12x --idprefix chimp_16 --outfile ch16_cgh_50000/chimp.16.50000.es_bulk
+python mk50.py ch16_cgh_50000/chimp.16.50000.es_bulk 2000
+python mkload.py ch16_cgh_50000/chimp.16.50000.es_bulk > ch16_cgh_50000/load_chimp_16
+chmod +x ch16_cgh_50000/load_chimp_16
+./ch16_cgh_50000/load_chimp_16
+python mksearch.py ch16_cgh_50000/chimp.16.50000.processed ch16_cgh_50000_search chimp 16 50000 10000 ch16_cgh_50000 > ch16_cgh_50000/search_chimp_16
+python line_gen.py --datasource /Users/jojo/genomes/huref/hs_alt_HuRef_chr16.fa --linelen 50000 --outfile ch16_cgh_50000/human.16.50000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource ch16_cgh_50000/human.16.50000  --chromosome 16 --species human --index ch16_cgh_50000 --processing-config data/config/config.tokens.12x --idprefix human_16 --outfile ch16_cgh_50000/human.16.50000.es_bulk
+python mk50.py ch16_cgh_50000/human.16.50000.es_bulk 2000
+python mkload.py ch16_cgh_50000/human.16.50000.es_bulk > ch16_cgh_50000/load_human_16
+chmod +x ch16_cgh_50000/load_human_16
+./ch16_cgh_50000/load_human_16
+python mksearch.py ch16_cgh_50000/human.16.50000.processed ch16_cgh_50000_search human 16 50000 10000 ch16_cgh_50000 > ch16_cgh_50000/search_human_16
+python line_gen.py --datasource /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr16.fa --linelen 50000 --outfile ch16_cgh_50000/gorilla.16.50000 --filter "len(line) == 0 or line[0] == '>'"
+python esgen.py --datasource ch16_cgh_50000/gorilla.16.50000  --chromosome 16 --species gorilla --index ch16_cgh_50000 --processing-config data/config/config.tokens.12x --idprefix gorilla_16 --outfile ch16_cgh_50000/gorilla.16.50000.es_bulk
+python mk50.py ch16_cgh_50000/gorilla.16.50000.es_bulk 2000
+python mkload.py ch16_cgh_50000/gorilla.16.50000.es_bulk > ch16_cgh_50000/load_gorilla_16
+chmod +x ch16_cgh_50000/load_gorilla_16
+./ch16_cgh_50000/load_gorilla_16
+python mksearch.py ch16_cgh_50000/gorilla.16.50000.processed ch16_cgh_50000_search gorilla 16 50000 10000 ch16_cgh_50000 > ch16_cgh_50000/search_gorilla_16
+mkdir -p ch16_cgh_50000_search
+chmod +x ch16_cgh_50000/search_chimp_16
+ch16_cgh_50000/search_chimp_16
+chmod +x ch16_cgh_50000/search_human_16
+ch16_cgh_50000/search_human_16
+chmod +x ch16_cgh_50000/search_gorilla_16
+ch16_cgh_50000/search_gorilla_16
+python mkcsv.py --target-folder ch16_cgh_50000_search > ch16_cgh_50000/data.csv

@@ -1,4 +1,4 @@
-sp,chr,loc,score,msp,mchr,mloc
+sp,chr,loc,score,msp,mchr,mloc,color
 human,16,47500000,1947,chimp,16,49000000,same orientation
 human,16,47500000,1829,gorilla,16,51500000,same orientation
 chimp,16,42000000,364,gorilla,16,32500000,inversed

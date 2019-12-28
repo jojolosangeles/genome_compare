@@ -1,6 +1,6 @@
-SPLIT CG,GC,AT,TA REMOVE N 
+SPLIT CG,GC,AT,TA REMOVE N
 line.split()
-[val for val in data if len(val) > 11]
+TOKENS >11
 
 The lines are ordered:
 

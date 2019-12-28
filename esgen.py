@@ -38,9 +38,16 @@ def esgen(datasource, index, processing_config, idprefix, outfile, species, chro
 
         return f"line.{'.'.join(code_segment)}"
 
+    def token_recode(codeline):
+        data = codeline.split()
+        if data[0] == "TOKENS":
+            return f"[val for val in data if len(val) {data[1]}]"
+        else:
+            return codeline
+
     linemod = recode(code[0])
     splitmod = code[1]
-    listmod = code[2]
+    listmod = token_recode(code[2])
     with open(datasource, "r") as inFile:
         with open(outfile, "w") as outFile:
             with open(f"{outfile.replace('es_bulk', 'processed')}", "w") as processedLines:

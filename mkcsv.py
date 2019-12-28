@@ -10,7 +10,7 @@ def gen_data(target_folder):
     files = [x for x in filter(lambda x: x.endswith('.json'), os.listdir(target_folder))]
     MIN_SCORE = 250
 
-    print("sp,chr,loc,score,msp,mchr,mloc")
+    print("sp,chr,loc,score,msp,mchr,mloc,orientation")
 
     def show_hit(species, chromosome, location, score, match_species, match_chromosome,
                  match_location, reversed):
