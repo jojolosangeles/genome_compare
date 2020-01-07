@@ -1,6 +1,7 @@
-curl -XDELETE localhost:9200/ch16_cgh_500000
+curl -XDELETE localhost:9200/ch16_cgh_100000
 rm -rf ch16_cgh_500000_search
 rm -rf ch16_cgh_500000
-./mkdoit
+#python gen_script.py --section-size 100000 --target-folder ch16_cgh_100000 --data-files 16test.txt --processing-config data/config/config.tokens.12x --search-size 10000 --target-index ch16_cgh_100000 > doit
+python gen_script.py --section-size 100000 --target-folder ch16_cgh_100000 --data-files 16test.txt --processing-config data/config/config.tokens.am1 --search-size 10000 --target-index ch16_cgh_100000 > doit
 ./doit
 diff ch16_cgh_500000_data.csv ch16_cgh_500000/data.csv

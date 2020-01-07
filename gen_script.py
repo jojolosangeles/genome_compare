@@ -29,18 +29,29 @@ import os
 #   print(MK50.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
 
 def gen_script(section_size, target_folder, data_files, processing_config, search_size, target_index):
-    ES_GEN = f"python esgen.py --datasource {target_folder}/SPECIES.CHROMOSOME.{section_size}  --chromosome CHROMOSOME --species SPECIES --index {target_index} --processing-config {processing_config} --idprefix SPECIES_CHROMOSOME --outfile {target_folder}/SPECIES.CHROMOSOME.{section_size}.es_bulk"
+    ES_GEN = f"python esgen.py --datasource {target_folder}/SPECIES.CHROMOSOME.{section_size}  --chromosome CHROMOSOME --species SPECIES --index {target_index} --processing-config {processing_config} --idprefix SPECIES_CHROMOSOME --outfile {target_folder}/SPECIES.CHROMOSOME.{section_size}.processed"
     number_lines = int(50000000/section_size)*2  # approximate
-    MK50 = f"python mk50.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.es_bulk {number_lines}"
-    MKLOAD = f"python mkload.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.es_bulk > {target_folder}/load_SPECIES_CHROMOSOME"
+    #MK50 = f"python mk50.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.es_bulk {number_lines}"
+    #MKLOAD = f"python mkload.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.es_bulk > {target_folder}/load_SPECIES_CHROMOSOME"
     MKSEARCH = f"python mksearch.py {target_folder}/SPECIES.CHROMOSOME.{section_size}.processed {target_folder}_search SPECIES CHROMOSOME {section_size} {search_size} {target_index} > {target_folder}/search_SPECIES_CHROMOSOME"
-
+    LOGSTASH_FILE = "./logstash_to_es.conf"
+    MKLOGSTASH = f"sed -e \"s/__ELASTICSEARCH_INDEX__/{target_index}/\" data/config/logstash_to_es.conf.template > {LOGSTASH_FILE}"
     # make it visible
     print("set -x")
 
     # make sure target folder exists
+    print(f"rm -rf {target_folder}")
+    print(f"rm -rf {target_folder}_search")
+    print(f"curl -XDELETE localhost:9200/{target_index}")
     print(f"mkdir -p {target_folder}")
     print(f"mkdir -p {target_folder}_search")
+
+    # start logstash for loading data into ES
+    print("kill `ps aux | grep -F 'logstash' | grep -v -F 'grep' | awk '{ print $2 }'`")
+    print(MKLOGSTASH)
+    print(f"logstash -f {LOGSTASH_FILE} &")
+    print("sleep 5")
+    print("ps -ef | grep logstash")
 
     # get the list of files to process
     lines = open(data_files, "r").readlines()
@@ -51,10 +62,10 @@ def gen_script(section_size, target_folder, data_files, processing_config, searc
         target_file = f"{target_folder}/{species}.{chromosome}.{section_size}"
         print(f"python line_gen.py --datasource {filepath} --linelen {section_size} --outfile {target_file} --filter \"len(line) == 0 or line[0] == '>'\"")
         print(ES_GEN.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
-        print(MK50.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
-        print(MKLOAD.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
-        print(f"chmod +x {target_folder}/load_{species}_{chromosome}")
-        print(f"./{target_folder}/load_{species}_{chromosome}")
+        #print(MK50.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
+        #print(MKLOAD.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
+        #print(f"chmod +x {target_folder}/load_{species}_{chromosome}")
+        #print(f"./{target_folder}/load_{species}_{chromosome}")
         print(MKSEARCH.replace("SPECIES", species).replace("CHROMOSOME", chromosome))
 
     comp_dict = { 'A':'T', 'C':'G', 'G':'C', 'T':'A'}

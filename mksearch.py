@@ -22,7 +22,6 @@ def comp(val):
     else:
         return val
 
-
 def revcomp(s):
     l = [comp(v) for v in reversed(s)]
     return "".join(l)

@@ -1,4 +1,6 @@
 import click
+from Bio.Seq import Seq
+from Bio.Alphabet import generic_dna
 
 #
 #  Generate bulk load file format
@@ -32,6 +34,9 @@ def esgen(datasource, index, processing_config, idprefix, outfile, species, chro
                 remove_data = data[1].split(",")
                 for x in remove_data:
                     code_segment.append(f"replace('{x}', '')")
+            elif data[0] == "CODE":
+                offset = int(data[1])
+                code_segment.append(f"dcode({offset})")
             else:
                 return codeline
             data = data[2:]
@@ -45,31 +50,34 @@ def esgen(datasource, index, processing_config, idprefix, outfile, species, chro
         else:
             return codeline
 
+
+    class decodeable(str):
+        def __init__(self, s):
+            self.s = s
+
+        def dcode(self, offset):
+            coding_dna = Seq(self.s[offset:], generic_dna)
+            s = coding_dna.translate()
+            return ''.join(list(s))
+
     linemod = recode(code[0])
     splitmod = code[1]
     listmod = token_recode(code[2])
     with open(datasource, "r") as inFile:
-        with open(outfile, "w") as outFile:
-            with open(f"{outfile.replace('es_bulk', 'processed')}", "w") as processedLines:
-                for line in inFile:
-                    line = line.strip()
-                    line_location = str(location)
-                    location += len(line)
-                    n += 1
-                    id = idprefix + "_" + str(n)
-                    outFile.write(CREATE_LINE.replace("__INDEX__", index).replace("__ID__", id))
-                    outFile.write('\r\n')
+        with open(outfile, "w") as processedLines:
+            for line in inFile:
+                line = line.strip()
+                line_location = str(location)
+                location += len(line)
+                n += 1
+                id = idprefix + "_" + str(n)
 
-                    line = eval(linemod)
-                    data = eval(splitmod)
-                    line = " ".join(eval(listmod))
-                    processedLines.write(line)
-                    processedLines.write("\n")
-                    outFile.write(DATA_LINE.replace("__ID__", id).
-                                  replace("__DATA__", line).
-                                  replace("__LOCATION__", line_location).
-                                  replace("__CHROMOSOME__", chromosome).replace("__SPECIES__", species))
-                    outFile.write('\r\n')
+                line = decodeable(line)
+                line = eval(linemod)
+                data = eval(splitmod)
+                line = f"{species} {chromosome} {location} " + " ".join(eval(listmod))
+                processedLines.write(line)
+                processedLines.write("\n")
 
 if __name__ == '__main__':
     esgen()

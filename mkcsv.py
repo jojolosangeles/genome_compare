@@ -28,7 +28,7 @@ def gen_data(target_folder):
             hits = search_data['hits']['hits']
             for hit in hits:
                 show_hit(species, chromosome, location, hit['_score'],
-                         hit['_source']['species'], hit['_source']['chromosome'], hit['_source']['location'],
+                         hit['_source']['sp'], hit['_source']['chr'], hit['_source']['loc'],
                          reversed)
 
 
