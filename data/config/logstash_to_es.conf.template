@@ -1,6 +1,6 @@
 input { 
   file {
-    path => "/Users/jojo/PycharmProjects/lambda/ch16_cgh_500000/*.processed"
+    path => "/Users/jojo/PycharmProjects/lambda/__ELASTICSEARCH_INDEX__/*.processed"
     start_position => "beginning"
   }
 }
