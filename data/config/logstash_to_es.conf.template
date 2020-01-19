@@ -9,6 +9,9 @@ filter {
   grok {
     match => { "message" => "%{WORD:sp} %{WORD:chr} %{NONNEGINT:loc} %{GREEDYDATA:data}" }
   }
+  mutate {
+    remove_field => [ "message" ]
+  }
 }
 
 output {

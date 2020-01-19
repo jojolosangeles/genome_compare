@@ -1,0 +1,9 @@
+chimp 20 /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr20.fa
+chimp 21 /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr21.fa
+chimp 22 /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr22.fa
+human 20 /Users/jojo/genomes/huref/hs_alt_HuRef_chr20.fa
+human 21 /Users/jojo/genomes/huref/hs_alt_HuRef_chr21.fa
+human 22 /Users/jojo/genomes/huref/hs_alt_HuRef_chr22.fa
+gorilla 20 /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr20.fa
+gorilla 21 /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr21.fa
+gorilla 22 /Users/jojo/genomes/Gorilla_gorilla/ggo_ref_gorGor3.1_chr22.fa

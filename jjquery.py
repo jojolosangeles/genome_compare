@@ -10,7 +10,7 @@ def doquery(query, index):
     MUST_NOT = '"must_not": { "match": { "FIELD": "VALUE" }}'
     MUST = '"must": { "match": { "FIELD": "VALUE" }}'
     RANGE = '"filter": { "range": { "FIELD": { OPVAL_LIST }}}'
-    QUERY = '{ "_source": { "excludes": ["data"] }, "query": { "bool": { BOOL_QUERY }}}'
+    QUERY = '{ "_source": { "excludes": ["data", "message"] }, "query": { "bool": { BOOL_QUERY }}}'
     def qline(line):
         line = line.strip()
         _isnot = line.find(" is not ") > 0

@@ -1,7 +1,0 @@
-set -x
-python line_gen.py --datasource /Users/jojo/genomes/ptr_ref_Pan_tro-3.0/ptr_ref_Pan_tro_3.0_chr22.fa --linelen 100000 --outfile cgh_100000/chimp.22.100000 --filter "len(line) == 0 or line[0] == '>'"
-python esgen.py --datasource cgh_100000/chimp.22.100000  --chromosome 22 --species chimp --index cgh_100000 --processing-config data/config/config.test --idprefix chimp_22 --outfile cgh_100000/chimp.22.100000.es_bulk
-python mk50.py cgh_100000/chimp.22.100000.es_bulk 1000
-python mkload.py cgh_100000/chimp.22.100000.es_bulk > cgh_100000/load_chimp_22
-chmod +x cgh_100000/load_chimp_22
-./load_chimp_22

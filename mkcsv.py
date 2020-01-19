@@ -15,7 +15,7 @@ def gen_data(target_folder):
     def show_hit(species, chromosome, location, score, match_species, match_chromosome,
                  match_location, reversed):
         score = int(float(score))
-        if score > MIN_SCORE and (species != match_species or chromosome != match_chromosome):
+        if score > MIN_SCORE and (species != match_species or chromosome != match_chromosome or location != match_location):
             orientation = "inversed" if reversed else "same orientation"
             print(f"{species},{chromosome},{location},{score},{match_species},{match_chromosome},{match_location},{orientation}")
 
