@@ -29,9 +29,9 @@ class RelatedSpecies:
 
         Returns DataFrame with fields:
 
-            x -- sp1 chromosome name
-            y -- sp2 chromosome name
-            z -- count of related records between the two (as determined by elasticsearch)
+            sp1 -- species 1 chromosome names
+            sp2 -- species 2 chromosome names
+            count -- count of related records between the two (determined by elasticsearch results, in csv)
         """
         sp1_chr_list = self.chr_order[sp1]
         sp2_chr_list = self.chr_order[sp2]
@@ -50,11 +50,11 @@ class RelatedSpecies:
                 count = xdf.iloc[0]['count']
             counts.append(count)
 
-        source = pd.DataFrame({'x': ax1chrs,
-                               'y': ax2chrs,
-                               'z': counts})
+        source = pd.DataFrame({sp1: ax1chrs,
+                               sp2: ax2chrs,
+                               'count': counts})
         if min_record_count > 0:
-            source = source[source['z'] >= min_record_count]
+            source = source[source['count'] >= min_record_count]
         return source
 
     @staticmethod
@@ -83,14 +83,15 @@ class SpeciesGraphs:
         self.related_species = related_species
 
     def chromosomeRelationships(self, sp1, sp2):
+        """Heatmap of related chromosomes between two species"""
         source = self.related_species.getChromosomeRelationships(sp1, sp2)
         ax1_title = f"{sp1} chromosomes"
         ax2_title = f"{sp2} chromosomes"
         chr_map = self.related_species.chr_order
         return alt.Chart(source).mark_rect().encode(
-            x=alt.X('x:N', sort=chr_map[sp1], axis=alt.Axis(title=ax1_title, grid=True, ticks=True)),
-            y=alt.Y('y:N', sort=chr_map[sp2], axis=alt.Axis(title=ax2_title, grid=True, ticks=True)),
-            color=alt.Color('z:Q', title="count")
+            x=alt.X(f"{sp1}:N", sort=chr_map[sp1], axis=alt.Axis(title=ax1_title, grid=True, ticks=True)),
+            y=alt.Y(f"{sp2}:N", sort=chr_map[sp2], axis=alt.Axis(title=ax2_title, grid=True, ticks=True)),
+            color=alt.Color('count:Q', title="count")
         )
 
 
