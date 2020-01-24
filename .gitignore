@@ -4,20 +4,8 @@
 **/tmp
 **/test.1.results
 fasta
-cgh_50000
-cgh_100000
-cgh_100000_search
-cgh_1000000
-cgh_500000
-cgh_50000_search
-cgh_500000_search
-cgh_1000000_search
-ch16_cgh_50000/
-ch16_cgh_50000_search/
-ch16_cgh_100000/
-ch16_cgh_100000_search/
-ch16_cgh_500000/
-ch16_cgh_500000_search/
+cgh_*
+ch16_*
 package/
 
 # Created by .ignore support plugin (hsz.mobi)
