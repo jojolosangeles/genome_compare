@@ -70,12 +70,14 @@ class RelatedSpecies:
 
         The score, loc, and mloc fields are 'int' data type
         """
-        return pd.read_csv(csvFile,
+        df = pd.read_csv(csvFile,
                            index_col=False,
                            dtype={'sp': str, 'chr': str, 'loc': int,
                                   'score': int,
                                   'msp': str, 'mchr': str, 'mloc': int,
                                   'orientation': str})
+        mean_score = int(df['score'].mean())
+        return df[df['score'] > mean_score]
 
 
 class SpeciesGraphs:
@@ -96,7 +98,7 @@ class SpeciesGraphs:
 
 
 class ChromosomeGraphs:
-    domains = ['same orientation', 'inversed']
+    domains = ['same', 'inversed']
     color_scale = alt.Scale(
         domain=domains,
         range=['#6baed6', '#fcae91']

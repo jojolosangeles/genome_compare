@@ -1,13 +1,13 @@
 input { 
   file {
-    path => "/Users/jojo/PycharmProjects/lambda/__ELASTICSEARCH_INDEX__/*.processed"
+    path => "__TARGET_FOLDER__/*.processed"
     start_position => "beginning"
   }
 }
 
 filter {
   grok {
-    match => { "message" => "%{WORD:sp} %{WORD:chr} %{NONNEGINT:loc} %{GREEDYDATA:data}" }
+    match => { "message" => "%{WORD:sp} %{WORD:chr} %{NONNEGINT:dSO} %{NONNEGINT:dEO} %{NONNEGINT:loc} %{NONNEGINT:sEO} %{GREEDYDATA:data}" }
   }
   mutate {
     remove_field => [ "message" ]
