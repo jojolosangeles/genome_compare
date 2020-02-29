@@ -1,15 +1,34 @@
 import pandas as pd
 import altair as alt
+import itertools
 
 class RelatedSpecies:
     def __init__(self, df):
         self.df = df
         self.species_df = {}
-        self.relationships = df.groupby(['sp', 'chr', 'msp', 'mchr']).size().reset_index().rename(columns={0: 'count'})
+        modified_df = df.drop(['loc', 'mloc'], axis=1)
+        modified_df['count'] = 1
+        self.relationship_count = modified_df.groupby(['sp', 'chr', 'msp', 'mchr']).sum()
+        self.species_list = sorted(df['sp'].unique())
         self.chr_order = {}
 
     def setChromosomeOrder(self, species, chromosomes):
         self.chr_order[species] = chromosomes
+
+    def pairs(self):
+        return (ordered_tuple for ordered_tuple in itertools.combinations(self.species_list, 2))
+
+    def relationships(self, n):
+        return (ordered_tuple for ordered_tuple in itertools.combinations(self.species_list, n))
+
+    def strong_chromosome_relationships(self):
+        for sp1, sp2, df in self.chromosome_relationships():
+            df = df[df['count'] > df['count'].mean()]
+            yield sp1, sp2, df
+
+    def chromosome_relationships(self):
+        for sp1, sp2 in self.pairs():
+            yield sp1, sp2, self.relationship_count.query(f"sp == '{sp1}' & msp == '{sp2}'")
 
     def getSpecies(self, species):
         if species not in self.species_df:
@@ -24,6 +43,16 @@ class RelatedSpecies:
         df = self.getSpecies(species)
         return df[df['chr'] != df['mchr']]
 
+    def xspecies_relationships(self, sp1, sp2):
+        df = self.relationship_count
+        for chr1 in self.chr_order[sp1]:
+            for chr2 in self.chr_order[sp2]:
+                xdf = df.query(f"sp == '{sp1}' & chr == '{chr1}' & msp == '{sp2}' & mchr == '{chr2}'")
+                count = 0
+                if len(xdf) > 0:
+                    count = xdf.iloc[0]['count']
+                yield sp1, chr1, sp2, chr2, count
+
     def getChromosomeRelationships(self, sp1, sp2, min_record_count=0):
         """Count related records between two species.
 
@@ -33,21 +62,12 @@ class RelatedSpecies:
             sp2 -- species 2 chromosome names
             count -- count of related records between the two (determined by elasticsearch results, in csv)
         """
-        sp1_chr_list = self.chr_order[sp1]
-        sp2_chr_list = self.chr_order[sp2]
-        ax1chrs = [v1 for v1 in sp1_chr_list for v2 in sp2_chr_list]
-        ax2chrs = [v2 for v1 in sp1_chr_list for v2 in sp2_chr_list]
         counts = []
-        df = self.relationships
-        for ax1_chr, ax2_chr in zip(ax1chrs, ax2chrs):
-            xdf = df[(df['sp'] == sp1) &
-                     (df['msp'] == sp2) &
-                     (df['chr'] == ax1_chr) &
-                     (df['mchr'] == ax2_chr)
-            ]
-            count = 0
-            if len(xdf) > 0:
-                count = xdf.iloc[0]['count']
+        ax1chrs = []
+        ax2chrs = []
+        for sp1, chr1, sp2, chr2, count in self.xspecies_relationships(sp1, sp2):
+            ax1chrs.append(chr1)
+            ax2chrs.append(chr2)
             counts.append(count)
 
         source = pd.DataFrame({sp1: ax1chrs,
@@ -66,18 +86,76 @@ class RelatedSpecies:
             sp, chr, loc -- species, chromosome, location
             msp, mchr, mloc -- matching species, chromosome, location
             score -- Elasticsearch scoring
-            orientation -- distinguish 'same orientation' from 'inversed' (reverse complement)
+            orientation -- distinguish 'same' from 'inversed' (reverse complement)
 
         The score, loc, and mloc fields are 'int' data type
         """
         df = pd.read_csv(csvFile,
                            index_col=False,
+                           usecols=['sp','chr','loc','score','msp','mchr','mloc','orientation','segsize'],
                            dtype={'sp': str, 'chr': str, 'loc': int,
                                   'score': int,
                                   'msp': str, 'mchr': str, 'mloc': int,
-                                  'orientation': str})
+                                  'orientation': str, 'segsize': int, 'dsSO': int, 'dsEO': int })
         mean_score = int(df['score'].mean())
         return df[df['score'] > mean_score]
+
+    @staticmethod
+    def read_csv_with_filter(csvFile, recordFilter=None):
+        """Read CSV file that resulted from Elasticsearch scoring of relationships.
+
+        Returns DataFrame with columns:
+
+            sp, chr, loc -- species, chromosome, location
+            msp, mchr, mloc -- matching species, chromosome, location
+            score -- Elasticsearch scoring
+            orientation -- distinguish 'same' from 'inversed' (reverse complement)
+
+        The score, loc, and mloc fields are 'int' data type
+        """
+        df = pd.read_csv(csvFile,
+                           index_col=False,
+                           usecols=['sp','chr','loc','score','msp','mchr','mloc','orientation', 'segsize', 'dsSO', 'dsEO'],
+                           dtype={'sp': str, 'chr': str, 'loc': int,
+                                  'score': int,
+                                  'msp': str, 'mchr': str, 'mloc': int,
+                                  'orientation': str, 'segsize': int, 'dsSO': int, 'dsEO': int })
+        if recordFilter is not None:
+            df = recordFilter(df)
+        return df
+
+class StructuralRelationships:
+    def __init__(self, df, sp1, ch1, sp2, ch2, segment_size):
+        df = df.query(f"sp == '{sp1}' & chr == '{ch1}' & msp == '{sp2}' & mchr == '{ch2}'")
+        groups = df.groupby(by=['loc'])
+        df = groups.apply(lambda g: g[g['score'] == g['score'].max()])
+        df['sloc'] = (df['loc']/segment_size).astype('int64')
+        df['mloc'] = (df['mloc']/segment_size).astype('int64')
+        self.df = df
+        self.same = (df.mloc == (df.mloc.shift() + 1)) | (df.mloc == df.mloc.shift())
+        self.inversed = (df.mloc == (df.mloc.shift() - 1)) | (df.mloc == df.mloc.shift())
+
+    def similar_sections(self, minimum):
+        rawdata = []
+        for s, e, o in itertools.chain(self.ss(self.same, minimum, "same"), self.ss(self.inversed, minimum, "inversed")):
+            srec = self.df.iloc[s]
+            erec = self.df.iloc[e]
+            orientation = "same" if srec.mloc < erec.mloc else "inversed"
+            yield orientation, srec.sp, srec.chr, srec.sloc, erec.sloc, srec.msp, srec.mchr, srec.mloc, erec.mloc
+
+
+    def ss(self, markers, minimum_consecutive, orientation):
+        start = None
+        end = None
+        for i, v in enumerate(markers):
+            if v:
+                end = i
+                if start is None:
+                    start = i - 1
+            elif start is not None:
+                if (abs(end - start) + 1) >= minimum_consecutive:
+                    yield(start, end, orientation)
+                start = end = None
 
 
 class SpeciesGraphs:

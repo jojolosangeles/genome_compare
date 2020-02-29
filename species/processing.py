@@ -1,4 +1,4 @@
-from collections import deque
+import gzip
 
 """
 These are generators for processing a long sequence data source
@@ -24,9 +24,16 @@ class DataSourceFilter:
         self.filePath = filePath
         self.accept = acceptFunction
 
+    def open_datasource(self, datasource):
+        ext = datasource.split(".")[-1]
+        if ext == "gz":
+            return gzip.open(datasource, "rt")
+        else:
+            return open(datasource, "r")
+
     def sequences(self):
         dataOffset = 0
-        with open(self.filePath, "r") as inFile:
+        with self.open_datasource(self.filePath) as inFile:
             for line in inFile:
                 if self.accept(line):
                     stripped_line = line.strip()

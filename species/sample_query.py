@@ -60,9 +60,12 @@ def doquery(query, index):
                             score = int(y['_score'])
                             msp = y['_source']['sp']
                             mchr = y['_source']['chr']
-                            mloc = y['_source']['loc']
+                            mloc = int(y['_source']['loc'])
+                            seg_size = int(y['_source']['sEO']) - mloc
+                            dsSO = y['_source']['dSO']
+                            dsEO = y['_source']['dEO']
                             morientation = 'same' if orientation=='True' else 'inversed'
-                            print(f"{species},{chromosome},{segment_start_offset},{score},{msp},{mchr},{mloc},{morientation}")
+                            print(f"{species},{chromosome},{segment_start_offset},{score},{msp},{mchr},{mloc},{morientation},{seg_size},{dsSO},{dsEO}")
                 #print(response.text)
 
 # genre is fantasy
