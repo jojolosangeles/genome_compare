@@ -1,7 +1,5 @@
 import click
 
-from collections import defaultdict
-
 @click.command()
 @click.option("--files",
               help="text file with list of files to processes, each line with <species> <chromosome> <filePath>")
@@ -14,20 +12,21 @@ from collections import defaultdict
               help="number of samples to generate, doubled because reverse complement samples also generated")
 
 def gen_script(files, segsize, wordlen, targetfolder, targetindex, samplesizepercent, numbersamples):
+    print(f"mkdir -p {targetfolder}")
     lines = open(files, "r").readlines()
     print("set -x")
     print(f"echo 'creating logstash config file: logstash_{targetindex}.conf'")
     s = f"{targetfolder}".replace("/", "\\/")
-    mkLogstash = f"sed -e \"s/__TARGET_FOLDER__/{s}/\" ../data/config/logstash_to_es.conf.template"
+    mkLogstash = f"sed -e \"s/__TARGET_FOLDER__/{s}/\" ../templates/logstash_to_es.conf.template"
     conf_file = f"{targetfolder}/logstash_{targetindex}.conf"
     print(f"{mkLogstash} > {conf_file}x")
     mkLogstash = f"sed -e \"s/__ELASTICSEARCH_INDEX__/{targetindex}/\" {targetfolder}/logstash_{targetindex}.confx"
     print(f"{mkLogstash} > {conf_file}")
     # TODO: this is specific to my installation!  need this for repeated tests
     logstash_start_script = f"{targetfolder}/start_logstash_{targetindex}"
-    print(f"mkdir -p {targetfolder}")
+
     print(
-        f"echo 'rm /usr/local/Cellar/logstash/7.4.2/libexec/data/plugins/inputs/file/.sincedb*' > {logstash_start_script}")
+        f"echo 'rm /usr/local/Cellar/logstash/7.6.2/libexec/data/plugins/inputs/file/.sincedb*' > {logstash_start_script}")
     print(f"echo 'logstash -f {conf_file} &' > {logstash_start_script}")
     print(f"chmod +x {logstash_start_script}")
     print(f"read -p 'STOP LOGSTASH NOW!  then press ENTER'")
@@ -68,6 +67,9 @@ def gen_script(files, segsize, wordlen, targetfolder, targetindex, samplesizeper
 
 #
 #  Cases tested:
+#
+#    python mkdoit.py --files ../data/small_test.txt --segsize 1000000 --wordlen 13 --targetfolder ~/genomes/graph_data/1m13 --targetindex cgh_1m13 --samplesizepercent 3 --numbersamples 3 > doit
+#    python mkdoit.py --files /Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt --segsize 1000000 --wordlen 13 --targetfolder ~/genomes/graph_data/6primates --targetindex primates_1m13 --samplesizepercent 3 --numbersamples 3 > doit
 #
 #    python mkdoit.py --files ~/genomes/graph_data/cgh_files.txt --segsize 1000000 --wordlen 10 --targetfolder ~/genomes/graph_data/1m --targetindex cgh_1m --samplesizepercent 10 --numbersamples 3 > doit
 #    python mkdoit.py --files ~/genomes/graph_data/cgh_files.txt --segsize 100000 --wordlen 12 --targetfolder ~/genomes/graph_data/1h --targetindex cgh_1h --samplesizepercent 10 --numbersamples 2 > doit
