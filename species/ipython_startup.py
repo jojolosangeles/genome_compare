@@ -1,7 +1,7 @@
 """
-alias ipython='ipython -i ipython_startup.py'
+To run this file when starting ipython from this folder:
 
-code to be executed when started from this folder
+alias ipython='ipython -i ipython_startup.py'
 """
 import pandas as pd
 import numpy as np
@@ -14,7 +14,7 @@ print(f"\n\nUSING data_dir={data_dir}")
 print("\n\nFunctions defined:\n")
 print("sp_chr_df(sp, chr) returns df")
 print("get_matching_species_grouped_by_chromsome(df, species) returns DataFrameGroupBy")
-print("df_chr(groups,chrval) returns data frame for that specific chrval")
+print("species_name(chr) returns df for specific chromosome for a species")
 
 
 def sp_chr_df(sp, chr):
@@ -45,17 +45,18 @@ class Species:
         self.name = name
         self.resolution = resolution
 
-    def df_chr(self, chr):
+    def __call__(self, chr, matched_species=None):
         csvFile = f"{data_dir}/{self.name}.{chr}.{self.resolution}.13.samples.csv"
         df = pd.read_csv(csvFile)
+        if matched_species != None:
+            df = df[df['msp'] == matched_species.name]
         return df
 
     def df_msp(self, chr, matched_species):
-        df = self.df_chr(chr)
+        df = self(chr)
         msp = df[df['msp'] == matched_species.name]
         for matched_chr_name, group in msp.groupby('mchr'):
-            if str(matched_chr_name) == str(chr):
-                return self.analyze(group)
+            return self.analyze(group)
         return None
 
     def analyze(self, df):

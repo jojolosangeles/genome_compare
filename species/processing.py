@@ -1,7 +1,17 @@
 import gzip
 
 """
-These are generators for processing a long sequence data source
+These are generators for processing a long sequence data source.
+
+The data source includes non-sequence text like comments.  The offsets provided are for both
+the original source file and for the filtered data.
+
+The final data records are for fixed size filtered segments.
+Each segment record contains:
+
+- dataSourceStartOffset, dataSourceEndOffset (dsSO, dsEO) -- where to find the data in the original source file
+- filteredSequenceStartOffset, filteredSequenceEndOffset (fsSO, fsEO) -- offset in the complete filtered sequence
+- filteredSequence -- the raw data sequence
 """
 def excludeLinesStartingWith(s):
     def acceptFn(line):
@@ -16,7 +26,7 @@ class DataSourceFilter:
     This takes in a data stream and yields a stream containing only data to be processed
     (e.g. ignoring comment lines)
 
-    Yields (dataStartOffset, dataEndOffset, data)
+    Yields (dataSourceStartOffset, dataSourceEndOffset, data)
 
     The data offsets refer to the offset in the original data stream, e.g. file seek location in source data file
     """
@@ -43,12 +53,12 @@ class DataSourceFilter:
 
 class SegmentGenerator:
     """
-    Takes in a stream of data sequences, and yields larger sequences of a fixed size
+    Takes in small data sequences, and yields larger sequences of a fixed size
 
-    Yields: (dataStartOffset, dataEndOffset, segmentStartOffset, segmentEndOffset, segmentData, orientation)
+    Yields: (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation)
 
-    'dataStartOffset' and 'dataEndOffset' refer to the offset in the original data stream.
-    'segmentStartOffset' and 'segmentEndOffset' refer to the offset in the entire sequence of segments yielded
+    'dataSourceStartOffset' and 'dataSourceEndOffset' refer to the offset in the original data stream.
+    'filteredSequenceStartOffset' and 'filteredSequenceEndOffset' refer to the offset in the entire sequence of segments yielded
     'orientation' is always True
     """
     def __init__(self, dataSourceFilter, segmentSize):
@@ -56,36 +66,36 @@ class SegmentGenerator:
         self.segmentSize = segmentSize
 
     def segments(self):
-        segmentStartOffset = 0
-        segmentDataStartOffset = 0
-        segmentDataEndOffset = 0
+        filteredSequenceStartOffset = 0
+        segmentdataSourceStartOffset = 0
+        segmentdataSourceEndOffset = 0
         segmentData = ""
         for sequenceStartOffset, sequenceEndOffset, data in self.dataSourceFilter.sequences():
             if segmentData == "":
                 # first time, initialize segment
-                segmentDataStartOffset = sequenceStartOffset
+                segmentdataSourceStartOffset = sequenceStartOffset
                 segmentData = data
-                segmentDataEndOffset = sequenceEndOffset
+                segmentdataSourceEndOffset = sequenceEndOffset
             else:
                 # add to segment
                 segmentData += data
-                segmentDataEndOffset = sequenceEndOffset
+                segmentdataSourceEndOffset = sequenceEndOffset
 
             while len(segmentData) > self.segmentSize:
                 remainingSegmentData = segmentData[self.segmentSize:]
                 segmentData = segmentData[:self.segmentSize]
-                yield (segmentDataStartOffset,
-                       segmentDataEndOffset - len(remainingSegmentData),
-                       segmentStartOffset,
-                       segmentStartOffset + self.segmentSize,
+                yield (segmentdataSourceStartOffset,
+                       segmentdataSourceEndOffset - len(remainingSegmentData),
+                       filteredSequenceStartOffset,
+                       filteredSequenceStartOffset + self.segmentSize,
                        segmentData,
                        True)
                 segmentData = remainingSegmentData
-                segmentDataStartOffset = segmentDataEndOffset - len(segmentData)
-                segmentDataEndOffset - len(remainingSegmentData)
-                segmentStartOffset += self.segmentSize
+                segmentdataSourceStartOffset = segmentdataSourceEndOffset - len(segmentData)
+                segmentdataSourceEndOffset - len(remainingSegmentData)
+                filteredSequenceStartOffset += self.segmentSize
 
-        yield (segmentDataStartOffset, segmentDataEndOffset, segmentStartOffset, segmentStartOffset + len(segmentData), segmentData, True)
+        yield (segmentdataSourceStartOffset, segmentdataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceStartOffset + len(segmentData), segmentData, True)
 
 AT_CG_SPLIT = (('CG', 'C G'), ('GC', 'G C'), ('AT', 'A T'), ('TA', 'T A'), ('N', ''))
 
@@ -109,9 +119,9 @@ class SegmentProcessor:
         self.dataProcessor = dataProcessor
 
     def segments(self):
-        for dataStartOffset, dataEndOffset, segmentStartOffset, segmentEndOffset, segmentData, orientation in self.segmentGenerator.segments():
+        for dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation in self.segmentGenerator.segments():
             segmentData = self.dataProcessor(segmentData)
-            yield (dataStartOffset, dataEndOffset, segmentStartOffset, segmentEndOffset, segmentData, orientation)
+            yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation)
 
 
 class SearchSampler:
@@ -123,11 +133,11 @@ def prepare_for_es(fileToProcess, targetFile, segmentSize, wordSplitter, wordFil
     sg = SegmentGenerator(dsf, segmentSize)
     sp = SegmentProcessor(sg, wordSplitter)
     wf = SegmentProcessor(sp, wordFilter)
-    for startDataOffset, endDataOffset, segmentStartOffset, segmentEndOffset, segmentData, orientation in wf.segments():
-        targetFile.write(f"{species} {chromosome} {startDataOffset} {endDataOffset} {segmentStartOffset} {segmentEndOffset} {segmentData}\n")
+    for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation in wf.segments():
+        targetFile.write(f"{species} {chromosome} {startDataOffset} {endDataOffset} {filteredSequenceStartOffset} {filteredSequenceEndOffset} {segmentData}\n")
 
 
-class ForwardInverseSegmentGenerator:
+class ForwardInverseSampleExtractor:
     def __init__(self, segmentGenerator, sampleSize, marginSize, numberSamples):
         self.segmentGenerator = segmentGenerator
         self.sampleSize = sampleSize
@@ -151,25 +161,28 @@ class ForwardInverseSegmentGenerator:
         return "".join(l)
 
     def segments(self):
-        for dataStartOffset, dataEndOffset, segmentStartOffset, segmentEndOffset, segmentData, orientation in self.segmentGenerator.segments():
+        return self.samples()
+
+    def samples(self):
+        for dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation in self.segmentGenerator.segments():
             for sample in range(numberSamples):
                 sampleOffsetInSegment = (self.marginSize * (sample + 1) + self.sampleSize * sample)
                 data = segmentData[sampleOffsetInSegment:(sampleOffsetInSegment + self.sampleSize)]
-                yield (dataStartOffset, dataEndOffset, segmentStartOffset, segmentEndOffset, data, True)
+                yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, data, True)
                 revCompData = self.revcomp(data)
-                yield (dataStartOffset, dataEndOffset, segmentStartOffset, segmentEndOffset, revCompData, False)
+                yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, revCompData, False)
 
 def prepare_samples(fileToProcess, targetFile, segmentSize, wordSplitter, wordFilter, sampleSizePercent, numberSamples):
     dsf = DataSourceFilter(fileToProcess)
     sg = SegmentGenerator(dsf, segmentSize)
     singleSampleSize = int(segmentSize*sampleSizePercent/100)
     marginSize = int(int(segmentSize - singleSampleSize * numberSamples) / (numberSamples + 1))
-    fig = ForwardInverseSegmentGenerator(sg, singleSampleSize, marginSize, numberSamples)
+    fig = ForwardInverseSampleExtractor(sg, singleSampleSize, marginSize, numberSamples)
     sp = SegmentProcessor(fig, wordSplitter)
     wf = SegmentProcessor(sp, wordFilter)
 
-    for startDataOffset, endDataOffset, segmentStartOffset, segmentEndOffset, data, orientation in wf.segments():
-        targetFile.write(f"{species} {chromosome} {startDataOffset} {endDataOffset} {segmentStartOffset} {segmentEndOffset} {orientation} {data}\n")
+    for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, data, orientation in wf.segments():
+        targetFile.write(f"{species} {chromosome} {startDataOffset} {endDataOffset} {filteredSequenceStartOffset} {filteredSequenceEndOffset} {orientation} {data}\n")
 
 
 if __name__ == "__main__":
@@ -183,23 +196,23 @@ if __name__ == "__main__":
     # print("SegmentGenerator TEST")
     # dsf = DataSourceFilter(sys.argv[1])
     # sg = SegmentGenerator(dsf, 20)
-    # for startDataOffset, endDataOffset, segmentStartOffset, segmentEndOffset, segmentData in sg.segments():
-    #     print(f"data {startDataOffset}:{endDataOffset}, segment {segmentStartOffset}:{segmentEndOffset}, data={segmentData}, len is {len(segmentData)}")
+    # for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData in sg.samples():
+    #     print(f"data {startDataOffset}:{endDataOffset}, segment {filteredSequenceStartOffset}:{filteredSequenceEndOffset}, data={segmentData}, len is {len(segmentData)}")
     #
     # print("WordSplitter TEST")
     # dsf = DataSourceFilter(sys.argv[1])
     # sg = SegmentGenerator(dsf, 20)
     # sp = SegmentProcessor(sg, wordSplitterFactory(AT_CG_SPLIT))
-    # for startDataOffset, endDataOffset, segmentStartOffset, segmentEndOffset, segmentData in sp.segments():
-    #     print(f"data {startDataOffset}:{endDataOffset}, segment {segmentStartOffset}:{segmentEndOffset}, data={segmentData}, len is {len(segmentData)}")
+    # for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData in sp.samples():
+    #     print(f"data {startDataOffset}:{endDataOffset}, segment {filteredSequenceStartOffset}:{filteredSequenceEndOffset}, data={segmentData}, len is {len(segmentData)}")
     #
     # print("WordFilter TEST")
     # dsf = DataSourceFilter(sys.argv[1])
     # sg = SegmentGenerator(dsf, 20)
     # sp = SegmentProcessor(sg, wordSplitterFactory(AT_CG_SPLIT))
     # wf = SegmentProcessor(sp, wordFilterFactory(5))
-    # for startDataOffset, endDataOffset, segmentStartOffset, segmentEndOffset, segmentData in wf.segments():
-    #     print(f"data {startDataOffset}:{endDataOffset}, segment {segmentStartOffset}:{segmentEndOffset}, data={segmentData}, len is {len(segmentData)}")
+    # for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData in wf.samples():
+    #     print(f"data {startDataOffset}:{endDataOffset}, segment {filteredSequenceStartOffset}:{filteredSequenceEndOffset}, data={segmentData}, len is {len(segmentData)}")
     #
     # print("END OF TESTS")
     import sys

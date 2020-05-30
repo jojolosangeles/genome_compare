@@ -13,6 +13,7 @@ import click
 
 def gen_script(files, segsize, wordlen, targetfolder, targetindex, samplesizepercent, numbersamples):
     print(f"mkdir -p {targetfolder}")
+    print(f"mkdir -p {targetfolder}_max")
     lines = open(files, "r").readlines()
     print("set -x")
     print(f"echo 'creating logstash config file: logstash_{targetindex}.conf'")
@@ -61,19 +62,16 @@ def gen_script(files, segsize, wordlen, targetfolder, targetindex, samplesizeper
         print(f"python sample_query.py --query {sampleFilePath} --index {targetindex} >> {sampleFilePath}.csv")
 
     # put all result in single CSV
-    resultsFile = f"{targetfolder}/data.csv"
+    resultsFile = f"{targetfolder}_max/data.csv"
     print(f"echo 'sp,chr,sloc,score,msp,mchr,mloc,orientation,segsize,dsSO,dsEO' > {resultsFile}")
-    print(f"cat {targetfolder}/*.samples.csv >> {resultsFile}")
+    print(f"cat {targetfolder}_max/*.samples.csv >> {resultsFile}")
 
 #
 #  Cases tested:
 #
 #    python mkdoit.py --files ../data/small_test.txt --segsize 1000000 --wordlen 13 --targetfolder ~/genomes/graph_data/1m13 --targetindex cgh_1m13 --samplesizepercent 3 --numbersamples 3 > doit
 #    python mkdoit.py --files /Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt --segsize 1000000 --wordlen 13 --targetfolder ~/genomes/graph_data/6primates --targetindex primates_1m13 --samplesizepercent 3 --numbersamples 3 > doit
-#
-#    python mkdoit.py --files ~/genomes/graph_data/cgh_files.txt --segsize 1000000 --wordlen 10 --targetfolder ~/genomes/graph_data/1m --targetindex cgh_1m --samplesizepercent 10 --numbersamples 3 > doit
-#    python mkdoit.py --files ~/genomes/graph_data/cgh_files.txt --segsize 100000 --wordlen 12 --targetfolder ~/genomes/graph_data/1h --targetindex cgh_1h --samplesizepercent 10 --numbersamples 2 > doit
-#    python mkdoit.py --files ~/genomes/graph_data/cgh_files.txt --segsize 500000 --wordlen 19 --targetfolder ~/genomes/graph_data/5h --targetindex cgh_5h --samplesizepercent 10 --numbersamples 2 > doit
+#    python mkdoit.py --files /Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt --segsize 1000000 --wordlen 13 --targetfolder ~/genomes/graph_data/6primates --targetindex primates_1m13 --samplesizepercent 3 --numbersamples 30 > doit
 #
 if __name__ == "__main__":
     gen_script()
