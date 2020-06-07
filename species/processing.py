@@ -101,6 +101,7 @@ AT_CG_SPLIT = (('CG', 'C G'), ('GC', 'G C'), ('AT', 'A T'), ('TA', 'T A'), ('N',
 
 def wordSplitterFactory(replaceXwithY):
     def replaceFunction(line):
+        line = line.upper()
         for x,y in replaceXwithY:
             line = line.replace(x, y)
         return line

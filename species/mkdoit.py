@@ -1,8 +1,11 @@
 import click
 
+version = "1"
+
 @click.command()
 @click.option("--files",
               help="text file with list of files to processes, each line with <species> <chromosome> <filePath>")
+@click.option('--logstash/--no-logstash', default=True)
 @click.option("--segsize", help="segment size", type=int)
 @click.option("--wordlen", help="minimum word length", type=int)
 @click.option("--targetfolder", help="path to results folder")
@@ -11,27 +14,41 @@ import click
 @click.option("--numbersamples",
               help="number of samples to generate, doubled because reverse complement samples also generated")
 
-def gen_script(files, segsize, wordlen, targetfolder, targetindex, samplesizepercent, numbersamples):
+def gen_script(files, logstash, segsize, wordlen, targetfolder, targetindex, samplesizepercent, numbersamples):
+    print("#")
+    print(f"# generated with mkdoit.py, version {version}")
+    print("#")
+    logstash_val = "--no-logstash"
+    if logstash:
+        logstash_val = "--logstash"
+    print(f"#   python mkdoit.py --files {files} {logstash_val} --segsize {segsize} --wordlen {wordlen} --targetfolder {targetfolder} --targetindex {targetindex} --samplesizepercent {samplesizepercent} --numbersamples {numbersamples}")
+    print("#")
+
+    print("set -x")
     print(f"mkdir -p {targetfolder}")
     print(f"mkdir -p {targetfolder}_max")
     lines = open(files, "r").readlines()
-    print("set -x")
-    print(f"echo 'creating logstash config file: logstash_{targetindex}.conf'")
-    s = f"{targetfolder}".replace("/", "\\/")
-    mkLogstash = f"sed -e \"s/__TARGET_FOLDER__/{s}/\" ../templates/logstash_to_es.conf.template"
-    conf_file = f"{targetfolder}/logstash_{targetindex}.conf"
-    print(f"{mkLogstash} > {conf_file}x")
-    mkLogstash = f"sed -e \"s/__ELASTICSEARCH_INDEX__/{targetindex}/\" {targetfolder}/logstash_{targetindex}.confx"
-    print(f"{mkLogstash} > {conf_file}")
-    # TODO: this is specific to my installation!  need this for repeated tests
-    logstash_start_script = f"{targetfolder}/start_logstash_{targetindex}"
 
-    print(
-        f"echo 'rm /usr/local/Cellar/logstash/7.6.2/libexec/data/plugins/inputs/file/.sincedb*' > {logstash_start_script}")
-    print(f"echo 'logstash -f {conf_file} &' > {logstash_start_script}")
-    print(f"chmod +x {logstash_start_script}")
-    print(f"read -p 'STOP LOGSTASH NOW!  then press ENTER'")
-    print(f"{logstash_start_script}")
+    def generate_logstash_config():
+        print(f"echo 'creating logstash config file: logstash_{targetindex}.conf'")
+        s = f"{targetfolder}".replace("/", "\\/")
+        mkLogstash = f"sed -e \"s/__TARGET_FOLDER__/{s}/\" ../templates/logstash_to_es.conf.template"
+        conf_file = f"{targetfolder}/logstash_{targetindex}.conf"
+        print(f"{mkLogstash} > {conf_file}x")
+        mkLogstash = f"sed -e \"s/__ELASTICSEARCH_INDEX__/{targetindex}/\" {targetfolder}/logstash_{targetindex}.confx"
+        print(f"{mkLogstash} > {conf_file}")
+        # TODO: this is specific to my installation!  need this for repeated tests
+        logstash_start_script = f"{targetfolder}/start_logstash_{targetindex}"
+
+        print(
+            f"echo 'rm /usr/local/Cellar/logstash/7.6.2/libexec/data/plugins/inputs/file/.sincedb*' > {logstash_start_script}")
+        print(f"echo 'logstash -f {conf_file} &' > {logstash_start_script}")
+        print(f"chmod +x {logstash_start_script}")
+        print(f"read -p 'STOP LOGSTASH NOW!  then press ENTER'")
+        print(f"{logstash_start_script}")
+
+    if logstash:
+        generate_logstash_config()
 
     speciesSet = set()
 

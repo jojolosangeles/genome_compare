@@ -15,9 +15,6 @@ class RelatedSpecies:
     def setChromosomeOrder(self, species, chromosomes):
         self.chr_order[species] = chromosomes
 
-    def pairs(self):
-        return (ordered_tuple for ordered_tuple in itertools.combinations(self.species_list, 2))
-
     def relationships(self, n):
         return (ordered_tuple for ordered_tuple in itertools.combinations(self.species_list, n))
 
@@ -27,7 +24,7 @@ class RelatedSpecies:
             yield sp1, sp2, df
 
     def chromosome_relationships(self):
-        for sp1, sp2 in self.pairs():
+        for sp1, sp2 in itertools.combinations(self.species_list, 2):
             yield sp1, sp2, self.relationship_count.query(f"sp == '{sp1}' & msp == '{sp2}'")
 
     def getSpecies(self, species):
@@ -53,7 +50,7 @@ class RelatedSpecies:
                     count = xdf.iloc[0]['count']
                 yield sp1, chr1, sp2, chr2, count
 
-    def getChromosomeRelationships(self, sp1, sp2, min_record_count=0):
+    def getChromosomeRelationships(self, sp1, sp2, min_record_count=1):
         """Count related records between two species.
 
         Returns DataFrame with fields:
@@ -90,13 +87,15 @@ class RelatedSpecies:
 
         The score, loc, and mloc fields are 'int' data type
         """
+        compression = "gzip" if csvFile.endswith(".gz") else None
         df = pd.read_csv(csvFile,
-                           index_col=False,
-                           usecols=['sp','chr','loc','score','msp','mchr','mloc','orientation','segsize'],
-                           dtype={'sp': str, 'chr': str, 'loc': int,
-                                  'score': int,
-                                  'msp': str, 'mchr': str, 'mloc': int,
-                                  'orientation': str, 'segsize': int, 'dsSO': int, 'dsEO': int })
+                        compression=compression,
+                        index_col=False,
+                        usecols=['sp','chr','loc','score','msp','mchr','mloc','orientation','segsize'],
+                        dtype={ 'sp': str, 'chr': str, 'loc': int,
+                                'score': int,
+                                'msp': str, 'mchr': str, 'mloc': int,
+                                'orientation': str, 'segsize': int, 'dsSO': int, 'dsEO': int })
         mean_score = int(df['score'].mean())
         return df[df['score'] > mean_score]
 
