@@ -1,4 +1,3 @@
-import json
 import requests
 
 class ES_Search:

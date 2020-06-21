@@ -13,15 +13,17 @@ version = "1"
 @click.option("--samplesizepercent", help="percent of segment to use as a sample")
 @click.option("--numbersamples",
               help="number of samples to generate, doubled because reverse complement samples also generated")
+@click.option("--ndel", help="number of random subsequences to delete")
+@click.option("--ndellen", help="length of each random subsequence to delete")
 
-def gen_script(files, logstash, segsize, wordlen, targetfolder, targetindex, samplesizepercent, numbersamples):
+def gen_script(files, logstash, segsize, wordlen, targetfolder, targetindex, samplesizepercent, numbersamples, ndel, ndellen):
     print("#")
     print(f"# generated with mkdoit.py, version {version}")
     print("#")
     logstash_val = "--no-logstash"
     if logstash:
         logstash_val = "--logstash"
-    print(f"#   python mkdoit.py --files {files} {logstash_val} --segsize {segsize} --wordlen {wordlen} --targetfolder {targetfolder} --targetindex {targetindex} --samplesizepercent {samplesizepercent} --numbersamples {numbersamples}")
+    print(f"#   python mkdoit.py --files {files} {logstash_val} --segsize {segsize} --wordlen {wordlen} --targetfolder {targetfolder} --targetindex {targetindex} --samplesizepercent {samplesizepercent} --numbersamples {numbersamples} --ndel {ndel} --ndellen {ndellen}")
     print("#")
 
     print("set -x")
@@ -56,7 +58,7 @@ def gen_script(files, logstash, segsize, wordlen, targetfolder, targetindex, sam
         species, chromosome, filePath = line.strip().split()
         speciesSet.add(species)
         print(
-            f"python processing.py {species} {chromosome} {filePath} {segsize} {wordlen} {targetfolder} {samplesizepercent} {numbersamples}")
+            f"python processing.py {species} {chromosome} {filePath} {segsize} {wordlen} {targetfolder} {samplesizepercent} {numbersamples} {ndel} {ndellen}")
 
     # these are check against elasticsearch record counts (once logstash has loaded those -- how can we tell it is done?)
     for species in speciesSet:

@@ -8,7 +8,7 @@ import numpy as np
 
 pd.options.mode.chained_assignment = None
 
-data_dir = "/Users/johannesjohannsen/genomes/graph_data/6primates_max"
+data_dir = "/Users/johannesjohannsen/genomes/graph_data/6primates_v2_max"
 
 print(f"\n\nUSING data_dir={data_dir}")
 print("\n\nFunctions defined:\n")

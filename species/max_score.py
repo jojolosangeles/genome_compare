@@ -30,14 +30,12 @@ in original unprocessed text data file.
 
 ------
 
-This program takes these raw Elasticsearch CSV result files, and keeps only the maximum score record for
+This program takes processes the CSV search results, keeping only the maximum score record for
 each matching species.
 
 For each CSV file in the source folder, if there is NOT a corresponding CSV file in the dest folder,
 the CSV file is read, a new DataFrame is created containing only the species matches with maximum scores,
 and the new result is saved in a CSV file with the same name in the "max_csv_folder"
-
-
 """
 import click
 import glob, os
@@ -56,7 +54,7 @@ def process_csv_files(csv_folder, max_csv_folder):
 
     def process_csv_file(in_file, out_file):
         df = pd.read_csv(in_file,
-                         names=['sp', 'chr', 'loc', 'score', 'msp', 'mchr', 'mloc', 'orientation', 'segsize', 'dsSO'],
+                         names=['sp', 'chr', 'loc', 'score', 'msp', 'mchr', 'mloc', 'orientation', 'segsize', 'dsSO', 'dsEO'],
                          index_col=False)
         idx = df.groupby(['loc', 'msp'])['score'].transform(max) == df['score']
         df[idx].to_csv(out_file)

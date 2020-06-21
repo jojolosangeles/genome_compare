@@ -1,0 +1,100 @@
+# Read this file with:
+#
+#  import yaml
+#  with open('config/a.yaml') as file:
+#      config = yaml.load(file, Loader=yaml.FullLoader)
+#
+experiment:
+  input_data_specification: /Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt
+  output_path: env.SCRIPT_OUTPUT
+  tool_path: env.SCRIPT_TOOLS
+  title: test1
+  seed: 0
+
+# transform the long sequence into:
+#   fixed size segments that can be indexed by search engine,
+#   samples within those segments that can be searched
+#
+transformations:
+  # propagates down, can be overridden
+  include_reverse_complement: true
+
+  # delete random sequences
+  delete_random:
+    delete:
+      # sequence generator
+      sequence_set:
+        random:
+          alpha: ACGT
+          len: 4
+          count: 10
+
+  # delete fixed sequences
+  delete_fixed:
+    delete:
+      include_reverse_complement: true
+      fixed:
+        - GATTACA
+        - AAAAAAA
+
+  split_complements:
+    split:
+      AT: "A T"
+      CG: "C G"
+
+  # requires sequence to be split-able on space
+  word_length_filter:
+    word_filter: len(word) < 13
+
+# how to process segment sequence before it is put into Elasticsearch
+# how to sample the segment for searching for similar sequences across genomes
+search_transform:
+  # "._processed", fixed size segment processing
+  segment:
+    size: 1M
+    transformations:
+      - split_complements
+      - word_length_filter
+    sample:
+      size: 3%
+      count: 3
+
+# how the search engine is started
+search_engine:
+  install: 'docker pull docker.elastic.co/elasticsearch/elasticsearch:7.7.1'
+  run: 'docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.1 &'
+  is_started: '{experiment.tool_path}/is_elastic_search_started.sh localhost:9200'
+  wait_until_started: '{experiment.tool_path}/wait_for_elastic_search_started.sh localhost:9200'
+
+# how the search engine is loaded
+search_engine_loader:
+  script_folder: ~/genome/code/infrastructure
+  start: start_logstash.sh
+  stop: stop_logstash.sh
+  check: ???
+
+output:
+  graphs:
+    confusion_matrix:
+      x: species
+      y: species
+  data:
+    - confusion_matrix
+  translocations:
+    min_consecutive_segments: 2
+  inversions:
+    min_consecutive_segments: 2
+
+zoom:
+  segment: 100k
+  sequence_mods:
+    split:
+      AT: "A T"
+      TA: "T A"
+      CG: "C G"
+      GC: "G C"
+  sentence_mods:
+    min_word_size: 10
+  sample:
+    size: 3%
+    count: 3
