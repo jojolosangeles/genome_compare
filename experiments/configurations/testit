@@ -1,0 +1,10 @@
+set -x
+export SCRIPT_OUTPUT=/Users/johannesjohannsen/sandbox/el_stack_test
+export SCRIPT_TOOLS=/Users/johannesjohannsen/genome/code/genome_compare/script_tools
+export ELASTIC_SEARCH_URL='http://192.168.7.205:9200'
+rm -rf /Users/johannesjohannsen/sandbox/el_stack_test
+cd /Users/johannesjohannsen/genome/code/genome_compare/species/script_writers
+python script_writer.py /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/el_stack_test.yaml
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/test2/search_engine.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/test2/search_engine_loader.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/test2/preprocessing.sh

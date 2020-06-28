@@ -1,0 +1,9 @@
+Gorilla_gorilla 3 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/Gorilla_gorilla/chr3.fa
+Pan_troglodytes 3 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/Pan_troglodytes/chr3.fa
+hg38 3 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/hg38/chr3.fa
+Gorilla_gorilla 4 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/Gorilla_gorilla/chr4.fa
+Pan_troglodytes 4 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/Pan_troglodytes/chr4.fa
+hg38 4 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/hg38/chr4.fa
+Gorilla_gorilla 5 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/Gorilla_gorilla/chr5.fa
+Pan_troglodytes 5 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/Pan_troglodytes/chr5.fa
+hg38 5 /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/rawdata/hg38/chr5.fa

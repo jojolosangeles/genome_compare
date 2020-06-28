@@ -32,7 +32,6 @@ transformations:
   # delete fixed sequences
   delete_fixed:
     delete:
-      include_reverse_complement: true
       fixed:
         - GATTACA
         - AAAAAAA
@@ -44,11 +43,11 @@ transformations:
 
   # requires sequence to be split-able on space
   word_length_filter:
-    word_filter: len(word) < 13
+    min_length: 14
 
 # how to process segment sequence before it is put into Elasticsearch
 # how to sample the segment for searching for similar sequences across genomes
-search_transform:
+preprocessing:
   # "._processed", fixed size segment processing
   segment:
     size: 1M
@@ -68,10 +67,11 @@ search_engine:
 
 # how the search engine is loaded
 search_engine_loader:
-  script_folder: ~/genome/code/infrastructure
-  start: start_logstash.sh
-  stop: stop_logstash.sh
-  check: ???
+  install: 'docker pull logstash:7.8.0'
+  configure: 'python {experiment.tool_path}/generate_logstash_config.py {experiment.output_path} localhost:9200 test1'
+  is_started: '{experiment.tool_path}/is_docker_container_running.sh logstash:7.8.0'
+  run: 'docker run --rm -it -v {experiment.output_path}/pipeline/logstash.conf:/usr/share/logstash/config/logstash.conf logstash:7.8.0'
+
 
 output:
   graphs:

@@ -34,8 +34,10 @@ def read_genome_comparison_csv(csvFile):
     mean_score = int(df['score'].mean())
     return df[df['score'] > mean_score]
 
+
 def confusion_matrix_data(df):
     return df.groupby(['sp', 'chr', 'msp', 'mchr'], as_index=False)['sloc'].count()
+
 
 def species_to_species(df):
     cm_data = confusion_matrix_data(df)
@@ -44,12 +46,14 @@ def species_to_species(df):
         for msp in spdf['msp'].unique():
             yield sp, msp, spdf[spdf['msp'] == msp]
 
+
 def confusion_matrix_generator(df):
     for sp, msp, mspdf in species_to_species(df):
         df_result = mspdf.groupby(['chr', 'mchr', 'sloc'], as_index=False).count().drop(['sp', 'msp'], axis=1)
         df_result['sp'] = sp
         df_result['msp'] = msp
         yield df_result
+
 
 def inverse_range_generator(df):
     for sp, msp, mspdf in species_to_species(df):

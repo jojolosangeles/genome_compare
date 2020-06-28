@@ -1,0 +1,55 @@
+# Read this file with:
+#
+#  import yaml
+#  with open('config/a.yaml') as file:
+#      config = yaml.load(file, Loader=yaml.FullLoader)
+#
+experiment:
+  input_data_specification: /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/3_primate_test.txt
+  OUTPUT_PATH: env.SCRIPT_OUTPUT
+  TOOL_PATH: env.SCRIPT_TOOLS
+  ELASTIC_SEARCH_URL: env.ELASTIC_SEARCH_URL
+  TITLE: test2
+  seed: 0
+
+transformations:
+  # propagates down, can be overridden
+  include_reverse_complement: true
+
+  split_complements:
+    split:
+      AT: "A T"
+      CG: "C G"
+
+  # requires sequence to be split-able on space
+  word_length_filter:
+    min_length: 11
+
+# how to process segment sequence before it is put into Elasticsearch
+# how to sample the segment for searching for similar sequences across genomes
+preprocessing:
+  # "._processed", fixed size segment processing
+  segment:
+    size: 10k
+    transformations:
+      - split_complements
+      - word_length_filter
+    sample:
+      size: 3%
+      count: 3
+
+# how the search engine is started
+search_engine:
+  install: 'docker pull docker.elastic.co/elasticsearch/elasticsearch:7.7.1'
+  run: 'docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.1 &'
+  is_started: 'TOOL_PATH/is_elastic_search_started.sh ELASTIC_SEARCH_URL'
+  wait_until_started: 'TOOL_PATH/wait_for_elastic_search_started.sh ELASTIC_SEARCH_URL'
+
+# how the search engine is loaded
+# the configure step creates the logstash configuration file
+search_engine_loader:
+  install: 'docker pull logstash:7.8.0'
+  configure: 'python TOOL_PATH/generate_logstash_config.py OUTPUT_PATH ELASTIC_SEARCH_URL TITLE'
+  is_started: 'TOOL_PATH/is_docker_container_running.sh logstash:7.8.0'
+  run: 'docker run -v OUTPUT_PATH/processed:/processed -v OUTPUT_PATH/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf -v OUTPUT_PATH/pipeline/logstash.yml:/usr/share/logstash/config/logstash.yml logstash:7.8.0 &'
+

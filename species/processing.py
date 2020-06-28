@@ -89,16 +89,17 @@ class SegmentGenerator:
                        segmentdataSourceEndOffset - len(remainingSegmentData),
                        filteredSequenceStartOffset,
                        filteredSequenceStartOffset + self.segmentSize,
-                       segmentData,
-                       True)
+                       segmentData)
                 segmentData = remainingSegmentData
                 segmentdataSourceStartOffset = segmentdataSourceEndOffset - len(segmentData)
                 segmentdataSourceEndOffset - len(remainingSegmentData)
                 filteredSequenceStartOffset += self.segmentSize
 
-        yield (segmentdataSourceStartOffset, segmentdataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceStartOffset + len(segmentData), segmentData, True)
+        yield (segmentdataSourceStartOffset, segmentdataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceStartOffset + len(segmentData), segmentData)
+
 
 AT_CG_SPLIT = {'CG': 'C G', 'GC': 'G C', 'AT': 'A T', 'TA': 'T A', 'N': ''}
+
 
 def wordSplitterFactory(replaceXwithY):
     def replaceFunction(line):
@@ -108,10 +109,13 @@ def wordSplitterFactory(replaceXwithY):
         return line
     return replaceFunction
 
-COMPLEMENT = { 'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A' }
+
+COMPLEMENT = { 'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A', ' ': ' ' }
+
 
 def revcomp(s):
     return ''.join([COMPLEMENT[v] for v in reversed(s)])
+
 
 def deleterFactory(numberSubsequences, subsequenceLength):
     """Returns a function that deletes random subsequences and their reverse complement"""
@@ -127,6 +131,7 @@ def deleterFactory(numberSubsequences, subsequenceLength):
         return line
     return sequenceDeleterFunction
 
+
 def wordFilterFactory(minWordLen):
     """Returns a function that removes words less than 'minWordLen' from a string"""
     def wordFilterFunction(line):
@@ -135,58 +140,61 @@ def wordFilterFactory(minWordLen):
         return " ".join(data)
     return wordFilterFunction
 
+
 class SegmentProcessor:
     def __init__(self, segmentGenerator, dataProcessor):
         self.segmentGenerator = segmentGenerator
         self.dataProcessor = dataProcessor
 
     def segments(self):
-        for dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation in self.segmentGenerator.segments():
+        for dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData in self.segmentGenerator.segments():
             segmentData = self.dataProcessor(segmentData)
-            yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation)
+            yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData)
 
 
-def prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter):
+def prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter, sampler):
     """convert each continuous sequence into a much smaller sequence of words"""
     dsf = DataSourceFilter(fileToProcess)
     sg = SegmentGenerator(dsf, segmentSize)
     d = SegmentProcessor(sg, deleter)
     sp = SegmentProcessor(d, wordSplitter)
     wf = SegmentProcessor(sp, wordFilter)
-    for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation in wf.segments():
-        targetFile.write(f"{species} {chromosome} {startDataOffset} {endDataOffset} {filteredSequenceStartOffset} {filteredSequenceEndOffset} {segmentData}\n")
+    for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData in wf.segments():
+        location = f"{species} {chromosome} {startDataOffset} {endDataOffset} {filteredSequenceStartOffset} {filteredSequenceEndOffset}"
+        targetFile.write(f"{location} {segmentData}\n")
+        sampler.write_samples(location, segmentData)
 
 
-class ForwardInverseSampleExtractor:
-    def __init__(self, segmentGenerator, sampleSize, marginSize, numberSamples):
-        self.segmentGenerator = segmentGenerator
-        self.sampleSize = sampleSize
-        self.marginSize = marginSize
-        self.numberSamples = numberSamples
+class Sampler:
+    def __init__(self, output_file, sample_size_percent, number_samples):
+        self.output_file = output_file
+        self.sample_size_percent = sample_size_percent
+        self.number_samples = number_samples
 
-    def segments(self):
-        return self.samples()
+    def write_samples(self, location, segment_data):
+        words = segment_data.split()
+        words_per_sample = int(len(words)*self.sample_size_percent/100)
+        words_between = int((len(words) - words_per_sample*self.number_samples)/self.number_samples)
+        left = int(words_between/2)
+        for i in range(self.number_samples):
+            start = left + i * (words_between + words_per_sample)
+            data = ' '.join(words[start:(start + words_per_sample)])
+            orientation = "same"
+            self.output_file.write(f"{location} {orientation} {data}\n")
+            orientation = "reversed"
+            self.output_file.write(f"{location} {orientation} {revcomp(data)}")
 
-    def samples(self):
-        for dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData, orientation in self.segmentGenerator.segments():
-            for sample in range(numberSamples):
-                sampleOffsetInSegment = (self.marginSize * (sample + 1) + self.sampleSize * sample)
-                data = segmentData[sampleOffsetInSegment:(sampleOffsetInSegment + self.sampleSize)]
-                yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, data, True)
-                revCompData = revcomp(data)
-                yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, revCompData, False)
 
-def prepare_samples(fileToProcess, targetFile, segmentSize, wordSplitter, wordFilter, sampleSizePercent, numberSamples):
-    dsf = DataSourceFilter(fileToProcess)
-    sg = SegmentGenerator(dsf, segmentSize)
-    singleSampleSize = int(segmentSize*sampleSizePercent/100)
-    marginSize = int(int(segmentSize - singleSampleSize * numberSamples) / (numberSamples + 1))
-    fig = ForwardInverseSampleExtractor(sg, singleSampleSize, marginSize, numberSamples)
-    sp = SegmentProcessor(fig, wordSplitter)
-    wf = SegmentProcessor(sp, wordFilter)
-
-    for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, data, orientation in wf.segments():
-        targetFile.write(f"{species} {chromosome} {startDataOffset} {endDataOffset} {filteredSequenceStartOffset} {filteredSequenceEndOffset} {orientation} {data}\n")
+# https://gist.github.com/gajeshbhat/67a3db79a6aecd1db42343190f9a2f17
+def convert_str_to_number(x):
+    total_stars = 0
+    num_map = {'K':1000, 'M':1000000, 'B':1000000000}
+    if x.isdigit():
+        total_stars = int(x)
+    else:
+        if len(x) > 1:
+            total_stars = float(x[:-1]) * num_map.get(x[-1].upper(), 1)
+    return int(total_stars)
 
 
 if __name__ == "__main__":
@@ -195,7 +203,7 @@ if __name__ == "__main__":
     species = sys.argv[1]
     chromosome = sys.argv[2]
     fileToProcess = sys.argv[3]
-    segmentSize = int(sys.argv[4])
+    segmentSize = convert_str_to_number(sys.argv[4])
     minWordSize = int(sys.argv[5])
     targetFolder = sys.argv[6]
 
@@ -210,11 +218,11 @@ if __name__ == "__main__":
         numberSubsequencesToDelete = int(sys.argv[9])
         deletedSubsequenceLength = int(sys.argv[10])
 
-    with open(f"{targetFolder}/{species}.{chromosome}.{segmentSize}.{minWordSize}.processed", "w") as targetFile:
+    with open(f"{targetFolder}/processed/{species}.{chromosome}.{segmentSize}.{minWordSize}.processed", "w") as targetFile, \
+         open(f"{targetFolder}/samples/{species}.{chromosome}.{segmentSize}.{minWordSize}.samples", "w") as sampleFile:
         deleter = deleterFactory(numberSubsequencesToDelete, deletedSubsequenceLength)
         wordSplitter = wordSplitterFactory(AT_CG_SPLIT)
         wordFilter = wordFilterFactory(minWordSize)
-        prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter)
+        sampler = Sampler(sampleFile, sampleSizePercent, numberSamples)
+        prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter, sampler)
 
-    with open(f"{targetFolder}/{species}.{chromosome}.{segmentSize}.{minWordSize}.samples", "w") as targetFile:
-        prepare_samples(fileToProcess, targetFile, segmentSize, wordSplitterFactory(AT_CG_SPLIT), wordFilterFactory(minWordSize), sampleSizePercent, numberSamples)
