@@ -58,10 +58,10 @@ class Transformations:
 
 
 class Experiment:
-    OUTPUT_PATH_IN_YAML = "OUTPUT_PATH"
-    TOOL_PATH_IN_YAML = "TOOL_PATH"
-    ELASTIC_SEARCH_URL_IN_YAML = "ELASTIC_SEARCH_URL"
-    TITLE_IN_YAML = "TITLE"
+    OUTPUT_PATH_yaml_name = "OUTPUT_PATH"
+    TOOL_PATH_yaml_name = "TOOL_PATH"
+    ELASTIC_SEARCH_URL_yaml_name = "ELASTIC_SEARCH_URL"
+    TITLE_yaml_name = "TITLE"
 
     def __init__(self, experiment_yaml):
         self.experiment = experiment_yaml
@@ -70,22 +70,32 @@ class Experiment:
             random.seed(int(self.experiment["seed"]))
 
     def input_data_specification(self):
-        ok, specfile = get_string_or_environment_value(self.experiment['input_data_specification'])
+        ok, spec_file = get_string_or_environment_value(self.experiment['input_data_specification'])
         if not ok:
             error_out("'input_data_specification' is missing")
-        if not os.path.isfile(specfile):
-            error_out(f"Specification file {specfile} not found")
-        return ok, specfile
+        if not os.path.isfile(spec_file):
+            error_out(f"Specification file {spec_file} not found")
+        return ok, spec_file
+
+    def elasticsearch_url(self):
+        ok, url = get_string_or_environment_value(self.experiment[self.ELASTIC_SEARCH_URL_yaml_name])
+        return url
+
+    def processed_folder(self):
+        return f"{self.target_folder()}/{self.title()}/processed"
+
+    def samples_folder(self):
+        return f"{self.target_folder()}/samples"
 
     def target_folder(self):
-        ok, output_path = get_string_or_environment_value(self.experiment[Experiment.OUTPUT_PATH_IN_YAML])
+        ok, output_path = get_string_or_environment_value(self.experiment[Experiment.OUTPUT_PATH_yaml_name])
         return output_path
 
     def get_output_folders(self):
-        ok, output_path = get_string_or_environment_value(self.experiment[Experiment.OUTPUT_PATH_IN_YAML])
+        ok, output_path = get_string_or_environment_value(self.experiment[Experiment.OUTPUT_PATH_yaml_name])
         script_output_folder = None
         if ok:
-            ok, script_output_folder = get_string_or_environment_value(f"{output_path}/{self.experiment[Experiment.TITLE_IN_YAML]}")
+            ok, script_output_folder = get_string_or_environment_value(f"{output_path}/{self.experiment[Experiment.TITLE_yaml_name]}")
         if ok:
             ok = fs_ensure_folder_exists(output_path)
         if ok:
@@ -97,24 +107,28 @@ class Experiment:
         return ok, output_path, script_output_folder
 
     def title(self):
-        return self.experiment[Experiment.TITLE_IN_YAML]
+        return self.experiment[Experiment.TITLE_yaml_name]
+
+    def tool_folder(self):
+        _, tf = get_string_or_environment_value(self.experiment[Experiment.TOOL_PATH_yaml_name])
+        return tf
 
     def env_expand(self, s):
-        ok, tool_path = get_string_or_environment_value(self.experiment[Experiment.TOOL_PATH_IN_YAML])
+        ok, tool_path = get_string_or_environment_value(self.experiment[Experiment.TOOL_PATH_yaml_name])
         if ok:
-            ok, output_path = get_string_or_environment_value(self.experiment[Experiment.OUTPUT_PATH_IN_YAML])
+            ok, output_path = get_string_or_environment_value(self.experiment[Experiment.OUTPUT_PATH_yaml_name])
         if ok:
             ok, elastic_search_url = get_string_or_environment_value(
-                self.experiment[Experiment.ELASTIC_SEARCH_URL_IN_YAML])
+                self.experiment[Experiment.ELASTIC_SEARCH_URL_yaml_name])
         if ok:
-            ok, title = get_string_or_environment_value(self.experiment[Experiment.TITLE_IN_YAML])
+            ok, title = get_string_or_environment_value(self.experiment[Experiment.TITLE_yaml_name])
 
         if ok:
             output_path = f"{output_path}/{self.title()}"
-            return s.replace(Experiment.TOOL_PATH_IN_YAML, tool_path)\
-                .replace(Experiment.OUTPUT_PATH_IN_YAML, output_path)\
-                .replace(Experiment.ELASTIC_SEARCH_URL_IN_YAML, elastic_search_url)\
-                .replace(Experiment.TITLE_IN_YAML, title)
+            return s.replace(Experiment.TOOL_PATH_yaml_name, tool_path)\
+                .replace(Experiment.OUTPUT_PATH_yaml_name, output_path)\
+                .replace(Experiment.ELASTIC_SEARCH_URL_yaml_name, elastic_search_url)\
+                .replace(Experiment.TITLE_yaml_name, title)
         error_out("Expected environment variable NOT set, exiting")
 
 
@@ -137,6 +151,9 @@ class Configuration:
             return self.experiment.env_expand(self.configuration[Configuration.WAIT_UNTIL_STARTED])
         else:
             return not_configured(Configuration.WAIT_UNTIL_STARTED)
+
+    def sample_file_pattern(self):
+        return self.experiment.env_expand(self.configuration["sample_file_pattern"])
 
     def configure(self):
         return self.experiment.env_expand(self.configuration["configure"])

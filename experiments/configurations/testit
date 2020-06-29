@@ -1,10 +1,67 @@
-set -x
 export SCRIPT_OUTPUT=/Users/johannesjohannsen/sandbox/el_stack_test
 export SCRIPT_TOOLS=/Users/johannesjohannsen/genome/code/genome_compare/script_tools
 export ELASTIC_SEARCH_URL='http://192.168.7.205:9200'
 rm -rf /Users/johannesjohannsen/sandbox/el_stack_test
 cd /Users/johannesjohannsen/genome/code/genome_compare/species/script_writers
 python script_writer.py /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/el_stack_test.yaml
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/test2/search_engine.sh
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/test2/search_engine_loader.sh
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/test2/preprocessing.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/alltest/search_engine.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/alltest/search_engine_loader.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/alltest/preprocessing.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test/alltest/query_samples.sh
+echo ''
+echo ''
+echo 'This script will do the following:'
+echo ''
+echo '  - start an Elasticsearch docker image (contains no data)'
+echo '  - start a Logstash docker image, for feeding data into Elasticsearch'
+echo '  - process a list of FASTA files into files Logstash will send to Elasticsearch'
+echo '  - wait for Elasticsearch to be loaded'
+echo '  - query Elasticsearch to find relationships between the genomes'
+echo '  - put all query results into a .csv file for further processing'
+echo '  - identify corresponding sections of chromosomes, including inversions'
+echo '  - identify inversion boundaries, extract source data containing those boundaries'
+echo '  - generate raw sequence data for all inversion boundaries, including metadata species/chromosome/offset'
+echo '  - repeat this process on a smaller scale to get a more detailed view of the inversion boundaries'
+echo ''
+echo ''
+#read -p "STEP 1: start an Elasticsearch docker image (press Y to start, any other key to skip): " -n 1 -r
+echo ''
+echo ''
+#if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo 'Starting elasticsearch'
+    /Users/johannesjohannsen/sandbox/el_stack_test/alltest/search_engine.sh
+#else
+#    echo 'Skipping search engine start'
+#fi
+echo ''
+#read -p "STEP 2: press Y to start logstash: " -n 1 -r
+echo ''
+echo ''
+#if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo 'Starting logstash'
+    /Users/johannesjohannsen/sandbox/el_stack_test/alltest/search_engine_loader.sh
+    sleep 3
+#else
+#    echo 'Skipping search engine start'
+#fi
+echo ''
+#read -p "STEP 3: press Y to process the data files: " -n 1 -r
+echo ''
+echo ''
+#if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo 'Generating data files to load into elasticsearch'
+    /Users/johannesjohannsen/sandbox/el_stack_test/alltest/preprocessing.sh
+#else
+#    echo 'Skipping data generation'
+#fi
+echo ''
+#read -p "STEP 4: press Y to wait for data load to complete: " -n 1 -r
+echo ''
+echo ''
+#if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo 'Waiting for logstash-elasticsearch pipeline to complete, then query for relationships'
+    /Users/johannesjohannsen/sandbox/el_stack_test/alltest/query_samples.sh
+#else
+#    echo 'Not querying elasticsearch to find relationships between genome data'
+#fi
+

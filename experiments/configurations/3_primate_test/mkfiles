@@ -1,10 +1,10 @@
 set -x
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/Gorilla_gorilla/chr3.fa > ./rawdata/Gorilla_gorilla/chr3.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/Pan_troglodytes/chr3.fa > ./rawdata/Pan_troglodytes/chr3.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/hg38/chr3.fa > ./rawdata/hg38/chr3.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/Gorilla_gorilla/chr4.fa > ./rawdata/Gorilla_gorilla/chr4.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/Pan_troglodytes/chr4.fa > ./rawdata/Pan_troglodytes/chr4.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/hg38/chr4.fa > ./rawdata/hg38/chr4.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/Gorilla_gorilla/chr5.fa > ./rawdata/Gorilla_gorilla/chr5.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/Pan_troglodytes/chr5.fa > ./rawdata/Pan_troglodytes/chr5.fa
-head -10000 /Users/johannesjohannsen/Desktop/genomes/primates/hg38/chr5.fa > ./rawdata/hg38/chr5.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/Gorilla_gorilla/chr3.fa > ./rawdata/Gorilla_gorilla/chr3.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/Pan_troglodytes/chr3.fa > ./rawdata/Pan_troglodytes/chr3.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/hg38/chr3.fa > ./rawdata/hg38/chr3.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/Gorilla_gorilla/chr4.fa > ./rawdata/Gorilla_gorilla/chr4.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/Pan_troglodytes/chr4.fa > ./rawdata/Pan_troglodytes/chr4.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/hg38/chr4.fa > ./rawdata/hg38/chr4.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/Gorilla_gorilla/chr5.fa > ./rawdata/Gorilla_gorilla/chr5.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/Pan_troglodytes/chr5.fa > ./rawdata/Pan_troglodytes/chr5.fa
+head -20000 /Users/johannesjohannsen/Desktop/genomes/primates/hg38/chr5.fa > ./rawdata/hg38/chr5.fa

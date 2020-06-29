@@ -1,8 +1,7 @@
-set -x
 result=`docker ps | grep "$1"`
 if [ $? != 0 ]; then
-    echo "nope"
+    echo "container is NOT running"
     exit -1
 else
-  echo "yea"
+  echo "container IS running"
 fi

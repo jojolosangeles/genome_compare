@@ -3,13 +3,14 @@
 #  import yaml
 #  with open('config/a.yaml') as file:
 #      config = yaml.load(file, Loader=yaml.FullLoader)
-#
+#/Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt
 experiment:
   input_data_specification: /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/3_primate_test.txt
+  #input_data_specification: /Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt
   OUTPUT_PATH: env.SCRIPT_OUTPUT
   TOOL_PATH: env.SCRIPT_TOOLS
   ELASTIC_SEARCH_URL: env.ELASTIC_SEARCH_URL
-  TITLE: test2
+  TITLE: alltest
   seed: 0
 
 transformations:
@@ -23,14 +24,14 @@ transformations:
 
   # requires sequence to be split-able on space
   word_length_filter:
-    min_length: 11
+    min_length: 16
 
 # how to process segment sequence before it is put into Elasticsearch
 # how to sample the segment for searching for similar sequences across genomes
 preprocessing:
   # "._processed", fixed size segment processing
   segment:
-    size: 10k
+    size: 1M
     transformations:
       - split_complements
       - word_length_filter
@@ -41,9 +42,10 @@ preprocessing:
 # how the search engine is started
 search_engine:
   install: 'docker pull docker.elastic.co/elasticsearch/elasticsearch:7.7.1'
-  run: 'docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.1 &'
+  run: 'docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.1 > OUTPUT_PATH/elasticsearch_docker.log &'
   is_started: 'TOOL_PATH/is_elastic_search_started.sh ELASTIC_SEARCH_URL'
   wait_until_started: 'TOOL_PATH/wait_for_elastic_search_started.sh ELASTIC_SEARCH_URL'
+  progress: 'OUTPUT_PATH/es_progress.sh'
 
 # how the search engine is loaded
 # the configure step creates the logstash configuration file
@@ -51,5 +53,10 @@ search_engine_loader:
   install: 'docker pull logstash:7.8.0'
   configure: 'python TOOL_PATH/generate_logstash_config.py OUTPUT_PATH ELASTIC_SEARCH_URL TITLE'
   is_started: 'TOOL_PATH/is_docker_container_running.sh logstash:7.8.0'
-  run: 'docker run -v OUTPUT_PATH/processed:/processed -v OUTPUT_PATH/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf -v OUTPUT_PATH/pipeline/logstash.yml:/usr/share/logstash/config/logstash.yml logstash:7.8.0 &'
+  run: 'docker run -v OUTPUT_PATH/processed:/processed -v OUTPUT_PATH/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf -v OUTPUT_PATH/pipeline/logstash.yml:/usr/share/logstash/config/logstash.yml logstash:7.8.0 > OUTPUT_PATH/logstash_docker.log &'
 
+# querying the search enging with the samples
+query_with_samples:
+  wait_for_load_complete: 'python TOOL_PATH/wait_for_es_cload_omplete.py OUTPUT_PATH/processed ELASTIC_SEARCH_URL'
+  sample_file_pattern: 'OUTPUT_PATH/samples/*.samples'
+  process_single_file: 'python sample_query.py --query FILE_PATH --index TITLE >> FILE_PATH.csv'
