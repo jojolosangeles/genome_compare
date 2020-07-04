@@ -49,6 +49,9 @@ import pandas as pd
 def process_csv_files(csv_folder, max_csv_folder):
     os.chdir(csv_folder)
     csv_files_to_process = glob.glob("*.csv")
+    if not os.path.exists(max_csv_folder):
+        print(f"PATH {max_csv_folder} does not exist, CREATING IT")
+        os.mkdir(max_csv_folder)
     os.chdir(max_csv_folder)
     csv_files_already_processed = glob.glob("*.csv")
 

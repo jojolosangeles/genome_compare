@@ -66,3 +66,10 @@ def query_with_samples(script_output_folder, experiment, configuration):
                 f"python {tool_folder}/generate_query_script.py \"{configuration.sample_file_pattern()}\" {experiment.title()} {tool_folder} {experiment.elasticsearch_url()}  > {run_queries_script_path}\n")
             outFile.write(f"chmod +x {run_queries_script_path}\n")
             outFile.write(f"{run_queries_script_path}\n")
+
+            post_process = configuration.post_process()
+            if post_process is not None:
+                outFile.write("#\n")
+                outFile.write("# postprocess\n")
+                outFile.write("#\n")
+                outFile.write(f"{post_process}\n")

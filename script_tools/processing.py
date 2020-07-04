@@ -182,7 +182,7 @@ class Sampler:
             orientation = "same"
             self.output_file.write(f"{location} {orientation} {data}\n")
             orientation = "reversed"
-            self.output_file.write(f"{location} {orientation} {revcomp(data)}")
+            self.output_file.write(f"{location} {orientation} {revcomp(data)}\n")
 
 
 # https://gist.github.com/gajeshbhat/67a3db79a6aecd1db42343190f9a2f17

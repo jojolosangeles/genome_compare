@@ -5,8 +5,8 @@
 #      config = yaml.load(file, Loader=yaml.FullLoader)
 #/Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt
 experiment:
-  input_data_specification: /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/3_primate_test.txt
-  #input_data_specification: /Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt
+  #input_data_specification: /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/3_primate_test/3_primate_test.txt
+  input_data_specification: /Users/johannesjohannsen/Desktop/genomes/primates/6_primates_files.txt
   OUTPUT_PATH: env.SCRIPT_OUTPUT
   TOOL_PATH: env.SCRIPT_TOOLS
   ELASTIC_SEARCH_URL: env.ELASTIC_SEARCH_URL
@@ -60,3 +60,8 @@ query_with_samples:
   wait_for_load_complete: 'python TOOL_PATH/wait_for_es_cload_omplete.py OUTPUT_PATH/processed ELASTIC_SEARCH_URL'
   sample_file_pattern: 'OUTPUT_PATH/samples/*.samples'
   process_single_file: 'python sample_query.py --query FILE_PATH --index TITLE >> FILE_PATH.csv'
+  post_process: 'python TOOL_PATH/max_score.py --csv_folder OUTPUT_PATH/samples --max_csv_folder OUTPUT_PATH/max_scores'
+
+relate_chromosomes:
+  prepare: 'TOOL_PATH/create_dataframe.sh OUTPUT_PATH/max_scores | gzip > OUTPUT_PATH/data.gz'
+  summarize: 'python TOOL_PATH/chromosome_relationships.py OUTPUT_PATH/data.gz OUTPUT_PATH/chromo_relationships.gz'

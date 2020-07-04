@@ -10,7 +10,7 @@ template="""input {
 
 filter {
   grok {
-    match => { "message" => "%{WORD:sp} %{WORD:chr} %{NONNEGINT:dSO} %{NONNEGINT:dEO} %{NONNEGINT:loc} %{NONNEGINT:sEO} %{GREEDYDATA:data}" }
+    match => { "message" => "%{WORD:sp} %{WORD:chr} %{NONNEGINT:dSO} %{NONNEGINT:dEO} %{NONNEGINT:segloc} %{NONNEGINT:sEO} %{GREEDYDATA:data}" }
   }
   mutate {
     remove_field => [ "message" ]

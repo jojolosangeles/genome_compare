@@ -114,6 +114,8 @@ class Experiment:
         return tf
 
     def env_expand(self, s):
+        if s is None:
+            return None
         ok, tool_path = get_string_or_environment_value(self.experiment[Experiment.TOOL_PATH_yaml_name])
         if ok:
             ok, output_path = get_string_or_environment_value(self.experiment[Experiment.OUTPUT_PATH_yaml_name])
@@ -147,10 +149,7 @@ class Configuration:
         return self.experiment.env_expand(self.configuration["run"])
 
     def wait_until_started(self):
-        if Configuration.WAIT_UNTIL_STARTED in self.configuration:
-            return self.experiment.env_expand(self.configuration[Configuration.WAIT_UNTIL_STARTED])
-        else:
-            return not_configured(Configuration.WAIT_UNTIL_STARTED)
+        return self.script_line(Configuration.WAIT_UNTIL_STARTED)
 
     def sample_file_pattern(self):
         return self.experiment.env_expand(self.configuration["sample_file_pattern"])
@@ -164,6 +163,21 @@ class Configuration:
     # segment specification
     def segment_size(self):
         return self.configuration["segment"]["size"]
+
+    def script_line(self, s):
+        if s in self.configuration:
+            return self.experiment.env_expand(self.configuration[s])
+        else:
+            return f"# no {s} step specified"
+
+    def post_process(self):
+        return self.script_line("post_process")
+
+    def prepare(self):
+        return self.script_line("prepare")
+
+    def summarize(self):
+        return self.script_line("summarize")
 
     # sample configuration
     def sample_size_percent(self):

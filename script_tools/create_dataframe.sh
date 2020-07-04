@@ -1,0 +1,1 @@
+cat $1/*.csv | grep -v "chr"

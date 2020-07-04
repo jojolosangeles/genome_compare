@@ -91,8 +91,8 @@ class RelatedSpecies:
         df = pd.read_csv(csvFile,
                         compression=compression,
                         index_col=False,
-                        usecols=['sp','chr','loc','score','msp','mchr','mloc','orientation','segsize'],
-                        dtype={ 'sp': str, 'chr': str, 'loc': int,
+                        usecols=['sp','chr','segloc','score','msp','mchr','mloc','orientation','segsize'],
+                        dtype={ 'sp': str, 'chr': str, 'segloc': int,
                                 'score': int,
                                 'msp': str, 'mchr': str, 'mloc': int,
                                 'orientation': str, 'segsize': int, 'dsSO': int, 'dsEO': int })

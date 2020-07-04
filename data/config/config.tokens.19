@@ -1,9 +1,0 @@
-SPLIT CG,GC,AT,TA REMOVE N
-line.split()
-TOKENS >19
-
-The lines are ordered:
-
-line 1: given a string "line", eval this to get a replacement for the original line
-line 2: given a line, convert it into a list
-line 3: given a list, filter the list into another list
