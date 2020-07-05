@@ -64,4 +64,6 @@ query_with_samples:
 
 relate_chromosomes:
   prepare: 'TOOL_PATH/create_dataframe.sh OUTPUT_PATH/max_scores | gzip > OUTPUT_PATH/data.gz'
-  summarize: 'python TOOL_PATH/chromosome_relationships.py OUTPUT_PATH/data.gz OUTPUT_PATH/chromo_relationships.gz'
+  summarize:
+  - 'python TOOL_PATH/chromosome_relationships.py OUTPUT_PATH/data.gz OUTPUT_PATH/chromo_relationships.gz'
+  - 'python TOOL_PATH/df_process.py OUTPUT_PATH/chromo_relationships.gz OUTPUT_PATH/graphs'

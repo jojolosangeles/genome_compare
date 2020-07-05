@@ -13,4 +13,5 @@ def relate_chromosomes(script_output_folder, experiment, configuration):
             outFile.write("# combine samples, summarize\n")
             outFile.write("#\n")
             outFile.write(f"{configuration.prepare()}\n")
-            outFile.write(f"{configuration.summarize()}\n")
+            for line in configuration.summarize():
+                outFile.write(f"{line}\n")

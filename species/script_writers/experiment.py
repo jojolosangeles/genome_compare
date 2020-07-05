@@ -177,7 +177,7 @@ class Configuration:
         return self.script_line("prepare")
 
     def summarize(self):
-        return self.script_line("summarize")
+        return [ self.experiment.env_expand(line) for line in self.configuration["summarize"]]
 
     # sample configuration
     def sample_size_percent(self):
