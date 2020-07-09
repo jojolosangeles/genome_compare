@@ -2,9 +2,12 @@ from itertools import product, combinations
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import style;
 import seaborn
 import sys
 import os
+
+style.use('ggplot')
 
 ordering = {
     "Gorilla_gorilla": ['1', '2A', '2B', '3', '4', '5', '6', '7', '8', '9', '10',
@@ -15,10 +18,10 @@ ordering = {
              '21', '22', 'X', 'Y'],
     "Macaca_fascicularis": ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
                             '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
-                            '21', '22', 'X'],
+                            'X'],
     "Macaca_mulatta": ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
                        '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
-                       '21', '22', 'X', 'Y'],
+                       'X', 'Y'],
     "Pan_troglodytes": ['1', '2A', '2B', '3', '4', '5', '6', '7', '8', '9', '10',
                         '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
                         '21', '22', 'X', 'Y'],
@@ -72,24 +75,26 @@ def gen_graph(df, sp, msp, out_directory):
     out_file = f"{out_directory}/{sp}_vs_{msp}.png"
     print(f"  generate {out_file}")
     cm_df = df[(df['sp'] == sp) & (df['msp'] == msp)]
-    print(cm_df)
+
     # creating a DataFrame with rows from sp, columns from msp
     # first create a dictionary with keys from msp, these will be the columns
-    d = {key: vals(cm_df[cm_df['mchr'] == key], sp_labels, msp_labels) for key in msp_labels}
+    #d = {key: vals(cm_df[cm_df['mchr'] == key], sp_labels, msp_labels) for key in msp_labels}
     d = {}
-    for key in msp_labels:
+    mask = np.zeros(shape=(len(msp_labels), len(sp_labels)))
+    for i, key in enumerate(msp_labels):
         xdf = cm_df[cm_df['mchr'] == key]
-        print(xdf)
         v = vals(xdf, sp_labels, msp_labels)
-        print(v)
+        mask[i][v == 0] = 1
         d[key] = v
     ddf = pd.DataFrame(d)
     ddf.index = sp_labels
-    print(ddf)
+    mask = mask.T
 
     fig, ax = plt.subplots(figsize=(10, 10))
+    ax.tick_params(axis=u'both', which=u'both', length=0)
+    ax.set_facecolor("black")
     seaborn.heatmap(ddf, linecolor='#3f3151', linewidth=0.5, xticklabels=msp_labels, yticklabels=sp_labels,
-                    cbar=False, annot=True, fmt='d')
+                    mask=mask, cbar=False, annot=True, fmt='d')
     plt.yticks(rotation=0)
     plt.ylabel(sp, fontsize='large', fontweight='bold')
     plt.xlabel(msp, fontsize='large', fontweight='bold')

@@ -42,7 +42,7 @@ preprocessing:
 # how the search engine is started
 search_engine:
   install: 'docker pull docker.elastic.co/elasticsearch/elasticsearch:7.7.1'
-  run: 'docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.1 > OUTPUT_PATH/elasticsearch_docker.log &'
+  run: 'docker run -p 9200:9200 -p 9300:9300 -v OUTPUT_PATH/esdata:/usr/share/elasticsearch/data -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.1 > OUTPUT_PATH/elasticsearch_docker.log &'
   is_started: 'TOOL_PATH/is_elastic_search_started.sh ELASTIC_SEARCH_URL'
   wait_until_started: 'TOOL_PATH/wait_for_elastic_search_started.sh ELASTIC_SEARCH_URL'
   progress: 'OUTPUT_PATH/es_progress.sh'
