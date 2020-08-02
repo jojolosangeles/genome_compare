@@ -1,16 +1,20 @@
 echo "start of test" > timing.txt
 date >> timing.txt
-export SCRIPT_OUTPUT=/Users/johannesjohannsen/sandbox/el_stack_test2
+export SCRIPT_OUTPUT=/Users/johannesjohannsen/sandbox/el_stack_test6
 export SCRIPT_TOOLS=/Users/johannesjohannsen/genome/code/genome_compare/script_tools
-export ELASTIC_SEARCH_URL='http://192.168.7.205:9200'
-rm -rf /Users/johannesjohannsen/sandbox/el_stack_test2
+# Eagle Rock
+#export ELASTIC_SEARCH_URL='http://192.168.7.205:9200'
+# Joshua Tree
+export ELASTIC_SEARCH_URL='http://192.168.7.217:9200'
+rm -rf /Users/johannesjohannsen/sandbox/el_stack_test6
+mkdir -p /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/esdata
 cd /Users/johannesjohannsen/genome/code/genome_compare/species/script_writers
 python script_writer.py /Users/johannesjohannsen/genome/code/genome_compare/experiments/configurations/el_stack_test.yaml
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/search_engine.sh
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/search_engine_loader.sh
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/preprocessing.sh
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/query_samples.sh
-chmod +x /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/relate_chromosomes.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/search_engine.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/search_engine_loader.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/preprocessing.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/query_samples.sh
+chmod +x /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/relate_chromosomes.sh
 echo ''
 echo ''
 echo 'This script will do the following:'
@@ -34,7 +38,7 @@ echo ''
     echo 'Starting elasticsearch'
     echo 'Starting elasticsearch' >> timing.txt
     date >> timing.txt
-    /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/search_engine.sh
+    /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/search_engine.sh
 #else
 #    echo 'Skipping search engine start'
 #fi
@@ -46,7 +50,7 @@ echo ''
     echo 'Starting logstash'
     echo 'Starting logstash' >> timing.txt
     date >> timing.txt
-    /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/search_engine_loader.sh
+    /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/search_engine_loader.sh
     sleep 3
 #else
 #    echo 'Skipping search engine start'
@@ -59,7 +63,7 @@ echo ''
     echo 'Generating data files to load into elasticsearch'
     echo 'Generating data files to load into elasticsearch' >> timing.txt
     date >> timing.txt
-    /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/preprocessing.sh
+    /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/preprocessing.sh
 #else
 #    echo 'Skipping data generation'
 #fi
@@ -71,13 +75,13 @@ echo ''
     echo 'Waiting for logstash-elasticsearch pipeline to complete, then query for relationships'
     echo 'Waiting for logstash-elasticsearch pipeline to complete, then query for relationships' >> timing.txt
     date >> timing.txt
-    /Users/johannesjohannsen/sandbox/el_stack_test2/alltest/query_samples.sh
+    /Users/johannesjohannsen/sandbox/el_stack_test6/alltest/query_samples.sh
 #else
 #    echo 'Not querying elasticsearch to find relationships between genome data'
 #fi
 echo "prepare dataframe"
     echo 'prepare single CSV file' >> timing.txt
     date >> timing.txt
-/Users/johannesjohannsen/sandbox/el_stack_test2/alltest/relate_chromosomes.sh
+/Users/johannesjohannsen/sandbox/el_stack_test6/alltest/relate_chromosomes.sh
     echo 'ready for next step' >> timing.txt
     date >> timing.txt

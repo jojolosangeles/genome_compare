@@ -24,20 +24,22 @@ transformations:
 
   # requires sequence to be split-able on space
   word_length_filter:
-    min_length: 16
+    min_length: 14
 
 # how to process segment sequence before it is put into Elasticsearch
 # how to sample the segment for searching for similar sequences across genomes
 preprocessing:
   # "._processed", fixed size segment processing
   segment:
-    size: 1M
+    size: 50k   # raw data size per incoming data processed
+    minimum_number_words: 20000 # minimum number of words in a segment
     transformations:
       - split_complements
       - word_length_filter
     sample:
-      size: 3%
+      size: 2%
       count: 3
+      
 
 # how the search engine is started
 search_engine:

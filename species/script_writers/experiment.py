@@ -164,6 +164,9 @@ class Configuration:
     def segment_size(self):
         return self.configuration["segment"]["size"]
 
+    def minimum_number_words(self):
+        return self.configuration["segment"]["minimum_number_words"]
+
     def script_line(self, s):
         if s in self.configuration:
             return self.experiment.env_expand(self.configuration[s])

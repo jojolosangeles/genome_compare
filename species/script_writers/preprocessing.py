@@ -7,6 +7,7 @@ def preprocessing_script(script_output_folder, experiment, configuration, transf
     if not ok:
         error_out(f"Could not load input data specification")
     segment_size = configuration.segment_size()
+    minimum_number_words = configuration.minimum_number_words()
     min_word_length = transformations.min_word_length()
     target_folder = experiment.target_folder()
     tool_folder = experiment.tool_folder()
@@ -31,7 +32,7 @@ def preprocessing_script(script_output_folder, experiment, configuration, transf
                 species_set.add(species)
                 outFile.write(f"echo 'processing file {filePath} ({counter} of {total})'\n")
                 outFile.write(f"python {tool_folder}/processing.py {species} {chromosome} {filePath} {segment_size} ")
-                outFile.write(f"{min_word_length} {target_folder}/{experiment.title()} {sample_size_percent} {number_samples}")
+                outFile.write(f"{min_word_length} {target_folder}/{experiment.title()} {sample_size_percent} {number_samples} {minimum_number_words}")
                 outFile.write("\n")
                 # optional additional parameters: {ndel} {ndellen}")
 

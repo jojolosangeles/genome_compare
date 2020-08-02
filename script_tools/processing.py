@@ -135,14 +135,14 @@ def deleterFactory(numberSubsequences, subsequenceLength):
 def wordFilterFactory(minWordLen):
     """Returns a function that removes words less than 'minWordLen' from a string"""
     def wordFilterFunction(line):
-        data = line.split()
-        data = [ word for word in data if len(word) >= minWordLen ]
-        return " ".join(data)
+        words = line.split()
+        filtered_words = [ word for word in words if len(word) >= minWordLen ]
+        return " ".join(filtered_words)
     return wordFilterFunction
 
 
 class SegmentProcessor:
-    def __init__(self, segmentGenerator, dataProcessor):
+    def __init__(self, segmentGenerator, dataProcessor, minWords=0):
         self.segmentGenerator = segmentGenerator
         self.dataProcessor = dataProcessor
 
@@ -152,17 +152,55 @@ class SegmentProcessor:
             yield (dataSourceStartOffset, dataSourceEndOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData)
 
 
-def prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter, sampler):
+class SegmentJoiner:
+    def __init__(self, target_file, sample_writer, minimum_number_words):
+        self.targetFile = target_file
+        self.sample_writer = sample_writer
+        self.minimum_number_words = minimum_number_words
+        self.currentSegmentData = ""
+        self.currentSO = self.currentEO = self.currentFSO = self.currentFEO = 0
+        self.currentNumberWords = 0
+
+    def reset(self):
+        self.currentSegmentData = ""
+        self.currentSO = self.currentEO = self.currentFSO = self.currentFEO = 0
+        self.currentNumberWords = 0
+
+    def store(self, startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData):
+        if self.currentNumberWords == 0:
+            self.currentSO = startDataOffset
+            self.currentEO = endDataOffset
+            self.currentFSO = filteredSequenceStartOffset
+            self.currentFEO = filteredSequenceEndOffset
+            self.currentSegmentData = segmentData
+            self.currentNumberWords = len(segmentData.split())
+        else:
+            self.currentEO = endDataOffset
+            self.currentFEO = filteredSequenceEndOffset
+            self.currentSegmentData = f"{self.currentSegmentData} {segmentData}"
+            self.currentNumberWords += len(segmentData.split())
+
+        if self.currentNumberWords > self.minimum_number_words:
+            self.flush()
+
+    def flush(self):
+        location = f"{species} {chromosome} {self.currentSO} {self.currentEO} {self.currentFSO} {self.currentFEO}"
+        self.targetFile.write(f"{location} {self.currentSegmentData}\n")
+        self.sample_writer.write_samples(location, self.currentSegmentData)
+        self.reset()
+
+
+def prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter, sampler, minimumNumberWordsPerSegment):
     """convert each continuous sequence into a much smaller sequence of words"""
     dsf = DataSourceFilter(fileToProcess)
     sg = SegmentGenerator(dsf, segmentSize)
     d = SegmentProcessor(sg, deleter)
     sp = SegmentProcessor(d, wordSplitter)
     wf = SegmentProcessor(sp, wordFilter)
+    sj = SegmentJoiner(targetFile, sampler, minimumNumberWordsPerSegment)
     for startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData in wf.segments():
-        location = f"{species} {chromosome} {startDataOffset} {endDataOffset} {filteredSequenceStartOffset} {filteredSequenceEndOffset}"
-        targetFile.write(f"{location} {segmentData}\n")
-        sampler.write_samples(location, segmentData)
+        sj.store(startDataOffset, endDataOffset, filteredSequenceStartOffset, filteredSequenceEndOffset, segmentData)
+    sj.flush()
 
 
 class Sampler:
@@ -210,13 +248,14 @@ if __name__ == "__main__":
     # get samples at same time, includes reverse complement samples
     sampleSizePercent = int(sys.argv[7])
     numberSamples = int(sys.argv[8])
+    minimumNumberWordsPerSegment = int(sys.argv[9])
 
     # number of random subsequences of given length to remove, 0 for number subsequences does nothing
     numberSubsequencesToDelete = 0
     deletedSubsequenceLength = 0
-    if len(sys.argv) > 9:
-        numberSubsequencesToDelete = int(sys.argv[9])
-        deletedSubsequenceLength = int(sys.argv[10])
+    if len(sys.argv) > 10:
+        numberSubsequencesToDelete = int(sys.argv[10])
+        deletedSubsequenceLength = int(sys.argv[11])
 
     with open(f"{targetFolder}/processed/{species}.{chromosome}.{segmentSize}.{minWordSize}.processed", "w") as targetFile, \
          open(f"{targetFolder}/samples/{species}.{chromosome}.{segmentSize}.{minWordSize}.samples", "w") as sampleFile:
@@ -224,5 +263,5 @@ if __name__ == "__main__":
         wordSplitter = wordSplitterFactory(AT_CG_SPLIT)
         wordFilter = wordFilterFactory(minWordSize)
         sampler = Sampler(sampleFile, sampleSizePercent, numberSamples)
-        prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter, sampler)
+        prepare_for_es(fileToProcess, targetFile, segmentSize, deleter, wordSplitter, wordFilter, sampler, minimumNumberWordsPerSegment)
 
